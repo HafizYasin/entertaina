@@ -1,0 +1,135 @@
+<% provide(:title, 'Search') %>
+
+
+<div class="w940px" id="found" >	
+	<div id="main_container">
+
+		<% 20.times do %>
+		<div class="entertainer">
+			<div class="image">
+				<a class="favorites_link" href="/"><img src="/assets/favorites_icon.png"> add to favorites</a>
+				<img class="img" src="/assets/list_item_thumb.jpg">
+				<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
+			</div>
+			
+			<div class="info">
+				<div class="like_play">
+					<a class="like"><i class="fa fa-heart"></i></a>
+					<% if [true, false][rand(2)] %>
+					<a class="play gradient"><i class="fa fa-caret-right"></i></a>
+					<% end %>
+				</div>
+				<div class="name"><a href="/">Blue Jewel Ceilidh Band</a></div>
+				<span class="price">From £900</span> <span class="reviews"><%= rand(10000) %> reviews</span>
+				<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
+			</div>
+		</div>
+		<% end %>
+		
+		<div class="clear"></div>
+		
+		<div class="page_pagination">
+			<a href="/"><i class="fa fa-angle-left"></i></a>
+			<a class="active">1</a>
+			<a href="/">2</a>
+			<a href="/">3</a>
+			<a href="/"><i class="fa fa-angle-right"></i></a>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	<aside>
+		<div class="filter">
+			<form>
+				<div class="block">
+					<div class="title">Keywords</div>
+					<div class="line"><input class="input" type="text" name="date" value="Keywords" onfocus="if(this.value == 'Keywords') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Keywords';}"></div>
+
+					<div class="title">Sort by</div>
+					<div class="line" id="sort_by">
+						<select name="">
+							<option value="">Lowest price</option>
+							<option value="">Variant 1</option>
+							<option value="">Variant 2</option>
+							<option value="">Variant 3</option>
+						</select>
+					</div>
+					
+					<div class="title">Location</div>
+					<div class="line"><input class="input location" type="text" name="date" value="Anywhere" onfocus="if(this.value == 'Anywhere') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Anywhere';}"></div>
+
+					<div id="distance">
+						<span class='data'></span>
+						<div id="slider-distance"></div>
+					</div>
+
+	
+					<div class="title">Date</div>
+					<div class="line"><input class="input datepicker" type="text" name="date" value="Any date" onfocus="if(this.value == 'Any date') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Any date';}"></div>
+					
+					<div class="title">Price Range</div>
+					<div class="line price">
+						£<span id="ot"></span> - £<span id="do"></span>
+						<div id="slider-price"></div>
+					</div>
+				</div>
+			
+				<div class="block">
+					<div class="title">Categories</div>
+					
+					<div class="line">
+						<input type="checkbox" name="catetory" id="cat1">
+						<label class="checkbox_label sub" for="cat1">Bands & Ensembles</label>
+					</div>
+					<div class="sub_cats for_cat1">
+						<% 10.times do |i| %>
+							<div class="line">
+								<input type="checkbox" name="catetory" id="cat1_<%= i %>">
+								<label class="checkbox_label" for="cat1_<%= i %>">Vintage <sub><%= rand(1000) %></sub></label>
+							</div>
+						<% end %>
+					</div>
+
+					<div class="line">
+						<input type="checkbox" name="catetory" id="cat2">
+						<label class="checkbox_label" for="cat2">Solo Musicians</label>
+					</div>
+					
+					<div class="line">
+						<input type="checkbox" name="catetory" id="cat3">
+						<label class="checkbox_label" for="cat3">Entertainers</label>
+					</div>
+					
+					<div class="line">
+						<input type="checkbox" name="catetory" id="cat4">
+						<label class="checkbox_label" for="cat4">Unusual</label>
+					</div>
+					
+					<div class="line">
+						<input type="checkbox" name="catetory" id="cat5">
+						<label class="checkbox_label" for="cat5">Other Services</label>
+					</div>
+				</div>
+
+				<button class="flat_button center">UPDATE</button>
+			</form>
+		</div>
+	
+		<div class="ads">
+			<a href="#biling_form" class="fancy">
+				<div class="logo"><img src="/assets/common/grey_logo.png" alt=""></div>
+				<div class="desc">
+					<p>Awesome<br> Promotion<br> Here</p>
+					<p class="details">Try right now <img src="/assets/arrow_right_grey.png" alt=""></p>
+				</div>
+			</a>
+		</div>
+	</aside>
+
+	<div class="clear"></div>
+</div>
+
+
+
+
+

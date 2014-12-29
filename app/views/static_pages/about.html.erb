@@ -1,0 +1,78 @@
+<% provide(:title, 'About') %>
+
+
+<div id="about">	
+
+	<div id="map"></div>
+
+	<div class="w650px text">
+		<section>
+			<h1>About Entertaina</h1>			
+			<div class="small_fat_blue">UK Entertainment Index</div>
+			<p>The Team at Entertaina strive to make finding entertainment for any event quick, simple and hassle free. Our aim is to have all the acts you could possibly think of, and the ones you can't, all in one place - and make finding the one you want easy.</p>
+			<p>Whether you’re looking for background music, a brilliant band, solo musician or an act to wow your guests with for a wedding, party or corporate event, Entertaina is the place to find it. The website has been carefully designed to make your search wonderfully easy, you don't need to register or sign up with us, simply browse through the acts or use the filters to narrow your search results, you'll then be able to save your favourites and contact the Entertaina's directly to discuss a booking. ‘Start searching’</p>
+		</section>
+		<section>
+			<h1>Here to help</h1>
+			<p>Our resident blogger, Katie, is passionate about parties and the Entertaina blog is a great place to source wedding and party inspiration, get ideas and absorb vital tips in all party planning areas.  The specialEntertaina Inspiration section on the blog is perfect if you're in need of a little inspiration for finding the perfect entertainment for your event, with different entertainment ideas as well as Entertaina reviews.</p>
+		</section>
+		<section>
+			<h1>Speak To Us</h1>
+			<p>We want to make your search, and future searches, the best they can be, we'd love to hear from you if you feel there's something we can improve on. Get in touch on <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" class="blue">blahblah@entertaina.com</a></p>
+			<p>Similarly, our Entertaina's really appreciate your support and feed back, it's fantastic if you can spare a few minutes to review your act after your event. And if you have even more to say, why not email <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" class="blue">katie@entertaina.com</a> with your story for a chance to feature on the blog.</p>
+		</section>
+
+
+		<form class="form">
+			<input class="input left" type="text" placeholder="Your Name">
+			<input class="input right" type="email" placeholder="Email">
+			<textarea placeholder="Message"></textarea>
+			<button class="flat_button">SEND</button>
+			<div class="clear"></div>
+		</form>
+	</div>
+</div>
+
+
+
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoAMXxjTlAd0m8q0g76hDOtCCgpDUI7X0&sensor=false"></script>
+
+<!-- map_ -->
+<script type="text/javascript">
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+        // Basic options for a simple Google Map
+        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+        var mapOptions = {
+            // How zoomed in you want the map to start at (always required)
+            zoom: 11,
+            scrollwheel: false,
+
+            // The latitude and longitude to center the map (always required)
+            center: new google.maps.LatLng(40.6700, 15.9400), // New York
+
+            // How you would like to style the map. 
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"stylers":[{"hue":"#00aaff"},{"saturation":-100},{"gamma":2.15},{"lightness":12}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":24}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}]
+        };
+
+        // Get the HTML DOM element that will contain your map 
+        // We are using a div with id="map" seen below in the <body>
+        var mapElement = document.getElementById('map');
+
+        // Create the Google Map using our element and options defined above
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        // Let's also add a marker while we're at it
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(40.6300, 15.9400),
+            map: map,
+            icon: '/assets/common/map_pointer.png'
+        });
+    }
+</script>
+<!-- _map -->

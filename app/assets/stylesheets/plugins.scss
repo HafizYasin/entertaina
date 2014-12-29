@@ -1,0 +1,171 @@
+.gmnoprint, .gm-style-cc, #map > div > div:nth-child(2){ display: none; } /*google map*/
+
+.ui-tabs .ui-tabs-panel {
+	padding: 0;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+	padding-left: 0;
+}
+.ui-tabs-nav{
+	padding: 0 !important;
+}
+.ui-tooltip{
+	background:#fff;
+	box-shadow: 0 1px 2px rgba(0,0,0,.15);
+	text-align: center;
+	color: $grey;
+	font: 20px/47px FuturaPTDemi;
+	border-radius:5px;
+	width: 60px;
+	padding: 0;
+	height: 47px;
+	border: none;	
+}
+.ui-tooltip:after{
+	position: absolute;
+	left: 50%;
+	bottom: -8px;
+	margin-left: -5px;
+	width: 10px;
+	height: 8px;
+	background: url(/assets/tooltip_arrow.png) 0 0 no-repeat;
+	display: block;
+	content: '1';
+	text-indent: -9999px;
+}
+.ui-corner-all{
+	.ui-icon{
+		background: none;
+	}
+}
+.ui-slider-horizontal{
+	height: 3px;
+	border: none;
+	margin-top: 16px;
+}
+.ui-datepicker{ padding: 0; width: 220px; background: none; border: none; }
+#ui-datepicker-div{ padding: 7px 0 0; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.2); z-index: 9 !important; }
+.ui-datepicker-calendar{ border-spacing: 0px; margin-bottom: 0 !important; border-bottom: 1px solid #ebedef; }
+.ui-datepicker-calendar td{ padding: 0; border-top: 1px solid #ebedef; border-left: 1px solid #ebedef; background: #f7f9fa; width: 30px; height: 30px; font: 12px FuturaPTDemi; }
+.ui-datepicker-calendar tr td:last-child{ border-right: 1px solid #ebedef; }
+.ui-datepicker-calendar td a.ui-state-default{ text-align: center; padding: 0; color: $grey; background: none; border:none; font-weight: 400; }
+.ui-datepicker-calendar td:hover{ background: #2cb5bd; }
+.ui-datepicker-calendar td:hover a{ color: #fff; }
+.ui-datepicker-calendar th {
+	padding: 0;
+	height: 20px;
+	color: #9da3a8;
+	font: 10px FuturaPTMedium;
+}
+.ui-datepicker .ui-datepicker-header{ padding: 0 0 7px; height: 24px; background: none; border: none; }
+.ui-datepicker .ui-datepicker-title{ color: $grey; font: 14px/24px FuturaPTDemi; }
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
+	width: 9px;
+	height: 15px;
+	top: 4px;
+	cursor: pointer;
+	background: url(/assets/calendar_arrows.png) 0 0 no-repeat;
+}
+.ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover{ border: none; }
+.ui-datepicker .ui-datepicker-prev{ background-position: 0 0; left: 30px; }
+.ui-datepicker .ui-datepicker-next{ background-position: -9px 0; right: 30px; }
+
+
+
+
+.ui-slider-horizontal .ui-slider-range{ background: #2ab8b6; }
+.ui-slider .ui-slider-handle{ width: 20px; height: 21px; background: url(/assets/polzynok.png) 0 0 no-repeat; border: none; }
+.ui-slider-horizontal .ui-slider-handle{ margin-left: -10px; top: -8px; }
+.ui-slider-horizontal .ui-slider-handle:hover{ cursor: pointer; }
+
+
+
+
+
+
+
+
+
+
+.calendar{
+	background: #fff;
+	border-radius: 5px;
+	margin-bottom: 18px;
+	padding: 15px 0 0;
+	box-shadow: 0 1px 2px rgba(0,0,0,.03);
+	.selected{ 
+		background: $blue;
+		a{ color: white !important;}
+	}
+	.block_title{ padding: 0 15px; }
+	.info{ text-align: center; padding:10px 0; color: $grey; font: 14px/18px FuturaPTBook; }
+	.info > div{ display: inline-block; margin: 0 12px; }
+	.info img{ vertical-align: middle; margin-right: 7px; }
+}
+
+.input.location{ background: url(/assets/input_location_icon.png) 222px 50% no-repeat; }
+.input.datepicker{ background: url(/assets/input_date_icon.png) 222px 50% no-repeat; }
+
+.ui-selectmenu-menu{
+	li{
+		width: 100%;
+		cursor: pointer; color: $grey; 
+		padding: 0 15px;
+		font: 16px/30px FuturaPTBook; 
+		transition: all 0.3s ease; 
+		padding: 0 15px;
+		margin: 5px 0;
+		border: none;
+		background: white;
+	}
+	li:hover{ 
+		background: #d7dce0;
+		border: none;
+	} 
+
+}
+span:focus{ outline: none; }
+.ui-selectmenu-button{
+	outline: none;
+	background: #fff;
+	border: 1px solid #d7dce0;
+	border-radius: 6px;
+	width: 198px !important;
+	height: 42px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	z-index: 9;
+	color: $grey; padding: 0 35px 0 15px; font: 16px/42px FuturaPTBook;
+}
+
+
+#sort_by .ui-selectmenu-button {
+	background: url(/assets/select_trigger.png) 220px no-repeat;
+}
+
+
+.ui-selectmenu-button span.ui-selectmenu-text{
+	padding: 0;
+	display: inline;
+}
+.ui-menu{
+	border-radius: 5px;
+	border: 1px solid #d7dce0;
+	background: white;
+}
+
+
+
+
+
+
+
+
+
+
+.fancybox-close{
+	background: url('/assets/jquery.fancybox/close.png') center center no-repeat;
+	top: -3px;
+	right: -1px;
+}
+

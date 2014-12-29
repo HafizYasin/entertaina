@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= yield :title %></title>
+	<%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body id="index">
+
+<header>
+	<div class="gradient_in">
+		<div class="w940px">
+			<div class="logo left"><a href="/"><img src="/assets/logo.png"></a></div>
+			
+			<a class="sign_up_link right fancy" href="#register_form">Sign up</a>
+
+			<%= render '/layouts/_header_menu' %>
+
+			<div class="clear"></div>
+			
+			<div id="search_block">
+				<div class="title">Find Your Act</div>
+				<div class="desc">Search from over 17,345 entertainers. Your search ends here!</div>
+				<form>
+					<input class="left" type="text" name="" value="Search for name, location or category..." onfocus="if(this.value == 'Search for name, location or category...') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Search for name, location or category...';}">
+					<input class="left" type="submit" name="submit" value="Search">
+				</form>
+			</div>
+		</div>
+	</div>
+</header>
+
+<%= yield %>
+
+<footer>
+	<div class="gradient_in">
+		<div class="w940px" id="top_footer">
+			<div class="w25">
+				<img class="logo" src="/assets/logo.png" alt="">
+				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</span>
+				<a class="bold" href="">More about us <i class="fa fa-angle-right"></i></a>
+			</div>
+			<div class="w25">
+				<span class="bold">Get in touch</span>
+				<span>21 Eccleston Street, London <br>sw1w 9lx, England</span>
+				<span>+44 20 3456 7894</span>
+				<span>info@entertaina.com</span>
+			</div>
+			<div class="w25" id="recent_posts">
+				<span class="bold">Recent posts</span>
+				<div class="row">
+					<img src="/assets/index/footer/recent_posts/1.png">
+					<img src="/assets/index/footer/recent_posts/1.png">
+					<img src="/assets/index/footer/recent_posts/1.png">
+				</div>
+				<div class="row">
+					<img src="/assets/index/footer/recent_posts/1.png">
+					<img src="/assets/index/footer/recent_posts/1.png">
+					<img src="/assets/index/footer/recent_posts/1.png">
+				</div>			
+			</div>
+			<div class="w25" id="subscribing">
+				<span class="bold">Subscribing</span>
+				<span>Receive the latest articles and news from Entertaina.com</span>
+
+				<form class="transparent_circle_form">
+					<input type="text" name="" value="hello@entertaina.com">
+					<div class="circle"><i class="fa fa-angle-right"></i></div>
+				</form>
+
+			</div>			
+
+			<div class="line"></div>
+		</div>
+		<div class="w940px">
+			<div class="copy left"> © All rights reserved</div>
+		
+			<div class="social right">
+				<a href="/"><img class="logo" src="/assets/common/footer/twitter.png"></a>
+				<a href="/"><img class="logo" src="/assets/common/footer/fb.png"></a>
+				<a href="/"><img class="logo" src="/assets/common/footer/vine.png"></a>
+			</div>
+			
+			<%= render '/layouts/_footer_menu' %>
+
+			<div class="clear"></div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= render '/layouts/modals' %>
+
+<!-- 
+	<script src="js/selectbox.js"></script>
+	<script src="js/jcarousel.js"></script>
+	<script src="js/slides.js"></script>
+	<script src="js/jquery.MetaData.js"></script>
+	<script src="js/jquery.rating.js"></script>
+-->
+</body>
+</html>

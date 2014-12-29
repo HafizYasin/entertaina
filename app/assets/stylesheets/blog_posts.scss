@@ -1,0 +1,119 @@
+@import 'application';
+
+#blog{
+	aside{
+		float: right;
+		width: 260px; 
+		font-size: 14px;
+		line-height: 22px;
+
+		.follow{
+			.social{
+				a{ margin-right: 2px; margin-left: 2px; }
+				img{ width: 30px; }
+			}
+		}
+
+		.subscribing{
+			color: white;
+			background-image: url('/assets/blog/follow_violin.png');
+			width: 100%;
+			position: relative;
+			border-radius: 5px;
+			min-height: 180px;
+			.gradient{ border-radius: 5px; min-height: 180px; }
+			.transparent_text_line{ padding-top: 20px; }
+			.text{ padding: 0 20px; }
+			form{ width: 174px; margin: 20px auto;}
+		}
+
+		.pinterest{
+			img{
+				width: 80px;
+				height: 80px;
+				border-radius: 5px;
+			}
+			a:not(:last-child) img{ margin-right: 10px; }
+			a{ float: left; }
+		}
+
+		.twitter{
+			font-size: 15px;
+			.text{ padding: 10px 0; }
+			.date{
+				color: rgb(176, 175, 175);
+				padding-left: 10px;
+			}
+			b{ font-family: FuturaPTBook; font-size: 16px;}
+			.next{ color: $blue; font: 13px/19px FuturaPTDemi; text-transform: uppercase; margin-top: 12px; }
+		}
+
+		section{
+			margin-bottom: 32px;
+			.text_line, .transparent_text_line{ margin-bottom: 20px; }
+		}
+	}
+
+
+	#main_container{
+		padding-right: 300px;
+		margin-right: -260px;
+		width: 100%;
+		box-sizing:border-box;
+		float: left;
+		
+		.post{
+			&:not(:nth-last-child(2)){ border-bottom: 1px solid #eff1f3; }
+			&:not(:first-child){ padding-top: 40px; }
+
+			.img{ width: 100%; }
+			.title{ font:30px FuturaPTDemi; margin-bottom: 5px; }
+			.title .share{
+				float: right;
+				font: 13px/19px FuturaPTDemi;
+				text-transform: uppercase;
+				color: #394c60;
+			}
+			.title .share img{
+				width: 22px;
+				position: relative;
+				top: 5px;
+				margin-left: 5px;
+			}
+			.text{ 
+				color: #394c60; font: 16px/28px FuturaPTBook; 
+
+				blockquote{
+					padding-left: 20px;
+					border-left: 3px #c0e9e5 solid;
+					color: #b0b9c3;
+					font-size: 26px;
+					line-height: 35px;
+					font-family: 'FuturaPTBookOblique';
+					margin-bottom: 20px;
+				}
+				ul{
+					margin-bottom: 20px;
+				}
+			}
+			.img{ width: 100%; display: block; margin-bottom: 25px; border-radius:5px; }
+
+		}
+
+		nav{ 
+			font: 13px/19px FuturaPTDemi; text-transform: uppercase; margin-top: 25px; padding-bottom: 50px; 
+			a{ color: $blue; }
+			i{ font-weight: 700; }
+			.fa-angle-right{ padding-left: 5px; }
+			.fa-angle-left{ padding-right: 5px; }
+		}
+		.loading-spinner{ margin-bottom: 70px; margin-top: -60px; }
+	}
+}
+		
+
+
+
+
+
+

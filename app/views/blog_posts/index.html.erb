@@ -1,0 +1,34 @@
+<%= provide(:title, 'All posts') %>
+
+<div class="w940px" id="blog">	
+
+	<div id="main_container">
+		<% 2.times do %>
+			<div class="post">
+				<img class="img" src="/assets/blog/post_images/1.png">
+				<div class="title">
+					<a href="/blog_posts/1">Floral Wallpaper</a>
+					<div class="share">
+						<span>Share:</span>
+						<a href=""><img src="/assets/common/social_icons/1.png"></a>
+						<a href=""><img src="/assets/common/social_icons/2.png"></a>
+						<a href=""><img src="/assets/common/social_icons/3.png"></a>
+					</div>
+				</div>
+				<div class="small_fat_blue">March 15, 2014</div>
+				<div class="text">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae tempor mauris, sed porttitor arcu. Aenean posuere dignissim dapibus. Mauris quis nunc eleifend, sodales massa sed, pellentesque diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas a semper felis, eget tempus justo. Nullam varius mauris in ipsum lacinia, in pharetra ...</p>
+					<nav>
+						<a href="/blog_posts/1">Continue reading<i class="fa fa-angle-right"></i></a>
+					</nav>
+				</div>
+			</div>	
+		<% end %>	
+		<div class="loading-spinner text_center"><img src="/assets/common/ajax-loader.gif"></div>
+	</div>
+		
+	
+	<%= render "aside" %>
+	<div class="clear"></div>
+
+</div>

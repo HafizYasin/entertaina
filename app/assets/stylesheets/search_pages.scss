@@ -1,0 +1,266 @@
+@import 'application';
+
+
+#index{
+	header{
+		color: white;
+		text-align: center;
+		padding: 0;
+		background: url('/assets/index/footer/bg.jpg');
+		#search_block{ 
+			margin: 80px 0 85px; 
+			.title{ font: 40px FuturaPTHeavy; margin-bottom: 10px; }
+			.desc{ font: 18px FuturaPTBook; margin-bottom: 30px; }
+			form{ display: inline-block; }
+			input[type=text]{
+				background: rgba(255, 255, 255, 0.23) url(/assets/common/forms/search_icon.png) 20px 17px no-repeat;
+				border-radius: 30px 0 0 30px;
+				height: 51px;
+				padding: 0 35px 0 50px;
+				width: 311px;
+				font: 16px/47px FuturaPTBookOblique;
+			}
+			input[type=submit]{
+				background: white;
+				width: 120px;
+				height: 51px;
+				margin-left: -25px;
+				color: #47bbc3;
+				font: 18px FuturaPTDemi;
+				border-radius: 30px;
+				padding-bottom: 2px;
+			}
+		}
+		.gradient_in{ padding: 20px 0; }
+	}
+	footer{
+		background: url(/assets/index/footer/bg.jpg) 50% 0 no-repeat;
+		position: relative;
+		padding: 0;
+
+		.gradient_in{
+			padding: 20px 0;
+		}
+
+		#top_footer{
+			padding: 20px 0;
+			font-size: 0px;
+			.w25{
+				width: 25%;
+				display: inline-block;
+				font: 16px/24px FuturaPTBook;
+				vertical-align: top;
+			}
+			.w25>*{
+				display: block;
+				margin-bottom: 14px;
+				padding-right: 20px;
+			}
+			.bold{
+				text-transform: uppercase;
+				font-size: 13px;
+				font-family: FuturaPTDemi;
+				i{
+					font-weight: 700;
+					padding-left: 5px;
+				}
+			}
+			#recent_posts{
+				img{
+					border-radius: 5px;
+					width: 33%;
+					font-size: 0px;
+					padding-right: 12px;
+					box-sizing: border-box;
+				}
+				.row{
+					font-size: 0;
+					margin-right: 20px;
+				}
+			}
+			.transparent_circle_form{
+				input{
+					width: 147px;
+				}
+				.circle{
+					right: 35px;
+				}
+			}
+			.line{
+				border-bottom: 1px #A0FAFF solid;
+				margin-top: 40px;
+			}
+		}
+	}
+
+	.how{
+		padding-bottom: 70px;
+		p{
+			width: 48%;
+		}
+	}
+
+	.entertainers{
+		background: -100px -130px url("/assets/index/popular_entertainers/bg.jpg");
+		position: relative;
+		.width{
+			max-width: 1020px;
+			margin: 0 auto;
+		}	
+		.gradient{
+			padding: 50px 0 20px 0;
+		}
+		.jcarousel{
+			margin: 40px 0 100px 0;
+			position: relative;
+			overflow: hidden;
+			ul{
+				width: 10000000px;
+				position: relative;
+				list-style: none;
+			}
+			.entertainer{ margin: 0 20px; float: left; }
+		}
+		.j-prev, .j-next{
+			color: white;
+			font-size: 60px;
+			position: absolute;
+			top: 260px;
+		}
+		.j-prev{ left: 10%; }
+		.j-next{ right: 10%; }
+	}
+
+	.categories{ 
+		padding-top: 40px;
+		padding-bottom: 70px;
+		.item{ 
+			box-sizing: border-box; 
+			display: inline-block; 
+			font:16px/26px FuturaPTBook; 
+			width: 33%; 
+			vertical-align: top; 
+			margin-bottom: 20px;
+			&:nth-child(2){
+				padding: 0 20px;
+			}
+			.name{ color: $blue; display: inline-block; margin: 15px 0; font-size: 18px; }
+			img{ width: 20px; margin-right: 10px; }
+		}
+	}
+
+	h1{ margin-bottom: 40px; }
+}
+
+
+#found{
+	padding-bottom: 70px;
+	aside{
+		width: 300px;
+		float: left;
+		.filter{
+			border: 2px solid #E3E8EC;
+			border-radius: 5px;
+			.block{
+				margin-bottom: 18px;
+				background: #fff;
+				box-shadow: 0 1px 2px rgba(0,0,0,.03);
+				padding: 25px;
+				border-radius: 4px;
+				.title{ color: #c0c4c9; font: 10px FuturaPTHeavy; margin-bottom: 10px; text-transform: uppercase; }
+			}
+			.block:nth-child(2){
+				box-shadow: none;
+			}
+			.input{
+				border: 1px solid #d7dce0;
+				border-radius: 6px;
+				width: 198px;
+				height: 42px;
+				padding: 0 35px 0 15px;
+				margin-bottom: 25px;
+			}
+			.price, #distance{ color: $grey; font: 18px FuturaPTMedium; }
+			#slider-distance{
+				height: 3px;
+				border: none;
+				margin: 15px 0 30px 0;
+			}
+
+			button{
+				width: 220px;
+				height: 49px;
+				margin-bottom: 20px;
+			}
+			.checkbox_label{
+				color: $grey;
+				display: inline-block;
+				cursor: pointer;
+				font: 14px/14px FuturaPTHeavy;
+				padding-left: 30px;
+				margin-top: 15px;
+				background: url(/assets/checkbox_icon.png) 0 0 no-repeat;
+			}
+			.checkbox_label.sub{ width: 220px; background: url(/assets/checkbox_icon.png) 0 0 no-repeat, url(/assets/arrow_down.png) 233px 6px no-repeat; }
+			input[type=checkbox]{ display: none; }
+			input[type=checkbox]:checked + .checkbox_label{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat; }
+			input[type=checkbox]:checked + .checkbox_label.sub{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat, url(/assets/arrow_up.png) 233px 6px no-repeat; }
+			.sub_cats{ 
+				display: none; margin-bottom: 15px; 
+				.line{ padding-left: 30px; }
+				.checkbox_label{ margin-top: 12px; font-family: FuturaPTBook; }
+				input[type=checkbox]:checked + .checkbox_label{ color: $blue; }
+				.checkbox_label sub{ vertical-align: top; font-size: 9px; position: relative; top: -3px; color: $blue; }
+			}
+		}
+		.ads{
+			margin-top: 40px;
+		}
+	}
+
+	#main_container{
+		padding-left: 320px;
+		margin-left: -300px;
+		width: 100%;
+		box-sizing: border-box;
+		float: right;
+		.entertainer{
+			margin-bottom: 30px;
+			&:nth-child(odd){ float: left; }
+			&:nth-child(even){ float: right; }
+		}
+
+		.page_pagination{ 
+			padding: 20px 0 38px; 
+			a{
+				display: block;
+				margin-right: 8px;
+				text-align: center;
+				width: 32px;
+				height: 32px;
+				color: $grey;
+				font: 14px/32px FuturaPTDemi;
+				box-shadow: 0 1px 2px rgba(0,0,0,.03);
+				float: left;
+			}
+			a.active{ 
+				color: $blue; 
+				font-size: 17px; 
+				position: relative; 
+				bottom: 2px; 
+			}
+			i{ font-weight: 700; }
+		}
+
+
+
+
+
+
+
+	}
+
+
+}
+
+
