@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'profiles/show'
+  get '/profiles/1', to: 'profiles#show'
+  get '/settings', to: 'profiles#settings'
 
-  root to: 'search_pages#index'
+  root 'search_pages#index'
   get '/search', to: 'search_pages#found'
 
   get '/blog_posts/1', to: 'blog_posts#show'

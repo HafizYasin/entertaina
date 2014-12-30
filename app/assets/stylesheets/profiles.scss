@@ -1,295 +1,405 @@
 @import 'application';
 
+#profile{
+	#profile_info{
+		height: 420px; 
+		margin-top: -145px; 
+		background: url(/assets/profile/entertainers/rolling_stones/bg.jpg) 50% 0 no-repeat; background-size: cover;
+		position: relative;
+		font: 14px/20px FuturaPTDemi;
+		margin-bottom: 70px;
+		.black_gradient{ height: 100%; }
+		.info{ position: absolute; bottom: 20px; }
+		.name{
+			padding-left: 20px;
+			h2{
+				color: white;
+				font-size: 36px;
+				font-weight: 400;
+				margin-bottom: 11px;
+			}
+			a, span{ color: #5acdd0; }
+		}
+
+		.logo img{
+			border-radius: 50%;
+			border: 3px rgba(255, 255, 255, 0.45) solid;
+			width: 80px;
+			height: 80px;
+		}
+		.name, .logo{
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	aside{
+		float: right;
+		section{ 
+			margin-bottom: 40px; 
+			.text_line{ margin-bottom: 31px; }
+		}
+
+		#send_add{
+			i{ padding-right: 5px; }
+			a{ margin-bottom: 10px; }
+			.add{
+				background: #f5f6f8;
+				color: #26afb7;
+			}
+		}
+
+		#photos{
+			img{
+				width: 85px;
+				height: 85px;
+			}
+			.gradient_in{
+				background: $green_blue;
+				width: 100%;
+				height: 100%;
+				border-bottom-right-radius: 5px;
+				div{
+					color: white;
+					text-align: center;
+					font-family: FuturaPTDemi;
+					line-height: 13px;
+					font-size: 18px;
+					padding-top: 29px;
+				}
+				.ellipsis{
+					font-size: 25px;
+					font-weight: 700;
+					letter-spacing: 2px;
+				}
+			}
+			.gradient_out{
+				background: url(/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg);
+				display: inline-block;
+				width: 85px;
+				height: 85px;
+				vertical-align: top;
+				border-bottom-right-radius: 5px;
+			}
+			.gallery{
+				font-size: 0;
+				line-height: 0;
+				img:nth-child(1){ border-top-left-radius: 5px;}
+				img:nth-child(3){ border-top-right-radius: 5px;}
+				img:nth-child(4){ border-bottom-left-radius: 5px;}
+				&:hover{ opacity: 0.7; }
+			}
+		}
+
+		#availability{
+			.calendar{
+				border: 2px #efefef solid;
+				.ui-datepicker{ width: 100%; }
+			}
+		}
+
+		#audios{
+			span{ display: inline-block; vertical-align: top; }
+			.song{
+				font: 14px FuturaPTDemi;
+				margin-bottom: 20px;
+				.gradient{
+					position: relative;
+					top: -2px;
+				}
+				.name{
+					color: #4f5762;
+					padding-left: 5px;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+					max-width: 188px;
+				}
+				.time{
+					color: #5acdd0;
+					float: right;
+				}
+			}
+		}
+
+		#videos{
+			.thumb{
+				background: url(/assets/profile/entertainers/rolling_stones/video_thumbs/1.jpg);
+				width: 100px;
+				height: 70px;
+				position: relative;
+				float: left;
+				@extend .animation;
+				.play{
+					position: absolute;
+					top: 23px;
+					left: 37px;
+				}
+			}
+			.description{
+				float: right;
+				padding-top: 6px;
+				width: 150px;
+				font: 14px FuturaPTDemi;
+			}			
+			.name{
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				color: #4f5762;
+			}
+			.time{ color: #5acdd0; }
+			.views{ color: #c4c5c9; font: 13px FuturaPTBook;}
+			.description div{ padding-bottom: 1px; }
+			.video{ margin-bottom: 20px; }
+		}
+	}
+
+	#main_container{
+		float: left;
+		.tabs{
+			.middle_heading{
+				margin-top: 20px;
+				margin-bottom: 10px;
+			}
+			.small_heading{ margin-top: 20px; }
+			ul:not(.nav){ padding-left: 40px; }
+			ul.col2 li{
+				width: 50%;
+				float: left;
+				padding-bottom: 10px;
+			}
+
+			#technical ul, #prices ul{ margin-top: 15px; }
+
+			#contact{
+				margin-top: 25px;
+				#map{
+					width: 315px;
+					height: 315px;
+					float: left;
+					margin-right: 20px;
+					img{
+						border-radius: 5px;
+
+					}
+				}
+				ul{ 
+					padding-left: 20px; 
+					margin-top: 15px;
+					margin-bottom: 10px;
+					float: left; 
+					font-family: FuturaPTDemi;
+					span{ display: inline-block; }
+					li{
+						list-style: none;
+						margin-bottom: 7px
+					}
+					.icon{ width: 20px; }
+					.icon img{ width: 13px; height: 14px; }
+				}
+				.social{
+					float: left;
+					img{
+						width: 27px;
+						height: 27px;
+						margin-right: 4px;
+					}
+
+				}
+
+			}
+		}
+		.reviews{
+			padding: 20px 0 0;
+			h2{
+				font: 23px; margin-bottom: 30px;
+				img{ 
+					width: 22px; 
+					height: 21px; 
+					padding-right: 10px;
+					position: relative;
+					top: 3px;
+				}
+				.flat_button{
+					width: 140px;
+					height: 34px;
+					font-size: 13px;
+					float: right;					
+					i{ padding-right: 6px; }
+					span{ position: relative; bottom: 5px; }
+
+				}
+			}
+			.review{
+				font-family: FuturaPTDemi;
+				border-bottom: 1px #ededed solid;
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+				.name{ color: $grey; font-size: 18px; }
+				.rating{ 
+					float: right;
+					img{ vertical-align: middle; margin-left: 10px; }
+					sub{ font-size: 10px; position: relative; top: -7px; left: 1px; }
+					span, .stars{ display: inline-block; }
+					.stars{
+						font-size: 14px;
+						color: $blue;
+						margin-left: 5px;
+						i{ width: 12px; }
+					}
+				}
+				.date{ color: $light; font-size: 10px; text-transform: uppercase; }
+				.text{ color: $grey; font: 15px/22px FuturaPTBook; padding-bottom: 10px; }
+				.vote a{ margin: 0 5px; }
+			}
+		}
+	}
+}
 
 
-#profile_info{ 
-	height: 420px; 
-	margin-top: -145px; 
-	background: url(/assets/profile/entertainers/rolling_stones/bg.jpg) 50% 0 no-repeat; background-size: cover;
-	position: relative;
-	font: 14px/20px FuturaPTDemi;
-	margin-bottom: 70px;
-}
-#profile_info .black_gradient{ height: 100%; }
-#profile_info .info{ position: absolute; bottom: 20px; }
-#profile_info .name h2{
-	color: white;
-	font-size: 36px;
-	font-weight: 400;
-	margin-bottom: 11px;
-}
-#profile_info .name a, #profile_info .name span{
-	color: #5acdd0;
-}
-#profile_info .logo img{
-	border-radius: 50%;
-	border: 3px rgba(255, 255, 255, 0.45) solid;
-	width: 80px;
-	height: 80px;
-}
-#profile_info .name, #profile_info .logo{
-	display: inline-block;
-	vertical-align: middle;
-}
-#profile_info .name{ padding-left: 20px;}
+#settings{
+	#free_trial_warning{
+		width: 100%;
+		background: #f5f6f8;
+		color: $light;
+		font-family: FuturaPTDemi;
+		position: absolute;
+		top: 74px;
+		padding: 14px 0;
+		font-size: 14px;
+		i.fa-exclamation-triangle{
+			font-size: 20px;
+			color: $blue;
+			vertical-align: middle;
+			padding-right: 10px;
+		}
+		.close img{ 
+			width: 8px;
+			padding: 0 10px;
+		}
+	}
+	.tabs{
+		.nav{
+			margin-bottom: 30px;
+		}
+		form{
+			label{
+				float: left;
+				text-align: right;
+				width: 120px;
+				font-family: FuturaPTDemi;
+				text-transform: uppercase;
+				padding-top: 7px;
+				font-size: 13px;
+				i{
+					color: $blue;
+					font-size: 7px;
+					vertical-align: text-top;
+					padding-left: 5px;
+				}
+			}
+			.right{
+				width: 490px;
+				.comment{
+					display: inline-block;
+					color: $light;
+					font-size: 14px;
+				}
+				.input, select{
+					width: 100%;
+					box-sizing: border-box;
+					margin-bottom: 3px;
+				}
+				.ui-selectmenu-button{ margin-bottom: 3px; }
+				
+			}
+			.line.website{
+				font-size: 0;
+				#http{
+					width: 20%;
+					font-size: 15px;
+					color: $light;
+					display: inline-block;
+					text-align: center;
+					font-family: FuturaPTDemi;
+					padding: 6px 0;
+					background: #f5f6f7;
+					border: 1px solid #d7dce0;
+					box-sizing: border-box;
+					border-radius: 5px 0 0 5px;
+					border-right: none;
+				}
+				input{
+					display: inline-block;
+					width: 80%;
+					border-radius: 0 5px 5px 0;
+				}
 
-#profile .right section{ margin-bottom: 40px; }
-#profile .right section .text_line{ margin-bottom: 31px; }
-
-#profile #send_add i { padding-right: 5px; }
-#profile #send_add a{ margin-bottom: 10px; }
-#profile #send_add .add{
-	background: #f5f6f8;
-	color: #26afb7;
-}
-
-
-#profile #photos img{
-	width: 85px;
-	height: 85px;
-}
-#profile #photos .gradient_out{
-	background: url(/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg);
-	display: inline-block;
-	width: 85px;
-	height: 85px;
-	vertical-align: top;
-}
-#profile #photos .gradient_in div{
-	color: white;
-	text-align: center;
-	font-family: FuturaPTDemi;
-	line-height: 17px;
-	font-size: 15px;
-	padding-top: 29px;
-}
-#profile #photos .gallery img:nth-child(1){ border-top-left-radius: 5px;}
-#profile #photos .gallery img:nth-child(3){ border-top-right-radius: 5px;}
-#profile #photos .gallery img:nth-child(4){ border-bottom-left-radius: 5px;}
-#profile #photos .gallery .gradient_in{ border-bottom-right-radius: 5px;}
-#profile #photos .gallery:hover{
-	opacity: 0.7;
-}
-
-#profile .calendar .ui-datepicker{
-	width: 100%;
-}
-#profile .calendar{
-	border: 2px #efefef solid;
-}
-
-#profile #audios span{
-	display: inline-block;
-}
-#profile #audios .song .gradient_in{
-	position: relative;
-	top: -2px;
-}
-
-#profile #audios .song{
-	font-size: 14px;
-	font: 14px FuturaPTDemi;
-}
-#profile #audios .name{
-	color: #4f5762;
-	padding-left: 5px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	max-width: 188px;
-}
-#profile #audios .time{
-	color: #5acdd0;
-	float: right;
-}
-#profile #audios span{
-	vertical-align: top;
-}
-#profile #audios .song{
-	margin-bottom: 20px;
-}
-
-
-
-#profile #videos .thumb{
-	background: url(/assets/profile/entertainers/rolling_stones/video_thumbs/1.jpg);
-	width: 100px;
-	height: 70px;
-	position: relative;
-	transition: all 0.3s ease;
-	float: left;
-}
-#profile #videos .thumb:hover{
-	opacity: 0.7;
-	cursor: pointer;
-}
-#profile #videos .thumb .play{
-	position: absolute;
-	top: 23px;
-	left: 37px;
-}
-#profile #videos .description{
-	float: right;
-	padding-top: 6px;
-	width: 150px;
-	font-size: 14px;
-	font: 14px FuturaPTDemi;
-}
-#profile #videos .name{
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	color: #4f5762;
-}
-#profile #videos .time{ color: #5acdd0; }
-#profile #videos .views{ color: #c4c5c9; font: 13px FuturaPTBook;}
-#profile #videos .description div{ padding-bottom: 1px; }
-#profile #videos .video{ margin-bottom: 20px; }
-
-
-#profile #tabs{ font-size: 16px; }
-#profile #tabs .middle_heading{
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-#profile #tabs ul:not(.nav){ padding-left: 40px; }
-
-#profile #tabs ul.col2 li{
-	width: 50%;
-	float: left;
-	padding-bottom: 10px;
-}
-#profile #tabs .nav{
-	border-bottom: 2px solid #eff1f3;
-	text-transform: uppercase;
-	font-family: FuturaPTDemi;
-	font-size: 14px;
-}
-#profile #tabs .nav a{
-	padding-bottom: 13px;
-	padding-right: 0;
-	margin-right: 29px;
-	
-}
-#profile #tabs .ui-state-active a{
-	color: $blue;
-	border-bottom: 2px solid $blue;
-	margin-bottom: -2px;
-}
-
-#profile #tabs #technical ul, #profile #tabs #prices ul{
-	margin-top: 15px;
-}
-#profile #tabs .small_heading{
-	margin-top: 20px;
-}
-
-#profile #map{
-	width: 315px;
-	height: 315px;
-	float: left;
-	margin-right: 20px;
-}
-
-#profile #tabs #contact ul{ padding-left: 20px; float: left; margin-top: 30px}
-#profile #tabs #contact ul span{ display: inline-block; }
-#profile #tabs #contact ul li{
-	list-style: none;
-	margin-bottom: 15px
-}
-#profile #tabs #contact ul .icon{ width: 20px; }
-#profile #tabs #contact ul .icon img{
-	width: 13px;
-	height: 14px;
-}
-#profile #tabs .social a img{
-	width: 25px;
-	height: 25px;
-}
-#profile #tabs .social{
-	display: block;
-	float: left;
-}
-
-#profile #tabs>div{
-	padding-bottom: 20px;
-	border-bottom:  2px solid #eff1f3;
-}
+			}
+			#network{
+				.right{ font-size: 0; padding-left: 2px; }
+				img{
+					width: 8%;
+					width: 31px;
+					margin: 3px;
+				}
+			}
 
 
 
 
 
-.profile_reviews{
-	padding: 20px 0 0;
-	background: #fff;
-	border-radius: 5px;
-	margin-bottom: 20px;
-	box-shadow: 0 1px 2px rgba(0,0,0,.03);
+		}
+	}
 }
-.profile_reviews .middle_heading{ font: 23px; margin-bottom: 30px; }
-.profile_reviews .middle_heading img{ 
-	width: 22px; 
-	height: 21px; 
-	padding-right: 10px;
-	position: relative;
-	top: 3px;
-}
-.profile_reviews .middle_heading .flat_button i{
-	padding-right: 6px;
-}
-.profile_reviews .middle_heading .flat_button{
-	width: 140px;
-	height: 34px;
-	float: right;
-}
-.profile_reviews .middle_heading .flat_button span{ 
-	position: relative;
-	bottom: 5px;
 
-}
+
 .add_new_review{ padding: 0 30px 30px; display: none; }
-.add_new_review .form{ position: relative; }
-.add_new_review  .form .name{ margin-bottom: 10px; }
-.add_new_review .form textarea{ padding-right: 80px; }
-.add_new_review .form .submit_btn{ position: absolute; right: 7px; bottom: 7px; width: 65px; transition: all 0.3s ease; height:37px; padding-top: 2px; }
-.add_new_review .form .submit_btn:hover{ opacity: 0.7; }
-.add_new_review .form div.star{ margin-top: 6px; }
+// .add_new_review .form{ position: relative; }
+// .add_new_review  .form .name{ margin-bottom: 10px; }
+// .add_new_review .form textarea{ padding-right: 80px; }
+// .add_new_review .form .submit_btn{ position: absolute; right: 7px; bottom: 7px; width: 65px; transition: all 0.3s ease; height:37px; padding-top: 2px; }
+// .add_new_review .form .submit_btn:hover{ opacity: 0.7; }
+// .add_new_review .form div.star{ margin-top: 6px; }
 
-div.rating-cancel,div.star-rating{float:left;width:19px;height:19px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden;}
-div.rating-cancel,div.rating-cancel a{ display: none; }
-div.star-rating,div.star-rating a{background:url(/assets/stars.png) no-repeat 0 0; }
-div.rating-cancel a,div.star-rating a{ display:block; width:19px; height:100%; background-position:0 0; border:0}
-div.star-rating-on a{background-position:0 -19px!important}
-div.star-rating-hover a{background-position:0 -19px}
-div.star-rating-readonly a{cursor:default !important}
-div.star-rating{background:transparent!important;overflow:hidden!important}
+// div.rating-cancel,div.star-rating{float:left;width:19px;height:19px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden;}
+// div.rating-cancel,div.rating-cancel a{ display: none; }
+// div.star-rating,div.star-rating a{background:url(/assets/stars.png) no-repeat 0 0; }
+// div.rating-cancel a,div.star-rating a{ display:block; width:19px; height:100%; background-position:0 0; border:0}
+// div.star-rating-on a{background-position:0 -19px!important}
+// div.star-rating-hover a{background-position:0 -19px}
+// div.star-rating-readonly a{cursor:default !important}
+// div.star-rating{background:transparent!important;overflow:hidden!important}
+//____________________ time
 
-.profile_reviews .review{ padding: 30px; border-top: 2px solid #f9fafb; }
-.profile_reviews .review .name{ color: $grey; font: 18px/26px FuturaPTDemi; }
-.profile_reviews .review .rating{ line-height: 26px; }
-.profile_reviews .review .rating img{ vertical-align: middle; margin-left: 10px; }
-.profile_reviews .review .rating sub{ vertical-align: top; font-size: 10px; position: relative; top: -3px; }
-.profile_reviews .review .date{ color: #dadee2; font: 10px/20px FuturaPTDemi; text-transform: uppercase; }
-.profile_reviews .review_text{ color: $grey; font: 14px/22px FuturaPTBook; padding-bottom: 10px; }
-.profile_reviews .review .vote .value{ color: $blue; font: 12px/20px FuturaPTDemi; }
-.profile_reviews .review .vote .sep{ color: #eaecef; font: 12px/20px FuturaPTDemi; }
-.profile_reviews .review .vote a{ margin: 0 5px; transition: all 0.3s ease; }
-.profile_reviews .review .vote a:hover{ opacity: .7; }
-.profile_reviews .more_review{
-	border-top: 2px solid #f9fafb;
-	height: 49px;
-	text-align: center;
-	line-height: 49px;
-	display: block;
+
+#profile, #settings{
+	.tabs{
+		padding-bottom: 45px;
+		border-bottom:  2px solid #eff1f3;
+		.nav{
+			border-bottom: 2px solid #eff1f3;
+			text-transform: uppercase;
+			font-family: FuturaPTDemi;
+			font-size: 14px;
+			padding-bottom: 8px;
+			li{
+				display: inline-block;
+				list-style: none;
+			}
+			a{
+				padding-bottom: 13px;
+				padding-right: 0;
+				margin-right: 29px;
+				&:focus{ outline: none; }
+			}
+			a.active{
+				color: $blue;
+				border-bottom: 2px solid $blue;
+				margin-bottom: -2px;
+			}
+		}
+	}
 }
-.profile_reviews .more_review img{ vertical-align: middle; }
-
-
-
-
-
-
-
-
 

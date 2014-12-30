@@ -130,12 +130,14 @@ span:focus{ outline: none; }
 	background: #fff;
 	border: 1px solid #d7dce0;
 	border-radius: 6px;
-	width: 198px !important;
 	height: 42px;
 	margin-bottom: 20px;
 	cursor: pointer;
 	z-index: 9;
 	color: $grey; padding: 0 35px 0 15px; font: 16px/42px FuturaPTBook;
+}
+.ui-menu-item{
+	padding-left: 16px !important;
 }
 
 

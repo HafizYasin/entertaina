@@ -1,0 +1,165 @@
+<% provide :title, 'Settings' %>
+
+
+<div id="settings">
+	<div id="free_trial_warning">
+		<div class="w940px">
+			<i class="fa fa-exclamation-triangle"></i>
+			During your free trial, your profile is not visible to the public. To share with the rest of the world, <span class="uppercase blue">upgrade your account</span>
+			<div class="right close animation">
+				<img src="/assets/common/grey_close.png">
+			</div>
+		</div>
+	</div>
+
+	<!-- structure class lets you structure page with aside and #main_container -->
+	<div class="w940px structure">	
+
+		<div id="main_container">
+			<div class="tabs">
+				<ul class="nav">
+					<li><a href="#profile_tab">Profile</a></li>
+					<li><a href="#technical">Media</a></li>
+					<li><a href="#prices">Account</a></li>
+					<li><a href="#contact">Billing</a></li>
+				</ul>
+
+				<div id="profile_tab">
+					<form class="form">
+
+						<div class="line">
+							<label for="act_name">Act name<i class="fa fa-asterisk"></i></label>
+							<div class="right">
+								<input class="input" name="act_name">
+								<div class="comment">Your full name, alias or name of squad which will dispayed in profile</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="username">Username<i class="fa fa-asterisk"></i></label>
+							<div class="right">
+								<input class="input" name="username">
+								<div class="comment">Your Entertaina URL: https://entertaina.com/<span id='username_future'></span></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="category">Category<i class="fa fa-asterisk"></i></label>
+							<div class="right">
+								<select name="category">
+									<option value="">Wow</option>
+									<option value="">Variant 1</option>
+									<option value="">Variant 2</option>
+									<option value="">Variant 3</option>
+								</select>
+							</div>
+							<div class="clear"></div>
+
+							<label for="type">Type<i class="fa fa-asterisk"></i></label>
+							<div class="right" style="line-height: 19px;"> <!-- inline style is for comment adjastment -->
+								<select name="type">
+									<option value="">Rock Bands</option>
+									<option value="">Variant 1</option>
+									<option value="">Variant 2</option>
+									<option value="">Variant 3</option>
+								</select>
+								<div class="comment">Your occupation category and type that will affect on the search result</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="location">Location<i class="fa fa-asterisk"></i></label>
+							<div class="right">
+								<input class="input" name="location">
+								<div class="comment">The area in which you provide services</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="phone">Phone</label>
+							<div class="right">
+								<input class="input" name="phone">
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="email">Email</label>
+							<div class="right">
+								<input class="input" name="email">
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line website">
+							<label for="website">Website</label>
+							<div class="right">
+								<div id="http">http:/<span style="margin-left: -3px;">/</span></div>
+								<input class="input" name="website">
+								<div class="comment">Public contact details to communicate with you</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<section id="network">
+							<div class="line">
+								<label>Add network</label>
+								<div class="right">
+									<% (1..13).each do |i| %>
+									<img src="/assets/common/social_icons/<%= i %>.png">
+									<% end %>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</section>
+
+
+					</form>
+				</div>
+
+				<div id="technical">
+				</div>
+
+				<div id="prices">
+				</div>
+
+				<div id="contact">
+				</div>
+			</div>
+		</div>
+
+
+	<!-- 	<aside>
+			<section id="send_add">
+				<a href="#" class="flat_button send"><i class="fa fa-paper-plane"></i> send enquiry</a>
+				<a href="#" class="flat_button add"><i class="fa fa-heart"></i> add to favorite</a>
+			</section>
+
+			<section id="availability">
+				<div class="text_line">
+					<span>Availability</span>
+				</div>		
+
+				<div class="calendar">
+					<div class="datepicker"></div>
+					<div class="info">
+						<div><img src="/assets/available_icon.png" alt="">available</div>
+						<div><img src="/assets/booked_icon.png" alt="">booked</div>
+					</div>
+				</div>
+			</section>
+
+		</aside> -->
+
+		<div class="clear"></div>
+	</div>
+</div>
+
+
+
+
+

@@ -15,6 +15,7 @@
 //= require jquery.fancybox
 //= require jquery-ui
 //= require jquery.jcarousel 
+//= require jquery.raty-fa
 //= require_tree .
 //= require turbolinks
 
@@ -56,12 +57,11 @@ $(function(){
 	// });
 
 
-  $( "#tabs" ).tabs();
-
 	
 	// $('#reviews_block .slide').width($('#reviews_block .slides_container').width()-100);
 	// $( window ).resize(function() {
 	// 	$('#reviews_block .slide').width($('#reviews_block .slides_container').width()-100);
 	// });
+
 });
 }

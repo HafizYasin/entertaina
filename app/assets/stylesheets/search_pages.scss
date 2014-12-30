@@ -31,15 +31,21 @@
 				padding-bottom: 2px;
 			}
 		}
-		.gradient_in{ padding: 20px 0; }
+		.gradient{ 
+			padding: 20px 0; 
+			width: 100%; 
+			height: 100%; 
+		}
 	}
 	footer{
 		background: url(/assets/index/footer/bg.jpg) 50% 0 no-repeat;
 		position: relative;
 		padding: 0;
 
-		.gradient_in{
+		.gradient{
 			padding: 20px 0;
+			width: 100%;
+			height: 100%;
 		}
 
 		#top_footer{
@@ -205,6 +211,7 @@
 			input[type=checkbox]{ display: none; }
 			input[type=checkbox]:checked + .checkbox_label{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat; }
 			input[type=checkbox]:checked + .checkbox_label.sub{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat, url(/assets/arrow_up.png) 233px 6px no-repeat; }
+			.ui-selectmenu-button{ width: 198px !important; }
 			.sub_cats{ 
 				display: none; margin-bottom: 15px; 
 				.line{ padding-left: 30px; }
