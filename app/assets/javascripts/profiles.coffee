@@ -52,7 +52,8 @@ $ ->
 
 	input = $('#profile_tab input[name=username]')
 	input.keyup =>
-		$('#username_future').text input.val().replace(/\ /g, "_")
+		$('#username_future').text input.val().replace(/\ /g, "_") #later see what addresses are okay
 		return
 
+	
 
