@@ -40,7 +40,7 @@
 							<label for="username">Username<i class="fa fa-asterisk"></i></label>
 							<div class="right">
 								<input class="input" name="username">
-								<div class="comment">Your Entertaina URL: https://entertaina.com/<span id='username_future'></span></div>
+								<div class="comment">Your Entertaina URL: https://entertaina.com/<b id='username_future'></b></div>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -105,17 +105,91 @@
 							<div class="clear"></div>
 						</div>
 
+
+						<div class="line">
+							<label for="twitter">Twitter</label>
+							<div class="right">
+								<input class="input" name="twitter">
+							</div>
+							<div class="clear"></div>
+						</div>
+
+
+
+
 						<section id="network">
 							<div class="line">
-								<label>Add network</label>
-								<div class="right">
+								<label>Add another one</label>
+								<div class="right"
 									<% (1..13).each do |i| %>
-									<img src="/assets/common/social_icons/<%= i %>.png">
+									<a href=""><img src="/assets/common/social_icons/<%= i %>.png"></a>
 									<% end %>
 								</div>
 								<div class="clear"></div>
 							</div>
 						</section>
+
+						<div class="line">
+							<label for="">Biography<i class="fa fa-asterisk"></i></label>
+							<%= render 'layouts/text_editor', comment: 'The area in which you provide services' %>
+
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="example_repertoire">Example reportoire</label>
+							<div class="right">
+								<textarea name="example_repertoire"></textarea>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="example_repertoire">Recent clients</label>
+							<div class="right">
+								<textarea name="example_repertoire"></textarea>
+								<div class="comment">Lists of 5-10 names. Separate names using ; semicolons</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line price">
+							<label for="price">Price from</label>
+							<div class="right">
+
+								<div id="currency">
+									<select name="">
+										<option value="">£</option>
+										<option value="">€</option>
+										<option value="">$</option>
+									</select>
+								</div>
+
+								<input class="input" name="price">
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="">Pricing options<i class="fa fa-asterisk"></i></label>
+							<%= render 'layouts/text_editor', comment: 'Detailed description of your price options. Take this section carefully.' %>
+
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="">Technical specs<i class="fa fa-asterisk"></i></label>
+							<%= render 'layouts/text_editor', comment: 'Detailed description of your technical specifications. Take this section carefully.' %>
+
+							<div class="clear"></div>
+						</div>
+
+						<div class="right">
+							<a class="flat_button uppercase">Update</a>
+						</div>
+
+
+
 
 
 					</form>

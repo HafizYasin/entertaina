@@ -242,7 +242,6 @@
 	.name .logo_link{ opacity: .2; vertical-align: middle; transition: all 0.3s ease; } 
 	.name .logo_link:hover{ opacity: 1; }
 	.input{
-		background: #fff;
 		border: 1px solid #d7dce0;
 		border-radius: 6px;
 		width: 268px;
@@ -253,7 +252,6 @@
 		margin-bottom: 9px;
 	}
 	textarea{
-		background: #fff;
 		border: 1px solid #d7dce0;
 		border-radius: 6px;
 		width: 100%;
@@ -263,6 +261,7 @@
 		font: 16px FuturaPTBook;
 		box-sizing:border-box;
 		resize: none;
+		&:focus{ outline: none; }
 	}
 	.input.required{ background: url(/assets/common/forms/required_icon.png) 97% 8px no-repeat; }
 	.input.success{ border-color: $blue; color: $blue; font-family: FuturaPTMedium; background: url(/assets/common/forms/input_success_icon.png) 97% 8px no-repeat; }
@@ -316,9 +315,52 @@
 	}	
 }
 
+.text_editor{
+	.toolbar{
+		width: 100%;
+		font-size: 13px;
+		color: $light;
+		text-align: center;
+		font-family: FuturaPTDemi;
+		padding: 6px 0;
+		background: #f5f6f7;
+		border: 1px solid #d7dce0;
+		box-sizing: border-box;
+		border-radius: 5px 5px 0 0;
+		border-bottom: none;
+		a{
+			display: inline-block;
+			padding-left: 11px;
+			padding-right: 11px;
+			border: 1px solid #d7dce0;
+			border-radius: 5px;
+			color: #b0b9c3;
+			cursor: pointer;
+		}
+	}
+	section{
+		border: 1px solid #d7dce0;
+		border-radius: 0 0 5px 5px;
+		padding: 0 15px;
+		&:focus{
+			outline: none;
+		}
+		ul, ol{
+			padding-left: 20px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
 
 .loading-spinner{ margin-top: 40px; margin-bottom: 70px; }
-
 
 
 
