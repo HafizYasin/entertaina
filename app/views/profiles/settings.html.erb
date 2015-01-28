@@ -1,6 +1,132 @@
 <% provide :title, 'Settings' %>
 
 
+
+<section id="wrapper">
+<div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/14060/azcarbon_2_1_0_VERT"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
+    <header>
+      <h1>Drag and drop, automatic upload</h1>
+    </header>
+
+<style>
+#holder { border: 10px dashed #ccc; width: 300px; min-height: 300px; margin: 20px auto;}
+#holder.hover { border: 10px dashed #0c0; }
+#holder img { display: block; margin: 10px auto; }
+#holder p { margin: 10px; font-size: 14px; }
+progress { width: 100%; }
+progress:after { content: '%'; }
+.fail { background: #c00; padding: 2px; color: #fff; }
+.hidden { display: none !important;}
+</style>
+<article>
+  <div id="holder">
+  </div> 
+  <p id="upload" class="hidden"><label>Drag & drop not supported, but you can still upload via this input field:<br><input type="file"></label></p>
+  <p id="filereader">File API & FileReader API not supported</p>
+  <p id="formdata">XHR2's FormData is not supported</p>
+  <p id="progress">XHR2's upload progress isn't supported</p>
+  <p>Upload progress: <progress id="uploadprogress" min="0" max="100" value="0">0</progress></p>
+  <p>Drag an image from your desktop on to the drop zone above to see the browser both render the preview, but also upload automatically to this server.</p>
+</article>
+<script>
+var holder = document.getElementById('holder'),
+    tests = {
+      filereader: typeof FileReader != 'undefined',
+      dnd: 'draggable' in document.createElement('span'),
+      formdata: !!window.FormData,
+      progress: "upload" in new XMLHttpRequest
+    }, 
+    support = {
+      filereader: document.getElementById('filereader'),
+      formdata: document.getElementById('formdata'),
+      progress: document.getElementById('progress')
+    },
+    acceptedTypes = {
+      'image/png': true,
+      'image/jpeg': true,
+      'image/gif': true
+    },
+    progress = document.getElementById('uploadprogress'),
+    fileupload = document.getElementById('upload');
+
+"filereader formdata progress".split(' ').forEach(function (api) {
+  if (tests[api] === false) {
+    support[api].className = 'fail';
+  } else {
+    // FFS. I could have done el.hidden = true, but IE doesn't support
+    // hidden, so I tried to create a polyfill that would extend the
+    // Element.prototype, but then IE10 doesn't even give me access
+    // to the Element object. Brilliant.
+    support[api].className = 'hidden';
+  }
+});
+
+function previewfile(file) {
+  if (tests.filereader === true && acceptedTypes[file.type] === true) {
+    var reader = new FileReader();
+    reader.onload = function (event) {
+      var image = new Image();
+      image.src = event.target.result;
+      image.width = 250; // a fake resize
+      holder.appendChild(image);
+    };
+
+    reader.readAsDataURL(file);
+  }  else {
+    holder.innerHTML += '<p>Uploaded ' + file.name + ' ' + (file.size ? (file.size/1024|0) + 'K' : '');
+    console.log(file);
+  }
+}
+
+function readfiles(files) {
+    debugger;
+    var formData = tests.formdata ? new FormData() : null;
+    for (var i = 0; i < files.length; i++) {
+      if (tests.formdata) formData.append('file', files[i]);
+      previewfile(files[i]);
+    }
+
+    // now post a new XHR request
+    if (tests.formdata) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/devnull.php');
+      xhr.onload = function() {
+        progress.value = progress.innerHTML = 100;
+      };
+
+      if (tests.progress) {
+        xhr.upload.onprogress = function (event) {
+          if (event.lengthComputable) {
+            var complete = (event.loaded / event.total * 100 | 0);
+            progress.value = progress.innerHTML = complete;
+          }
+        }
+      }
+
+      xhr.send(formData);
+    }
+}
+
+if (tests.dnd) { 
+  holder.ondragover = function () { this.className = 'hover'; return false; };
+  holder.ondragend = function () { this.className = ''; return false; };
+  holder.ondrop = function (e) {
+    this.className = '';
+    e.preventDefault();
+    readfiles(e.dataTransfer.files);
+  }
+} else {
+  fileupload.className = 'hidden';
+  fileupload.querySelector('input').onchange = function () {
+    readfiles(this.files);
+  };
+}
+
+
+
+
+
+
 <div id="settings">
 	<div id="free_trial_warning">
 		<div class="w940px">
@@ -19,9 +145,9 @@
 			<div class="tabs">
 				<ul class="nav">
 					<li><a href="#profile_tab">Profile</a></li>
-					<li><a href="#technical">Media</a></li>
-					<li><a href="#prices">Account</a></li>
-					<li><a href="#contact">Billing</a></li>
+					<li><a href="#media_tab">Media</a></li>
+					<li><a href="#account_tab">Account</a></li>
+					<li><a href="#billing_tab">Billing</a></li>
 				</ul>
 
 				<div id="profile_tab">
@@ -30,7 +156,7 @@
 						<div class="line">
 							<label for="act_name">Act name<i class="fa fa-asterisk"></i></label>
 							<div class="right">
-								<input class="input" name="act_name">
+								<input class="input" id="act_name">
 								<div class="comment">Your full name, alias or name of squad which will dispayed in profile</div>
 							</div>
 							<div class="clear"></div>
@@ -39,7 +165,7 @@
 						<div class="line">
 							<label for="username">Username<i class="fa fa-asterisk"></i></label>
 							<div class="right">
-								<input class="input" name="username">
+								<input class="input" id="username">
 								<div class="comment">Your Entertaina URL: https://entertaina.com/<b id='username_future'></b></div>
 							</div>
 							<div class="clear"></div>
@@ -48,7 +174,7 @@
 						<div class="line">
 							<label for="category">Category<i class="fa fa-asterisk"></i></label>
 							<div class="right">
-								<select name="category">
+								<select id="category">
 									<option value="">Wow</option>
 									<option value="">Variant 1</option>
 									<option value="">Variant 2</option>
@@ -59,7 +185,7 @@
 
 							<label for="type">Type<i class="fa fa-asterisk"></i></label>
 							<div class="right" style="line-height: 19px;"> <!-- inline style is for comment adjastment -->
-								<select name="type">
+								<select id="type">
 									<option value="">Rock Bands</option>
 									<option value="">Variant 1</option>
 									<option value="">Variant 2</option>
@@ -73,7 +199,7 @@
 						<div class="line">
 							<label for="location">Location<i class="fa fa-asterisk"></i></label>
 							<div class="right">
-								<input class="input" name="location">
+								<input class="input" id="location">
 								<div class="comment">The area in which you provide services</div>
 							</div>
 							<div class="clear"></div>
@@ -82,7 +208,7 @@
 						<div class="line">
 							<label for="phone">Phone</label>
 							<div class="right">
-								<input class="input" name="phone">
+								<input class="input" id="phone">
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -90,7 +216,7 @@
 						<div class="line">
 							<label for="email">Email</label>
 							<div class="right">
-								<input class="input" name="email">
+								<input class="input" id="email">
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -99,7 +225,7 @@
 							<label for="website">Website</label>
 							<div class="right">
 								<div id="http">http:/<span style="margin-left: -3px;">/</span></div>
-								<input class="input" name="website">
+								<input class="input" id="website">
 								<div class="comment">Public contact details to communicate with you</div>
 							</div>
 							<div class="clear"></div>
@@ -109,7 +235,7 @@
 						<div class="line">
 							<label for="twitter">Twitter</label>
 							<div class="right">
-								<input class="input" name="twitter">
+								<input class="input" id="twitter">
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -139,7 +265,7 @@
 						<div class="line">
 							<label for="example_repertoire">Example reportoire</label>
 							<div class="right">
-								<textarea name="example_repertoire"></textarea>
+								<textarea id="example_repertoire"></textarea>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -147,7 +273,7 @@
 						<div class="line">
 							<label for="example_repertoire">Recent clients</label>
 							<div class="right">
-								<textarea name="example_repertoire"></textarea>
+								<textarea id="example_repertoire"></textarea>
 								<div class="comment">Lists of 5-10 names. Separate names using ; semicolons</div>
 							</div>
 							<div class="clear"></div>
@@ -158,14 +284,14 @@
 							<div class="right">
 
 								<div id="currency">
-									<select name="">
+									<select id="">
 										<option value="">£</option>
 										<option value="">€</option>
 										<option value="">$</option>
 									</select>
 								</div>
 
-								<input class="input" name="price">
+								<input class="input" id="price">
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -187,21 +313,124 @@
 						<div class="right">
 							<a class="flat_button uppercase">Update</a>
 						</div>
+					</form>
+				</div>
 
+				<div id="media_tab">
+					<form class="form">
 
-
-
+						<div class="line">
+							<label for="account_email">Cover</label>
+							<div class="right">
+								<input class="input" id="account_email">
+								<div class="comment">Image which is used as main profile picture and a profile cover</div>
+							</div>
+							<div class="clear"></div>
+						</div>
 
 					</form>
 				</div>
 
-				<div id="technical">
+				<div id="account_tab">
+						<form class="form">
+
+							<div class="line">
+								<label for="account_email">Account email</label>
+								<div class="right">
+									<input class="input" id="account_email">
+									<div class="comment">Your login email address</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+
+							<div class="line">
+								<label for="current_password">Current pasword</label>
+								<div class="right">
+									<input class="input" id="current_password">
+								</div>
+								<div class="clear"></div>
+							</div>
+
+							<div class="line">
+								<label for="new_password">New pasword</label>
+								<div class="right">
+									<input class="input" id="new_password">
+								</div>
+								<div class="clear"></div>
+							</div>
+
+							<div class="line">
+								<label for="confirm_password">Confirm pasword</label>
+								<div class="right">
+									<input class="input" id="confirm_password">
+									<div class="comment">Minimum 6 characters</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+
+							<div class="line">
+								<label for="google_analytics">Google analytics</label>
+								<div class="right">
+									<input class="input" id="google_analytics">
+									<div class="comment">Send analytics for profile to profile to Google Analytics, e.g. UA-00000000-0</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+
+							<div class="line">
+								<label for="notifications">Notifications</label>
+								<div class="right">
+									<input type="checkbox" id="notifications">
+									<label class="checkbox_label" for="notifications">Recieve notifications and newsletters by email</label>
+								</div>
+								<div class="clear"></div>
+							</div>
+
+							<div class="line">
+								<div class="right">
+									<a class="flat_button uppercase">Update</a>
+									<a href=""><div class="small_fat_blue uppercase">Delete yout account</div></a>
+								</div>
+							</div>
+						</form>
 				</div>
 
-				<div id="prices">
-				</div>
+				<div id="billing_tab">
+					<form>
+						<div class="line current_plan">
+							<label>Current plan</label>
+							<div class="right">
+								<div class="info">
+									You are PRO (£12.00)<br>
+									Your next payment is £12.00 on January 9, 2015
+								</div>
+								<a class="flat_button">Cancel subscription</a>
+							</div>
+							<div class="clear"></div>
+						</div>
 
-				<div id="contact">
+						<div class="line credit_card">
+							<label>Credit card</label>
+							<div class="right">
+								<div class="info">
+									Your credirt card on file is xxxx-xxxx-xxxx-2156
+								</div>
+								<a class="flat_button">Edit billing details</a>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="line">
+							<label for="current_plan">Payment history</i></label>
+							<div class="right">
+								<div class="info">
+									October 9, 2014 — £12.00<br>November 9, 2014 — £12.00<br>December 9, 2014 — £12.00<br>July 30, 2014 — £12.00<br>August 30, 2014 — £12.00<br>March 20, 2014 — £12.00<br>April 20, 2014 — £12.00<br>April 23, 2014 — £12.00<br>April 30, 2014 — £12.00<br>May 20, 2014 — £12.00<br>June 20, 2014 — £12.00<br>July 20, 2014 — £12.00<br>July 23, 2014 — £12.00<br>July 30, 2014 — £12.00<br>February 10, 2014 — £12.00<br>March 10, 2014 — £12.00<br>March 13, 2014 — £12.00<br>March 20, 2014 — £12.00
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</form>
 				</div>
 			</div>
 		</div>

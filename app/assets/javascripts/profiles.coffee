@@ -50,7 +50,7 @@ $ ->
 		$('#free_trial_warning').slideUp 200
 		return
 
-	input = $('#profile_tab input[name=username]')
+	input = $('#profile_tab #username')
 	input.keyup =>
 		$('#username_future').text input.val().replace(/\ /g, "_") #later see what addresses are okay
 		return

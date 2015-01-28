@@ -24,7 +24,7 @@ $ ->
 	#for checkbox subcategories to slide down
 	$(".checkbox_label.sub").on eventName, ->
 		className = ".for_" + $(this).attr("for")
-		if $(className).is(":visible")
+		if !$(className).is(":visible")
 			$(className).slideDown()
 			$(className).find("input[type=checkbox]").attr "checked", "checked"
 		else

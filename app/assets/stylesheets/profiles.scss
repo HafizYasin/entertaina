@@ -379,11 +379,51 @@
 				}
 			}
 			.flat_button{ width: 222px; }
-
-
-
+			.checkbox_label{
+				color: #394c60;
+				display: inline-block;
+				cursor: pointer;
+				font: 14px/14px FuturaPTHeavy;
+				padding-left: 30px;
+				margin-top: 15px;
+				background: url(/assets/checkbox_icon.png) 0 0 no-repeat;
+			}
+			input[type=checkbox]:checked + .checkbox_label{
+				background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat;
+			}
+			.checkbox_label{
+				font-family: 'FuturaPTBook';
+				font-size: 16px;
+				width: 100%;
+				text-align: left;
+				text-transform: none;
+				padding-top: 0;
+			}
 
 		}
+		#account_tab{
+			.flat_button, .small_fat_blue{
+				display: inline-block;
+			}
+			.small_fat_blue{
+				margin-left: 30px;
+			}
+		}
+		#billing_tab{
+			.info{
+				font: 'FuturaPTBook';
+				color: $light;
+			}
+			.flat_button{
+				font-size: 12px;
+				width: 200px;
+			}
+			.current_plan .flat_button{
+				background: #f5f6f8;
+				color: #26afb7;
+			}
+		}
+
 	}
 }
 
