@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/terms', to: 'static_pages#terms'
   get '/about', to: 'static_pages#about'
+  get '/preregister', to: 'static_pages#preregister'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

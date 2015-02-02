@@ -20,7 +20,6 @@
 //= require turbolinks
 
 
-
 var isIPad = function() { return (/ipad/i).test(navigator.userAgent); };
 var isIPhone = function() { return (/iphone/i).test(navigator.userAgent); };
 var isIPod = function() { return (/ipod/i).test(navigator.userAgent); };

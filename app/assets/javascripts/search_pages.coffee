@@ -1,9 +1,11 @@
 $ ->
 	#________________found
+	#it makes some of the dates preselected in a datepicker (for sessions eg, 
+	#or for marking which dates are available)
 	$(".datepicker").datepicker
 		beforeShowDay: (d) ->
-			a = new Date(2014, 12 - 1, 29)
-			b = new Date(2014, 12 - 1, 16)
+			a = new Date(2015, 3 - 1, 20)
+			b = new Date(2015, 2 - 1, 16)
 			[
 				true
 				(if a.getTime() is d.getTime() or b.getTime() is d.getTime() then "selected" else "")

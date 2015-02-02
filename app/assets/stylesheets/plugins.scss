@@ -87,7 +87,7 @@
 
 
 
-.calendar{
+.calendar, .ui-datepicker{
 	background: #fff;
 	border-radius: 5px;
 	margin-bottom: 18px;
@@ -98,7 +98,7 @@
 		a{ color: white !important;}
 	}
 	.block_title{ padding: 0 15px; }
-	.info{ text-align: center; padding:10px 0; color: $grey; font: 14px/18px FuturaPTBook; }
+	.info{ text-align: center; padding:10px 0; color: $grey; font: 12px/18px FuturaPTBook; }
 	.info > div{ display: inline-block; margin: 0 12px; }
 	.info img{ vertical-align: middle; margin-right: 7px; }
 }

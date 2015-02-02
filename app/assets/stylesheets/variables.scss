@@ -2,6 +2,7 @@
 $grey: #394c60; /*___body font___*/
 $blue: #2cb5bd;
 $light: #b0b9c3;
+$light_light: #f5f6f8;
 $green_blue: linear-gradient(135deg,  rgba(32,194,156,0.9) 0%,rgba(44,181,189,0.9) 100%);
 
 
@@ -43,5 +44,6 @@ a{
 body{
 	color: $grey;
 	font: 16px/28px FuturaPTBook;
+	-webkit-font-smoothing: antialiased;
 }
 button, input{ border: none; outline: none; }

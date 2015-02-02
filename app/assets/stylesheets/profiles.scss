@@ -1,5 +1,38 @@
 @import 'application';
 
+
+#profile, #settings{
+	.tabs{
+		padding-bottom: 45px;
+		border-bottom:  2px solid #eff1f3;
+		.nav{
+			border-bottom: 2px solid #eff1f3;
+			text-transform: uppercase;
+			font-family: FuturaPTDemi;
+			font-size: 14px;
+			padding-bottom: 8px;
+			li{
+				display: inline-block;
+				list-style: none;
+			}
+			a{
+				padding-bottom: 13px;
+				padding-right: 0;
+				margin-right: 29px;
+				&:focus{ outline: none; }
+			}
+			a.active{
+				color: $blue;
+				border-bottom: 2px solid $blue;
+				margin-bottom: -2px;
+			}
+		}
+	}
+}
+
+
+
+
 #profile{
 	#profile_info{
 		height: 420px; 
@@ -44,7 +77,7 @@
 			i{ padding-right: 5px; }
 			a{ margin-bottom: 10px; }
 			.add{
-				background: #f5f6f8;
+				background: $light_light;
 				color: #26afb7;
 			}
 		}
@@ -98,29 +131,7 @@
 			}
 		}
 
-		#audios{
-			span{ display: inline-block; vertical-align: top; }
-			.song{
-				font: 14px FuturaPTDemi;
-				margin-bottom: 20px;
-				.gradient{
-					position: relative;
-					top: -2px;
-				}
-				.name{
-					color: #4f5762;
-					padding-left: 5px;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-					overflow: hidden;
-					max-width: 188px;
-				}
-				.time{
-					color: #5acdd0;
-					float: right;
-				}
-			}
-		}
+
 
 		#videos{
 			.thumb{
@@ -142,7 +153,7 @@
 				width: 150px;
 				font: 14px FuturaPTDemi;
 			}			
-			.name{
+			.title{
 				text-overflow: ellipsis;
 				white-space: nowrap;
 				overflow: hidden;
@@ -261,7 +272,7 @@
 #settings{
 	#free_trial_warning{
 		width: 100%;
-		background: #f5f6f8;
+		background: $light_light;
 		color: $light;
 		font-family: FuturaPTDemi;
 		position: absolute;
@@ -280,6 +291,7 @@
 		}
 	}
 	.tabs{
+		border-bottom: none;
 		.nav{
 			margin-bottom: 30px;
 		}
@@ -393,7 +405,7 @@
 			}
 			.checkbox_label{
 				font-family: 'FuturaPTBook';
-				font-size: 16px;
+				font-size: 17px;
 				width: 100%;
 				text-align: left;
 				text-transform: none;
@@ -419,11 +431,205 @@
 				width: 200px;
 			}
 			.current_plan .flat_button{
-				background: #f5f6f8;
+				background: $light_light;
 				color: #26afb7;
 			}
 		}
+		#media_tab{
+			.upload{
+				border: dashed #ebedef 2px;
+				padding: 20px 10px 10px;
+				i{ 
+					color: #ebedef;
+					font-size: 25px;
+				}
+			}
+			.uploaded{
+				img{
+					width: 100%;
+					height: 100%;
+					border-radius: 5px;
+				}
+			}
+			.uploading{
+				border: solid #ebedef 2px;
+				padding-top: 36px;
+				img{
+					margin-bottom: 10px;
+				}
+			}
 
+			.cover .upload{
+				width: 320px;
+			}
+			.photos{
+				.upload, .uploaded, .uploading{
+					width: 150px;
+					height: 150px;
+					margin-right: 11px;
+					margin-bottom: 10px;
+					display: inline-block;
+					box-sizing: border-box;
+					vertical-align: top;	
+					text-align: center;			
+					&:nth-child(3n){
+						margin-right: 0;
+					}
+				}
+			}
+			.audios{
+				.pause, .play{
+					width: 30px;
+					height: 30px;
+					top: -5px;
+					.fa-pause, .fa-play{
+						left: 12px;
+						top: 10px;
+						font-size: 9px;
+						cursor: pointer;
+					}
+					.fa-pause{ left: 11px; }
+				}
+				.title{
+					font-size: 15px;
+					max-width: 330px;
+					padding-left: 10px;
+				}
+				.song{
+					padding: 13px 20px 5px 20px;
+					margin-bottom: 0;
+					border-radius: 5px;
+				}
+				.playing{
+					background: $light_light;
+				}
+
+				.upload{
+					padding: 10px 10px 0px 20px;
+					text-align: left;
+					i, div{ display: inline-block; }
+					i, .grey_fat{ margin-right: 15px; }
+					.small_fat_blue{ width: 120px; }
+					i{
+						position: relative;
+						top: 3px;
+					}
+				}
+			}
+			.videos{
+				.video{
+					width: 235px;
+					display: inline-block;
+					font-size: 14px;
+					margin-bottom: 20px;
+					vertical-align: top;
+					&:nth-child(2n-1){ margin-right: 5px; }
+					.thumb{
+						width: 235px;
+						height: 170px;
+						background-image: url(/assets/profile/entertainers/rolling_stones/video_thumbs/1_larger.jpg);
+						background-size: 100% auto;
+						border-radius: 5px;
+						.play{ 
+							position: absolute;
+							left: 50%;
+							top: 50%;
+						}
+						.darken{ 
+							position: relative;
+							border-radius: 5px;
+						}
+					}
+					.title{
+						font-family: 'FuturaPTDemi';
+						line-height: 5px;
+						margin-top: 10px;
+					}
+					.stats{
+						.time{
+							font-family: 'FuturaPTDemi';
+							color: $blue;
+						}
+						.views{
+							font-family: 'FuturaPTBook';
+							color: $light;
+							padding-left: 5px;
+						}
+					}
+				}
+				.upload{
+					height: 170px;
+					box-sizing: border-box;
+				}
+			}
+
+		}
+		
+	}
+
+	aside{
+		section{
+			margin-bottom: 30px;
+		}
+		.flat_button.activate{
+			margin-bottom: 10px;
+		}
+		.flat_button.view{
+			background: $light_light;
+			color: $blue;
+			margin-bottom: 40px;
+		}
+		#avatar{
+			.text_line{ margin-bottom: 20px; }
+			.img{
+				width: 80px;
+				img{
+					border-radius: 50%;
+					width: 80px;
+				}
+			}
+			.upload{
+				padding-top: 10px;
+				text-align: left;
+				margin-right: 10px;
+				.grey_thin{ padding-bottom: 0; }
+			}
+		}
+		#availability{
+			.text_line{
+				margin-bottom: 20px;
+			}
+			.calendar{
+				border: 2px $light_light solid;
+				border-radius: 5px;
+				margin-bottom: 0px;
+				.ui-datepicker{
+					margin: 0 auto;
+				}
+				.info{
+					font-family: 'FuturaPTDemi';
+				}
+			}
+			#mark_days{
+				color: $light;
+				font-size: 14px;
+			}
+			
+		}
+	}
+
+	.upload, .uploading, .uploaded{
+		border-radius: 5px;
+		text-align: center;
+		color: $light;
+		font-size: 14px;
+		.grey_fat{
+			font-family: 'FuturaPTDemi';
+			line-height: 10px;
+		}
+		.grey_thin{
+			padding-bottom: 10px;
+		}
 	}
 }
 
@@ -445,34 +651,4 @@
 // div.star-rating-readonly a{cursor:default !important}
 // div.star-rating{background:transparent!important;overflow:hidden!important}
 //____________________ time
-
-
-#profile, #settings{
-	.tabs{
-		padding-bottom: 45px;
-		border-bottom:  2px solid #eff1f3;
-		.nav{
-			border-bottom: 2px solid #eff1f3;
-			text-transform: uppercase;
-			font-family: FuturaPTDemi;
-			font-size: 14px;
-			padding-bottom: 8px;
-			li{
-				display: inline-block;
-				list-style: none;
-			}
-			a{
-				padding-bottom: 13px;
-				padding-right: 0;
-				margin-right: 29px;
-				&:focus{ outline: none; }
-			}
-			a.active{
-				color: $blue;
-				border-bottom: 2px solid $blue;
-				margin-bottom: -2px;
-			}
-		}
-	}
-}
 
