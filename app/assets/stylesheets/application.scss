@@ -1,6 +1,7 @@
 @import 'font-awesome';
 @import 'jquery-ui';
 @import 'jquery.fancybox';
+@import 'lightSlider';
 @import 'normalize';
 @import 'variables';
 @import 'plugins'; //fixes plugins
@@ -24,6 +25,7 @@
 
 .w940px{ max-width: 940px; margin: 0 auto; }
 .w650px{ max-width: 650px; margin: 0 auto; }
+.w1200px{ max-width: 1200px; margin: 0 auto; }
 
 
 

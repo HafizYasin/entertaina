@@ -16,6 +16,7 @@
 //= require jquery-ui
 //= require jquery.jcarousel 
 //= require jquery.raty-fa
+//= require jquery.lightSlider
 //= require_tree .
 //= require turbolinks
 

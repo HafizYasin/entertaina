@@ -39,7 +39,71 @@
 
 
 #preregister{
-	// background: $light;
+	.money_goes{
+		background: $light_light;
+		padding: 100px 0;
+		.desc, .stats{ width: 50%; float: left; box-sizing: border-box; }
+		.desc{ padding-right: 20px; }
+		.stats{
+			padding-left: 57px;
+			ul{ padding-top: 15px; }
+			li{ list-style-type: none; margin-bottom: 10px; }
+			.circle{
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				background: red;
+				display: inline-block;
+				margin-right: 10px;
+			}
+			.c1{ background: #22b7bd; }
+			.c2{ background: #5cd6c1; }
+			.c3{ background: #82e9a0; }
+			.c4{ background: #01cb9b; }
+			.c5{ background: #3a4c60; }
+		}
+	}
+
+	.reviews{
+		margin: 80px 0 120px 0;
+		text-align: center;
+		#lightSlider{
+			height: 200px;
+			.review{				
+				max-width: 600px;
+				margin: 20px auto;
+			}
+			.name{
+
+			}
+			.profession{
+				font-size: 12px;
+			}
+
+		}
+		.lSGallery{
+			width: 300px !important;
+			margin: 0 auto;
+			li{ width: auto !important; padding: 0 20px; opacity: 1; }
+			li.active a{ border: $blue 2px solid; }
+			a{
+				border: #eaeaea 2px solid;
+				width: 49px;
+				height: 49px;
+				border-radius: 50%;
+				display: block;
+				img{
+					width: 43px;
+					height: 43px;
+					border-radius: 50%;
+					margin: 0 auto;
+					padding-top: 3px;
+				}
+			}
+		}
+
+
+	}
 }
 
 
