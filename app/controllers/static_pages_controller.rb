@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def preregister
-  	render layout: 'index'
+  	render layout: 'preregister'
   end
 
 end

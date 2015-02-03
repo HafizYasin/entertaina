@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= yield :title %></title>
+	<%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+	<%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class="big">
+	<div class="gradient">
+		<div class="w940px">
+			<div class="logo left"><a href="/"><img src="/assets/logo.png"></a></div>
+			
+			<%= render '/layouts/_header_menu' %>
+
+			<div class="clear"></div>
+			
+			<div id="search_block">
+				<div class="title">Create Your Entertaina Profile Today</div>
+				<div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi.</div>
+				<form>
+					<input class="left sign_up w200px" type="submit" name="submit" value="SIGN UP RIGHT NOW">
+				</form>
+			</div>
+		</div>
+	</div>
+</header>
+
+<%= yield %>
+
+<footer class="big">
+	<div class="gradient">
+
+		<div class="w940px">
+			<div class="copy left"><img class="logo" src="/assets/common/logo.png"> © All rights reserved</div>
+		
+			<div class="social right">
+				<a href="/"><img class="logo" src="/assets/common/footer/twitter.png"></a>
+				<a href="/"><img class="logo" src="/assets/common/footer/fb.png"></a>
+				<a href="/"><img class="logo" src="/assets/common/footer/vine.png"></a>
+			</div>
+			
+			<%= render '/layouts/_footer_menu' %>
+
+			<div class="clear"></div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+
+
+
+
+<%= render '/layouts/modals' %>
+
+</body>
+</html>

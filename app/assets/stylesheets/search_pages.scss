@@ -2,7 +2,6 @@
 
 
 #index{
-
 	.how{
 		padding-bottom: 70px;
 		p{
@@ -41,23 +40,6 @@
 		.j-next{ right: 10%; }
 	}
 
-	.categories{ 
-		padding-top: 40px;
-		padding-bottom: 70px;
-		.item{ 
-			box-sizing: border-box; 
-			display: inline-block; 
-			font:16px/26px FuturaPTBook; 
-			width: 33%; 
-			vertical-align: top; 
-			margin-bottom: 20px;
-			&:nth-child(2){
-				padding: 0 20px;
-			}
-			.name{ color: $blue; display: inline-block; margin: 15px 0; font-size: 18px; }
-			img{ width: 20px; margin-right: 10px; }
-		}
-	}
 
 	h1{ margin-bottom: 40px; }
 }

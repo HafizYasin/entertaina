@@ -127,7 +127,7 @@ header.big{
 	#search_block{ 
 		margin: 80px 0 85px; 
 		.title{ font: 40px FuturaPTHeavy; margin-bottom: 10px; }
-		.desc{ font: 18px FuturaPTBook; margin-bottom: 30px; }
+		.desc{ font: 18px FuturaPTBook; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
 		form{ display: inline-block; }
 		input[type=text]{
 			background: rgba(255, 255, 255, 0.23) url(/assets/common/forms/search_icon.png) 20px 17px no-repeat;
@@ -143,10 +143,11 @@ header.big{
 			height: 51px;
 			margin-left: -25px;
 			color: #47bbc3;
-			font: 18px FuturaPTDemi;
+			font: 14px FuturaPTDemi;
 			border-radius: 30px;
 			padding-bottom: 2px;
 		}
+		input[type=submit].w200px{ width: 200px; }
 	}
 	.gradient{ 
 		padding: 20px 0; 
