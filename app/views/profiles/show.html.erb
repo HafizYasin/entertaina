@@ -210,7 +210,7 @@
 		<aside>
 			<!-- in blog aside sections were named by classes. I don't know what makes more sense. -->
 			<section id="send_add">
-				<a href="#" class="flat_button send"><i class="fa fa-paper-plane"></i> send enquiry</a>
+				<a href="#enquiry_form" class="flat_button send fancy"><i class="fa fa-paper-plane"></i> send enquiry</a>
 				<a href="#" class="flat_button add"><i class="fa fa-heart"></i> add to favorite</a>
 			</section>
 
@@ -270,7 +270,7 @@
 					<span>Videos</span>
 				</div>
 
-				<div class="video">
+				<a href="http://player.vimeo.com/video/34792960" class="video fancybox">
 
 					<div class="thumb">
 						<div class="darken"><span class="play"><i class="fa fa-play"></i></span></div>
@@ -287,7 +287,7 @@
 						</div>
 					</div>
 					<div class="clear"></div>
-				</div>
+				</a>
 
 				<div class="video">
 
@@ -330,16 +330,22 @@
 
 		<div class="clear"></div>
 	</div>
+
+
+
+
 </div>
 
 
-<div class="modal" id="photo_modal">
+
+
+<div class="modal gallery" id="photo_modal">
 	<ul class="slider">
 		<% 10.times do %>
 		<li data-thumb="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
 			<img src="/assets/profile/entertainers/rolling_stones/photos/1.jpg">
 		</li>
-		<li data-thumb="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
+		<li data-thumb="/assets/profile/entertainers/rolling_stones/photos/1.jpg">
 			<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
 		</li>
 		<% end %>
@@ -347,9 +353,36 @@
 </div>
 
 
+<div class="modal" id="enquiry_form">
+	<div class="modal_title">Send Enquiry</div>
+	
+	<form class="form">
+		<div class="line">
 
+			<input class="input left mini required" type="text" name="" value="" placeholder="Name">
+			<input class="input right mini" type="tel" name="" value="" placeholder="Phone number">
 
+			<div class="clear"></div>
+		</div>
 
+		<div class="line">
 
+			<input class="input required" type="email" name="" value="" placeholder="Email">
+			<textarea class="input required" type="tel" name="" value="" placeholder="Your Message"></textarea>
+
+			<div class="clear"></div>
+		</div>
+
+		<div class="line">
+			<input type="checkbox" name="agree" id="check_agree">
+			<label class="checkbox_label" for="check_agree">Send me a copy</label>
+		</div>
+
+		<div class="submit">
+			<input class="submit_btn" type="submit" name="submit" value="Send">
+		</div>
+
+	</form>
+</div>
 
 

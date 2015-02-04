@@ -131,8 +131,6 @@
 			}
 		}
 
-
-
 		#videos{
 			.thumb{
 				background: url(/assets/profile/entertainers/rolling_stones/video_thumbs/1.jpg);
@@ -162,7 +160,7 @@
 			.time{ color: #5acdd0; }
 			.views{ color: #c4c5c9; font: 13px FuturaPTBook;}
 			.description div{ padding-bottom: 1px; }
-			.video{ margin-bottom: 20px; }
+			.video{ margin-bottom: 20px; display: block; }
 		}
 	}
 
@@ -266,7 +264,10 @@
 			}
 		}
 	}
+
+
 }
+
 
 
 #settings{
@@ -651,4 +652,51 @@
 // div.star-rating-readonly a{cursor:default !important}
 // div.star-rating{background:transparent!important;overflow:hidden!important}
 //____________________ time
+
+
+
+
+
+
+
+.modal.gallery{
+	width: 1200px;
+	.lightSlider{
+		img{
+			max-width: 700px;
+			max-height: 900px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+.fancybox-skin.transparent{
+	background: rgba(255, 255, 255, 0);
+	box-shadow: none;
+	.lSPrev{
+		background: url("/assets/common/slider_arrow_left_white.png") no-repeat;
+	}
+	.lSNext{ 
+		background: url("/assets/common/slider_arrow_right_white.png") no-repeat;
+	}
+	.lSPrev, .lSNext{ padding: 200px  0px; }
+
+	.lSPager{
+		// max-width: 940px !important;
+		margin: 0 auto;
+		.active img{
+			border: $grey 2px solid;
+			box-sizing: border-box;
+		}
+		li{
+			@extend .animation;
+			width: 100px !important;
+			border-radius: 3px;
+			opacity: 1;
+		}
+		
+	}
+
+}
+
 

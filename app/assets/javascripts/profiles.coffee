@@ -46,7 +46,7 @@ $ ->
 		score: 6
 	})
 
-	$('.gallery').fancybox afterShow: ->
+	$('a.gallery').fancybox afterShow: ->
   if $('.fancybox-inner').find('.lightSlider').length == 0
     $('#photo_modal .slider').lightSlider
       gallery: true
@@ -54,8 +54,25 @@ $ ->
       loop: true
       slideMargin: 0
       thumbItem: 8
-      adaptiveHeight: true
+      adaptiveHeight: false
+      galleryMargin: 40
+      thumbMargin: 20
   return #photos in modal in profile
+
+	$('body').on 'DOMNodeInserted', '.fancybox-skin', ->
+		if $('.modal.gallery').parents('.fancybox-skin.transparent').length == 0
+	  	$('.modal.gallery').parents('.fancybox-skin').addClass('transparent')
+	  return
+
+	$("a.video").fancybox
+		width: 940
+		type: 'iframe'
+		fitToView : false
+		beforeShow: ->
+			$('.fancybox-iframe').parents('.fancybox-skin').addClass('transparent')
+	false
+
+
 
 
 

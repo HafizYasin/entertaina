@@ -438,21 +438,5 @@
 
 
 
-#photo_modal{
-	width: 1000px;
-	.lightSlider{
-		img{
-			max-width: 700px;
-			max-height: 900px;
-			display: block;
-			margin: 0 auto;
-		}
-	}
-}
-.fancybox-opened .fancybox-skin{
-	background: rgba(255, 255, 255, 0);
-	box-shadow: none;
-}
-
 
 
