@@ -1,22 +1,14 @@
-a = 'October 9, 2014 — £12.00
-November 9, 2014 — £12.00
-December 9, 2014 — £12.00
-July 30, 2014 — £12.00
-August 30, 2014 — £12.00
-March 20, 2014 — £12.00
-April 20, 2014 — £12.00
-April 23, 2014 — £12.00
-April 30, 2014 — £12.00
-May 20, 2014 — £12.00
-June 20, 2014 — £12.00
-July 20, 2014 — £12.00
-July 23, 2014 — £12.00
-July 30, 2014 — £12.00
-February 10, 2014 — £12.00
-March 10, 2014 — £12.00
-March 13, 2014 — £12.00
-March 20, 2014 — £12.00'
+
+
+aa = []
+
+(0..9.5).each do |i|
+	aa.push i.to_s
+	aa.push (i+0.5).to_s
+end
 
 
 
-p a.split("\n").join('<br>')
+
+
+p aa

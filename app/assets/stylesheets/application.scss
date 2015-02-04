@@ -303,6 +303,7 @@
 		box-sizing:border-box;
 		resize: none;
 		&:focus{ outline: none; }
+		&::placeholder { color: $grey; }
 	}
 	.input.required{ background: url(/assets/common/forms/required_icon.png) 97% 8px no-repeat; }
 	.input.success{ border-color: $blue; color: $blue; font-family: FuturaPTMedium; background: url(/assets/common/forms/input_success_icon.png) 97% 8px no-repeat; }

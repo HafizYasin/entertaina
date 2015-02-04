@@ -41,10 +41,18 @@ $ ->
 
 		return
 
-	$('.review .stars').raty({
-		readOnly: true,
+	$('.review .stars').raty
+		readOnly: true
 		score: 6
-	})
+	
+	$('#review_form .stars').raty
+		target: '#hint'
+		targetText : 'none'
+		targetKeep : true
+		targetType: 'score'
+
+
+		
 
 	$('a.gallery').fancybox afterShow: ->
   if $('.fancybox-inner').find('.lightSlider').length == 0

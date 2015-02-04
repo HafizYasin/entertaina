@@ -152,41 +152,8 @@
 				<h2>
 					<img src="/assets/profile/design/5.png">
 					Reviews
-					<a href="#" class="flat_button"><span><i class="fa fa-plus"></i>Add review</span></a>
+					<a href="#review_form" class="flat_button fancy"><span><i class="fa fa-plus"></i>Add review</span></a>
 				</h2>
-				<div class="add_new_review">
-					<form class="form">
-						<p class="name">Add your review</p>
-					
-						<input class="left input" type="text" name="" value="Your name" onfocus="if(this.value == 'Your name') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Your name';}">
-						<div class="star right">
-							<input name="rating" type="radio" class="star {split:2}" value="0.5">
-							<input name="rating" type="radio" class="star {split:2}" value="1">
-							<input name="rating" type="radio" class="star {split:2}" value="1.5">
-							<input name="rating" type="radio" class="star {split:2}" value="2">
-							<input name="rating" type="radio" class="star {split:2}" value="2.5">
-							<input name="rating" type="radio" class="star {split:2}" value="3">
-							<input name="rating" type="radio" class="star {split:2}" value="3.5">
-							<input name="rating" type="radio" class="star {split:2}" value="4">
-							<input name="rating" type="radio" class="star {split:2}" value="4.5">
-							<input name="rating" type="radio" class="star {split:2}" value="5">
-							<input name="rating" type="radio" class="star {split:2}" value="5.5">
-							<input name="rating" type="radio" class="star {split:2}" value="6">
-							<input name="rating" type="radio" class="star {split:2}" value="6.5">
-							<input name="rating" type="radio" class="star {split:2}" value="7">
-							<input name="rating" type="radio" class="star {split:2}" value="7.5">
-							<input name="rating" type="radio" class="star {split:2}" value="8">
-							<input name="rating" type="radio" class="star {split:2}" value="8.5">
-							<input name="rating" type="radio" class="star {split:2}" value="9">
-							<input name="rating" type="radio" class="star {split:2}" value="9.5">
-							<input name="rating" type="radio" class="star {split:2}" value="10">
-						</div>
-						<div class="clear"></div>
-						
-						<textarea name="" onfocus="if(this.value == 'Your review') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Your review';}">Your review</textarea>
-						<input class="submit_btn" type="submit" name="suvmit" value="Post">
-					</form>
-				</div>
 				
 				<% 3.times do %>
 				<div class="review">
@@ -363,19 +330,16 @@
 			<input class="input right mini" type="tel" name="" value="" placeholder="Phone number">
 
 			<div class="clear"></div>
-		</div>
-
-		<div class="line">
 
 			<input class="input required" type="email" name="" value="" placeholder="Email">
-			<textarea class="input required" type="tel" name="" value="" placeholder="Your Message"></textarea>
+			<textarea class="required" name="" value="" placeholder="Your Message"></textarea>
 
 			<div class="clear"></div>
 		</div>
 
 		<div class="line">
-			<input type="checkbox" name="agree" id="check_agree">
-			<label class="checkbox_label" for="check_agree">Send me a copy</label>
+			<input type="checkbox" name="agree" id="check_send">
+			<label class="checkbox_label" for="check_send">Send me a copy</label>
 		</div>
 
 		<div class="submit">
@@ -386,3 +350,35 @@
 </div>
 
 
+<div class="modal" id="review_form">
+	<div class="modal_title">Submit Review</div>
+	
+	<form class="form">
+		<div class="line">
+
+			<input class="input" type="text" name="" value="" placeholder="Name">
+			<input class="input" type="email" name="" value="" placeholder="Email">
+
+			<div class="clear"></div>
+		</div>
+
+		<div class="line">
+			<div class="name">Set rating</div>
+			<div id="hint">hi</div>
+			<input id="tooltip" title="Enter You name">
+			<div class="stars"></div>
+
+			<textarea name="" value="" placeholder="Your Review"></textarea>
+		</div>
+
+		<div class="line">
+			<input type="checkbox" name="agree" id="check_send_review">
+			<label class="checkbox_label" for="check_send_review">Send me a copy</label>
+		</div>
+
+		<div class="submit">
+			<input class="submit_btn" type="submit" name="submit" value="Send">
+		</div>
+
+	</form>
+</div>
