@@ -1,5 +1,6 @@
 
 $ ->
+	# profile show
 	$(".tabs .nav").each ->
 	
 		# For each set of tabs, we want to keep track of
@@ -40,12 +41,25 @@ $ ->
 
 		return
 
-
 	$('.review .stars').raty({
 		readOnly: true,
 		score: 6
 	})
 
+	$('.gallery').fancybox afterShow: ->
+  if $('.fancybox-inner').find('.lightSlider').length == 0
+    $('#photo_modal .slider').lightSlider
+      gallery: true
+      item: 1
+      loop: true
+      slideMargin: 0
+      thumbItem: 8
+      adaptiveHeight: true
+  return #photos in modal in profile
+
+
+
+	# settings
 	$('#free_trial_warning .close').click =>
 		$('#free_trial_warning').slideUp 200
 		return
@@ -55,5 +69,7 @@ $ ->
 		$('#username_future').text input.val().replace(/\ /g, "_") #later see what addresses are okay
 		return
 
-	
+
+
+
 

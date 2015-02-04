@@ -78,7 +78,6 @@ footer{
 		border-radius: 50%;
 		width: 23px;
 		height: 23px;
-		transition: all 0.3s ease;
 		margin-left: 12px;
 	} 
 	.menu li{ line-height: 24px; font-size: 10px; }
@@ -89,28 +88,56 @@ footer{
 
 .modal{ 
 	padding: 40px 60px; display: none; width: 300px;
-	.modal_title{ margin-bottom: 30px; text-align: center; color: #21c19d; font: 30px/30px FuturaPTDemi; }
-	.benefits{
-		margin-bottom: 30px; text-align: center;
-		.item{ display: inline-block; margin: 0 18px; color: $grey; font: 16px/20px FuturaPTDemi; }
-		.item img{ margin-bottom: 5px; }
-		.text{ color: $grey; font: 14px/20px FuturaPTBook; margin-bottom: 40px; text-align: center; }
-	}
+	.modal_title{ margin-bottom: 30px; text-align: center; color: $greenish; font: 30px/30px FuturaPTDemi; }
 	.other_links{
 		margin-top: 22px; color: $grey; font: 16px/28px FuturaPTBook; text-align: center;
 		a{ color: $blue; }
 		a:hover{ text-decoration: underline; }
 	}
-	.biling_price{
-		margin-bottom: 15px; text-align: center; color: $grey; font: 17px/26px FuturaPTBook;
-		.price{ font-size: 28px; font-family: FuturaPTHeavy; }
-		.price sub{ font-size: 13px; vertical-align: top; position: relative; top: -5px; left: 2px; }
+	.plan{
+		background: $light_light;
+		padding: 20px 20px;
+		border-radius: 5px;
+		text-align: center;
+		position: relative;
+		margin-bottom: 20px;
+		.price{ 
+			font-size: 28px; 
+			font-family: FuturaPTHeavy; 
+		}
+		.choose{
+			text-transform: uppercase;
+			font-family: FuturaPTHeavy;
+			color: $blue;
+			font-size: 14px;
+			margin-top: 10px;
+		}
+		img{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+	}
+
+}
+#billing_form{
+	.comment{
+		color: $light;
+		text-align: center;
+		margin-top: 20px;
+		.secure{
+			font-family: FuturaPTDemi;
+		}
+		img{
+			margin-right: 10px;
+		}
+	}
+	.change .left{ font-family: FuturaPTDemi; }
+	.change .right{ font-family: FuturaPTHeavy; font-size: 12px; }
+	#cvc{ 
+		background: url('/assets/common/modals/question.png') no-repeat 130px 8px;
 	}
 }
-
-
-
-
 
 
 

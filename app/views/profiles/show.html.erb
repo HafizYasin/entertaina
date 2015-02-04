@@ -218,18 +218,15 @@
 				<div class="text_line">
 					<span>Photos</span>
 				</div>
-				<div class="gallery">
-					<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg">
-					<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg">
-					<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg">
-					<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg">
-					<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg">
+				<a href="#photo_modal" class="gallery">
+					<% 5.times do %><img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg"><% end %>
+					
 					<div class="gradient_out">
 						<div class="gradient_in">
 							<div>134 <br><span class="ellipsis">...</span></div>
 						</div>
 					</div>
-				</div>
+				</a>
 			</section>
 
 			<section id="availability">
@@ -334,5 +331,25 @@
 		<div class="clear"></div>
 	</div>
 </div>
+
+
+<div class="modal" id="photo_modal">
+	<ul class="slider">
+		<% 10.times do %>
+		<li data-thumb="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
+			<img src="/assets/profile/entertainers/rolling_stones/photos/1.jpg">
+		</li>
+		<li data-thumb="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
+			<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
+		</li>
+		<% end %>
+	</ul>
+</div>
+
+
+
+
+
+
 
 

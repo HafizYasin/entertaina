@@ -42,6 +42,7 @@
 	height: 3px;
 	border: none;
 	margin-top: 16px;
+	background: $light_light;
 }
 .ui-datepicker{ padding: 0; width: 220px; background: none; border: none; }
 #ui-datepicker-div{ padding: 7px 0 0; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.2); z-index: 9 !important; }
@@ -57,6 +58,8 @@
 	color: #9da3a8;
 	font: 10px FuturaPTMedium;
 }
+.ui-datepicker-current-day{ background: $blue !important; }
+.ui-datepicker-current-day a{ color: white !important; }
 .ui-datepicker .ui-datepicker-header{ padding: 0 0 7px; height: 24px; background: none; border: none; }
 .ui-datepicker .ui-datepicker-title{ color: $grey; font: 14px/24px FuturaPTDemi; }
 .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
@@ -88,7 +91,6 @@
 
 
 .calendar, .ui-datepicker{
-	background: #fff;
 	border-radius: 5px;
 	margin-bottom: 18px;
 	padding: 15px 0 0;
@@ -103,8 +105,8 @@
 	.info img{ vertical-align: middle; margin-right: 7px; }
 }
 
-.input.location{ background: url(/assets/input_location_icon.png) 222px 50% no-repeat; }
-.input.datepicker{ background: url(/assets/input_date_icon.png) 222px 50% no-repeat; }
+.input.location{ background: url(/assets/input_location_icon.png) 197px 50% no-repeat; }
+.input.datepicker{ background: url(/assets/input_date_icon.png) 197px 50% no-repeat; }
 
 .ui-selectmenu-menu{
 	li{
@@ -142,7 +144,7 @@ span:focus{ outline: none; }
 
 
 #sort_by .ui-selectmenu-button {
-	background: url(/assets/select_trigger.png) 220px no-repeat;
+	background: url(/assets/select_trigger.png) 197px no-repeat;
 }
 
 
@@ -166,9 +168,18 @@ span:focus{ outline: none; }
 // _______________fancybox
 
 .fancybox-close{
-	background: url('/assets/jquery.fancybox/close.png') center center no-repeat;
-	top: -3px;
-	right: -1px;
+	background: url('/assets/fancybox/close.png') no-repeat;
+}
+.fancybox-overlay{
+	background: rgba(8, 18, 29, 0.9);
+}
+.fancybox-close{
+	position: fixed;
+	right: 50px;
+	top: 22px;
+}
+.fancybox-opened .fancybox-skin{
+	background: white;
 }
 
 

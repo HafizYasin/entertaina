@@ -57,22 +57,10 @@ $(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	//_________________________modals
-	$('.fancy').fancybox({ fitToView: false, autoResize: false, autoSize: true, padding: 0 });
+	$('.fancy').fancybox();
+
+
 	$('.fancy_img').fancybox({ fitToView: false, autoResize: false, autoSize: true, padding: 30 });
 
 
@@ -104,6 +92,23 @@ $(function(){
 	// $( window ).resize(function() {
 	// 	$('#reviews_block .slide').width($('#reviews_block .slides_container').width()-100);
 	// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
 }

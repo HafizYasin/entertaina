@@ -4,10 +4,10 @@
 <div class="w940px" id="found" >	
 	<div id="main_container">
 
-		<% 20.times do %>
-		<div class="entertainer">
+		<% 2.times do %>
+		<div class="entertainer paid_place">
 			<div class="image">
-				<a class="favorites_link" href="/profiles/1"><img src="/assets/favorites_icon.png"> add to favorites</a>
+				<a class="favorites_link" href="/profiles/1"><img src="/assets/common/binocle.png"> View profile</a>
 				<img class="img" src="/assets/list_item_thumb.jpg">
 				<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
 			</div>
@@ -25,7 +25,28 @@
 			</div>
 		</div>
 		<% end %>
-		
+
+		<% 8.times do %>
+		<div class="entertainer">
+			<div class="image">
+				<a class="favorites_link" href="/profiles/1"><img src="/assets/common/binocle.png"> View profile</a>
+				<img class="img" src="/assets/list_item_thumb.jpg">
+				<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
+			</div>
+			
+			<div class="info">
+				<div class="like_play">
+					<a class="like"><i class="fa fa-heart"></i></a>
+					<% if [true, false][rand(2)] %>
+					<a class="play gradient"><i class="fa fa-caret-right"></i></a>
+					<% end %>
+				</div>
+				<div class="name"><a href="/profiles/1">Blue Jewel Ceilidh Band</a></div>
+				<span class="price">From £900</span> <span class="reviews"><%= rand(10000) %> reviews</span>
+				<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
+			</div>
+		</div>
+		<% end %>		
 		<div class="clear"></div>
 		
 		<div class="page_pagination">
@@ -65,7 +86,7 @@
 
 	
 					<div class="title">Date</div>
-					<div class="line"><input class="input datepicker" type="text" name="date" value="Any date" onfocus="if(this.value == 'Any date') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Any date';}"></div>
+					<div class="line"><input class="input datepicker" type="text" name="date" value="Any date"></div>
 					
 					<div class="title">Price Range</div>
 					<div class="line price">
@@ -127,7 +148,12 @@
 	</aside>
 
 	<div class="clear"></div>
+
+	<a href="/favorites" id="favorites" class="uppercase">
+		Favorites <i class="fa fa-heart fa-rotate-90"></i>
+	</a>
 </div>
+
 
 
 

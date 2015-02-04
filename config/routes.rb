@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'search_pages#index'
   get '/search', to: 'search_pages#found'
+  get '/favorites', to: 'search_pages#favorites'
 
   get '/blog_posts/1', to: 'blog_posts#show'
   get '/blog_posts', to: 'blog_posts#index'

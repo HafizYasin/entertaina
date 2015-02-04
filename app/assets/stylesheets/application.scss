@@ -63,7 +63,7 @@
 
 .ads{ 
 	background: #f7f8f9; border-radius: 3px;
-	a{ height: 275px; width: 260px; display: table-cell; padding: 0 40px; vertical-align: middle; }
+	a{ height: 275px; width: 260px; display: table-cell; padding: 0 70px; vertical-align: middle; }
 	.logo img{ display: inline-block; margin-bottom: 30px; width: 120px; }
 	.desc{ color: #b0b8c3; font: 20px FuturaPTDemi; text-transform: uppercase; }
 	.details{ display: inline-block; margin-top: 30px; font-size: 12px; }
@@ -103,7 +103,7 @@
 
 
 .entertainer{
-	width: 300px; 
+	width: 316px; 
 	box-shadow: 0 1px 2px rgba(0,0,0,.03);
 
 	.image{ position: relative; }
@@ -138,8 +138,8 @@
 		opacity: 0;
 		border-radius: 5px 5px 0 0;
 	}
-	.favorites_link img{ vertical-align: middle; margin-right: 3px; margin-top: -1px; }
-	.favorites_link:hover{ opacity: 1; }
+	.favorites_link img{ vertical-align: middle; margin-right: 3px; margin-top: -1px; position: relative; bottom: 1px;  }
+	.favorites_link:hover{ opacity: 1; font-size: 16px; }
 	.info{ padding: 10px 20px 20px; background: white; border-radius: 0 0 5px 5px; }
 	.name{ font: 18px FuturaPTDemi; }
 
@@ -157,7 +157,12 @@
 			position: relative;
 		}
 		i{ position: absolute; }
+		.play{ margin-left: 6px; }
 		.like{ background: #f5f6f7; }
+		.like.favorited{
+			i{ color: white; }			
+			background: $green_blue;
+		}
 		.like i{
 			font-size: 10px;
 			top: 9px;
@@ -285,6 +290,7 @@
 		color: $grey;
 		font: 16px/42px FuturaPTBook;
 		margin-bottom: 9px;
+		&::placeholder { color: $grey; }
 	}
 	textarea{
 		border: 1px solid #d7dce0;
@@ -316,8 +322,7 @@
 	.checkbox_label.sub{ width: 220px; background: url(/assets/common/forms/checkbox_icon.png) 0 0 no-repeat, url(/assets/common/forms/arrow_down.png) 233px 6px no-repeat; }
 	input[type=checkbox]:checked + .checkbox_label{ background: url(/assets/common/forms/checkbox_icon_h.png) 0 0 no-repeat; }
 	.submit_btn{
-		border: none;
-		cursor: pointer;
+		@extend .animation;
 		border-radius: 6px;
 		height: 44px;
 		color: #fff;
@@ -327,6 +332,11 @@
 		background: $green_blue;
 	}
 	.submit_btn sub{ font-size: 9px; vertical-align: top; position: relative; top: 0; left: 2px; }
+	.comment{
+		color: $light;
+		font-size: 14px;
+		line-height: 17px;
+	}
 }
 
 .text{
@@ -387,25 +397,25 @@
 }
 
 
-
-.categories{ 
-	padding-top: 40px;
-	padding-bottom: 70px;
-	.item{ 
-		box-sizing: border-box; 
-		display: inline-block; 
-		font:16px/26px FuturaPTBook; 
-		width: 33%; 
-		vertical-align: top; 
-		margin-bottom: 20px;
-		&:nth-child(2){
-			padding: 0 20px;
+#index, #preregister{
+	.categories{ 
+		padding-top: 40px;
+		padding-bottom: 70px;
+		.item{ 
+			box-sizing: border-box; 
+			display: inline-block; 
+			font:16px/26px FuturaPTBook; 
+			width: 33%; 
+			vertical-align: top; 
+			margin-bottom: 20px;
+			&:nth-child(2){
+				padding: 0 20px;
+			}
+			.name{ color: $blue; display: inline-block; margin: 15px 0; font-size: 18px; }
+			img{ width: 20px; margin-right: 10px; }
 		}
-		.name{ color: $blue; display: inline-block; margin: 15px 0; font-size: 18px; }
-		img{ width: 20px; margin-right: 10px; }
-	}
-} // on main page wedding ring stuff and on preregister
-
+	} // on main page wedding ring stuff and on preregister
+}
 
 
 
@@ -414,6 +424,35 @@
 
 
 .loading-spinner{ margin-top: 40px; margin-bottom: 70px; }
+
+
+
+.back{
+	font-size: 13px;
+	display: inline-block;
+	i{
+		padding-right: 5px;
+	}
+}
+
+
+
+
+#photo_modal{
+	width: 1000px;
+	.lightSlider{
+		img{
+			max-width: 700px;
+			max-height: 900px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+.fancybox-opened .fancybox-skin{
+	background: rgba(255, 255, 255, 0);
+	box-shadow: none;
+}
 
 
 
