@@ -240,4 +240,5 @@ $ ->
 
 
 
-
+	#currency select
+	$('#currency .ui-selectmenu-button').append('<i class="fa fa-chevron-down"></i>');

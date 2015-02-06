@@ -17,6 +17,8 @@
 //= require jquery.jcarousel 
 //= require jquery.raty-fa
 //= require jquery.lightSlider
+//= require text_editor_parser
+//= require text_editor
 //= require shared
 //= require_tree .
 //= require turbolinks
@@ -53,7 +55,6 @@ $(function(){
 
 
 
-	$('#currency .ui-selectmenu-button').append('<i class="fa fa-chevron-down"></i>');
 
 	//_________________________modals
 	$('.fancy').fancybox();
