@@ -265,8 +265,6 @@
 			}
 		}
 	}
-
-
 }
 
 
@@ -353,12 +351,58 @@
 					border-radius: 0 5px 5px 0;
 				}
 			}
+			//dependable selects
+			.closable{
+				position: relative;
+				.right{ position: relative; }
+				.ui-selectmenu-button{ background: none !important; }
+				.close{
+					background: url(/assets/common/forms/close.png) no-repeat 19px 17px;
+					@extend .animation;
+					width: 48px;
+					height: 100%;
+					position: absolute;
+					right: 0;
+					top: 0;
+					z-index: 100;
+				}
+			}
+			.potential{
+				.ui-selectmenu-button{
+					border: dashed 2px $light_light;
+					color: $light;
+				}
+			}
+			//___dependable selects
 			#network{
 				.right{ font-size: 0; padding-left: 2px; }
-				img{
-					width: 8%;
-					width: 31px;
-					margin: 3px;
+				span{
+					@extend .animation;
+					background: url(/assets/common/social_icons/dashed_border.png) 0 0 no-repeat;
+					width: 37px;
+					height: 37px;
+					display: inline-block;
+					margin-right: 5px;
+				}
+				svg{
+					width: 17px;
+					margin-left: 9px;
+					margin-top: 9px;
+					path{
+						fill: $light;
+					}
+				}
+			}
+			#network_names{
+				label{
+					svg{
+						width: 17px;
+						margin-left: 9px;
+						vertical-align: text-bottom;
+						path{
+							fill: $grey;
+						}
+					}
 				}
 			}
 			.line.price{

@@ -7,28 +7,13 @@
 [15.17.36] Andrey Maxim: начальную область у всех задал 32x32
 [15.18.08] Andrey Maxim: вот так https://up.kibakoapp.com/rfMe3fNWyS
 [15.19.58] Andrey Maxim: логотип в свг - https://up.kibakoapp.com/IdokuITh2Q
-[17.44.39] Andrey Maxim: Message removed.
-[17.53.31] Andrey Maxim: лоудер - http://jsfiddle.net/tjoq3vq5/
-[18.49.41] Andrey Maxim: закинуть остальнве элементы в свг?
-[18.49.48] Andrey Maxim: или еще что-нибудь нужно?
-[21.34.32] Jevgenija Karunus: слушай я вместо всех иконок почти использовала http://fortawesome.github.io/Font-Awesome/icons/, ты наверное заметил. это будет проблематично?
-[21.35.45] Andrey Maxim: тут мои https://up.kibakoapp.com/pjLIgn5JLQ
-[21.35.56] Andrey Maxim: ну ладно оставь фонтосм
-[21.38.03] Jevgenija Karunus: нет, не соционки, их я твои возьму. типа крестики например.
-[21.39.44] Andrey Maxim: я пока заметил https://up.kibakoapp.com/NopxVofnUD
-[21.40.05] Andrey Maxim: или это из старой верстки
-[21.40.59] Jevgenija Karunus: нет, моя. и  https://entertaina.herokuapp.com/profiles/1 здесь например звездочки и play и stop
-[21.42.34] Andrey Maxim: ну пускай будут тогда бутстраповские, ничего старашного, если заказчик заметит тогда поменяем
-[21.42.42] Jevgenija Karunus: хорошо.
 
 
 
 
 
 
-
-
-
+#done
 
 [16.15.08] Andrey Maxim: при пустом инпуте у нас вот так https://up.kibakoapp.com/FCEwx3Lujw - дропдаун предлагает выбрать категорию, как выбрали категорию появляется https://up.kibakoapp.com/WlbRFBR47B и дропдаун предлагает выбрать тип (подкатегорию), если выбрали один тип то можно выбрать еще один (не более 3ех) ну и следовательно чтобы удалить - нажать крестик https://up.kibakoapp.com/Od7IboNPDs
 [16.16.36] Andrey Maxim: https://up.kibakoapp.com/hFCG4YgSii 

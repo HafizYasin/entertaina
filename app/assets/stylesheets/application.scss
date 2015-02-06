@@ -442,23 +442,3 @@
 
 
 
-
-.closable{
-	position: relative;
-	.ui-selectmenu-button{ background: url(/assets/common/forms/close.png) 450px no-repeat !important; }
-	.close{
-		width: 40px;
-		height: 100%;
-		position: absolute;
-		right: 0;
-		top: 0;
-		z-index: 100;
-	}
-}
-.potential{
-	.ui-selectmenu-button{
-		border: dashed 2px $light_light;
-		color: $light;
-	}
-}
-
