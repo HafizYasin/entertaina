@@ -14,6 +14,7 @@ Rails.application.config.assets.precompile += %w( blog_posts.css )
 Rails.application.config.assets.precompile += %w( search_pages.css )
 Rails.application.config.assets.precompile += %w( profiles.css )
 Rails.application.config.assets.precompile += %w( emails.css )
+Rails.application.config.assets.precompile += %w( kind_of_emails.css )
 
 # Rails.application.config.assets.precompile << /\.(?:png|jpg|jpeg|gif)\z/ 
 # Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/

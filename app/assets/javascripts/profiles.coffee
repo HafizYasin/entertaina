@@ -50,6 +50,7 @@ $ ->
 		targetText : 'none'
 		targetKeep : true
 		targetType: 'score'
+		hints: [null, null, null, null, null]
 
 
 		
@@ -241,4 +242,8 @@ $ ->
 
 
 	#currency select
-	$('#currency .ui-selectmenu-button').append('<i class="fa fa-chevron-down"></i>');
+	$('#currency select').on 'selectmenucreate', ->
+		$('#currency .ui-selectmenu-button').append('<i class="fa fa-chevron-down"></i>')
+
+
+

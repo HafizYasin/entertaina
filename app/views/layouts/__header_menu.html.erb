@@ -1,8 +1,30 @@
-<a class="sign_up_link right fancy" href="#register_form">Sign up</a>
 <ul class="menu right">
 	<li><a href="/">home</a></li>
 	<li><a href="/about" data-no-turbolink>about</a></li>
+	<!-- no turbolink so google map works well -->
 	<li><a href="/search">find acts</a></li>
 	<li><a href="/blog_posts">blog</a></li>
-	<li><a href="#login_form" class="fancy">Login</a></li>
+
+
+	<% if [true, false][rand(2)] %>
+
+
+		<div id="logo">
+			<img src="/assets/profile/entertainers/rolling_stones/logo.png">
+			<ul class="dropdown not_displayed">
+				<div class="triangle"></div>
+				<li><a href="/profiles/1">profile</a></li>
+				<li><a href="/settings">settings</a></li>
+				<li><a href="">log out</a></li>
+			</ul>
+		</div>
+
+
+
+	<% else %>
+		<li><a href="#login_form" class="fancy">Login</a></li>
+		<a class="sign_up_link right fancy" href="#register_form">Sign up</a>
+	<% end %>
+
+
 </ul>

@@ -1,10 +1,44 @@
 header{
-	padding: 20px 0;
+	padding: 10px 0;
 	background: $green_blue;
 	position: relative;
 	z-index: 2;
 	margin-bottom: 70px;
-	.logo img{ display: block; }
+	#logo{
+		display: inline-block;
+		padding-left: 20px;
+		vertical-align: middle;
+		position: relative;
+		top: 3px;
+		img{
+			border-radius: 50%;
+			border: 2px rgba(255, 255, 255, 0.45) solid;
+			width: 30px;
+		}
+		.dropdown{
+			position: absolute;
+			background: rgba(8, 18, 29, 0.9);
+			text-align: center;
+			right: -52px;
+			border-radius: 5px;
+			li{
+				display: block;
+				padding: 2px 40px;
+				margin-left: 0;
+				border-bottom: 1px rgba(176, 185, 195, 0.34) solid;
+			}
+			.triangle{
+				width: 0; 
+				height: 0; 
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-bottom: 5px solid rgba(8, 18, 29, 0.9);
+				position: absolute;
+				top: -5px;
+				left: 61px;
+			}
+		}
+	}
 	.sign_up_link{
 		display: block;
 		font: 12px/32px FuturaPTHeavy;

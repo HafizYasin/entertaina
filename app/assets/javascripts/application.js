@@ -33,21 +33,19 @@ window.onload=function(){
 $(function(){
 
 
+
+
 	//_________________________modals
 	$('.fancy').fancybox();
 	$('.fancy_img').fancybox({ fitToView: false, autoResize: false, autoSize: true, padding: 30 });
-
-
-	// $('.tooltip').tooltip({ position: { my: "right bottom", at: "right+20 top-10" } });
 	
 
 
+	$("#logo").hover(
+		function () { $('.dropdown').slideDown(); },
+		function () { $('.dropdown').slideUp(); }
+	);
 
-
-	$("#tooltip").tooltip();
-	$('#review_form .stars i').hover(function(){
-		$( "#tooltip" ).tooltip( "option", "content", $('#hint').html() );
-	});
 
 
 
@@ -57,7 +55,12 @@ $(function(){
 
 
 
-
+	$(document).bind('mousemove', function(e){
+		$('#hint').css({
+			left:  e.pageX + 20,
+			top:   e.pageY
+		});
+	});
 
 
 
