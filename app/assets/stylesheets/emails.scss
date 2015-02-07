@@ -1,0 +1,102 @@
+@import 'variables';
+
+#welcome{
+	.white_bg{
+		border-radius: 5px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+		padding-bottom: 40px;
+	}
+	.welcome{
+		background: url('/assets/emails/gradient_bg.png');
+		border-top-left-radius: 5px; border-top-right-radius: 5px;
+		color: white;
+		padding: 40px 0;
+		h1{ margin-top: 40px; }
+		div{ margin-bottom: 40px; }
+	}
+	.big_text{
+		font-size: 25px;
+		margin-top: 20px; padding-top: 20px;
+	}
+	.small_text{
+		margin-top: 10px; padding-top: 10px;
+	}
+	.button{
+		background: url('/assets/emails/gradient_bg_button.png');
+		border-radius: 5px;
+		width: 270px;
+		height: 44px;
+		margin-top: 40px;
+		margin-right: auto; margin-left: auto;
+		div{
+			color: white;
+			font-weight: 700;
+			font-size: 14px;
+			padding-top: 7px;
+		}
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.email{
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	.logo{
+		padding: 40px 0;
+	}
+
+	.footer{
+		.logo{
+			width: 72px;
+		}
+		.social{
+			img{ padding-right: 10px; }
+		}
+		.unsubscribe{
+			margin-top: 40px;
+		}
+	}
+	
+
+}
+
+
+
+
+
+.light_bg{
+	background: $light_light;
+}
+.gradient_bg{
+	background: #02bea6;
+}
+.white_bg{
+	background: white;
+}
+
+.pad{
+	padding-right: 40px;
+	padding-left: 40px;
+}
+
+
+
+
+
+
+
+
+

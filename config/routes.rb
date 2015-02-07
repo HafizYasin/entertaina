@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'emails/welcome'
+  get 'emails/news'
+  get 'emails/text_center'
+  get 'emails/text_left'
+
   get '/profiles/1', to: 'profiles#show'
   get '/settings', to: 'profiles#settings'
 
