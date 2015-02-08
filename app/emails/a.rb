@@ -1,4 +1,4 @@
-require 'premailer'
+# require 'premailer'
 
 premailer = Premailer.new('http://localhost:3000/emails/welcome', :warn_level => Premailer::Warnings::SAFE)
 
