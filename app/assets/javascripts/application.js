@@ -15,7 +15,7 @@
 //= require jquery.fancybox
 //= require jquery-ui
 //= require jquery.jcarousel 
-//= require jquery.raty-fa
+//= require jquery.raty
 //= require jquery.lightSlider
 //= require text_editor_parser
 //= require text_editor
@@ -55,12 +55,35 @@ $(function(){
 
 
 
-	$(document).bind('mousemove', function(e){
-		$('#hint').css({
-			left:  e.pageX + 20,
-			top:   e.pageY
-		});
-	});
+
+var mouseX = 0, mouseY = 0, limitX = 300-15, limitY = -100;
+$(window).mousemove(function(e){
+  var offset = $('.container').offset();
+   mouseX = Math.min(e.pageX - offset.left, limitX);
+   mouseY = Math.min(e.pageY - offset.top, limitY);
+   if (mouseX < 0) mouseX = 0;
+   if (mouseY < 0) mouseY = 0;
+});
+
+// cache the selector
+var follower = $("#a");
+var xp = 0, yp = 100;
+var loop = setInterval(function(){
+    xp += (mouseX - xp);
+    yp += (mouseY - yp);
+    follower.css({left:xp, top:yp});
+}, 30);
+
+
+
+
+
+
+
+
+
+
+
 
 
 

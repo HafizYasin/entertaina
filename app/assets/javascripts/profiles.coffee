@@ -42,15 +42,30 @@ $ ->
 		return
 
 	$('.review .stars').raty
+		number: 10
 		readOnly: true
 		score: 6
+		path: '/assets/profile/design'
+		starHalf: 'star-half.png'
+		starOff: 'star-off.png'
+		starOn: 'star-on.png'
+		half: true
+		halfShow: true
 	
-	$('#review_form .stars').raty
+	$('.modal .stars').raty
+		number: 10
 		target: '#hint'
 		targetText : 'none'
 		targetKeep : true
 		targetType: 'score'
-		hints: [null, null, null, null, null]
+		path: '/assets/profile/design'
+		starHalf: 'star-half.png'
+		starOff: 'star-off.png'
+		starOn: 'star-on.png'
+		half: true
+		halfShow: true
+		precision: false
+
 
 
 		
