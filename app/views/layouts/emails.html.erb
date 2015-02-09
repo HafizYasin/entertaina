@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= yield :title %></title>
+	<%= stylesheet_link_tag     params[:controller], media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+<div class="w600px">
+<section id="header">
+	<img src="/assets/emails/gradient_logo.png">
+</section>
+
+<%= yield %>
+
+<section id="footer">
+		<div class="logo">
+			<img src="/assets/emails/gradient_logo.png">
+		</div>
+		<div class="find">
+			Find Your Act from over 17,345 entertainers. Your search ends here!
+		</div>
+		<div class="social">
+			<a href=""><img src="/assets/emails/twitter.png"></a>
+			<a href=""><img src="/assets/emails/fb.png"></a>
+			<a href=""><img src="/assets/emails/vimeo.png"></a>
+		</div>
+
+		<div class="unsubscribe">
+			<a href="">Unsubscribe</a>
+			<div>Entertaina Inc, 49 Chigwell Rd, London, Great Britain, info@entertaina.com</div>
+		</div>
+</section>
+</div>
+</body>
+</html>
+
+
+

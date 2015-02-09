@@ -42,14 +42,30 @@ $ ->
 		return
 
 	$('.review .stars').raty
+		number: 10
 		readOnly: true
 		score: 6
+		path: '/assets/profile/design'
+		starHalf: 'star-half.png'
+		starOff: 'star-off.png'
+		starOn: 'star-on.png'
+		half: true
+		halfShow: true
 	
-	$('#review_form .stars').raty
-		target: '#hint'
+	$('.modal .stars').raty
+		number: 10
+		target: '#hi'
 		targetText : 'none'
 		targetKeep : true
 		targetType: 'score'
+		path: '/assets/profile/design'
+		starHalf: 'star-half.png'
+		starOff: 'star-off.png'
+		starOn: 'star-on.png'
+		half: true
+		halfShow: true
+		precision: false
+
 
 
 		
@@ -241,4 +257,10 @@ $ ->
 
 
 	#currency select
-	$('#currency .ui-selectmenu-button').append('<i class="fa fa-chevron-down"></i>');
+	$('#currency select').on 'selectmenucreate', ->
+		$('#currency .ui-selectmenu-button').append('<i class="fa fa-chevron-down"></i>')
+
+
+
+
+	

@@ -1,24 +1,24 @@
 <div class="right text_editor">
 	<div id="<%= id %>_editor-toolbar" class="toolbar">
-	  <a data-wysihtml5-command="bold">Bold</a>
-	  <a data-wysihtml5-command="italic">Italic</a>
-	  <a data-wysihtml5-command="underline">Underline</a>
-	  <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">H1</a>
-	  <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">H2</a>
+		<a data-wysihtml5-command="bold">Bold</a>
+		<a data-wysihtml5-command="italic">Italic</a>
+		<a data-wysihtml5-command="underline">Underline</a>
+		<a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">H1</a>
+		<a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">H2</a>
 
-	  <a data-wysihtml5-command="insertUnorderedList">Bul. List</a>
-	  <a data-wysihtml5-command="insertOrderedList">Num. List</a>
+		<a data-wysihtml5-command="insertUnorderedList">Bul. List</a>
+		<a data-wysihtml5-command="insertOrderedList">Num. List</a>
 
 
-	  <!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
-	  <a data-wysihtml5-command="createLink">Link</a>
-	  <div data-wysihtml5-dialog="createLink" style="display: none;">
-	    <label>
-	      Link:
-	      <input data-wysihtml5-dialog-field="href" value="http://" class="text">
-	    </label>
-	    <a data-wysihtml5-dialog-action="save">OK</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
-	  </div>
+		<!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
+		<a data-wysihtml5-command="createLink">Link</a>
+		<div data-wysihtml5-dialog="createLink" style="display: none;">
+			<label>
+				Link:
+				<input data-wysihtml5-dialog-field="href" value="http://" class="text">
+			</label>
+			<a data-wysihtml5-dialog-action="save">OK</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+		</div>
 	</div>
 	<textarea id="<%= id %>_editor" placeholder="" autofocus>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -28,8 +28,34 @@
 </div>
 
 <script>
-var editor = new wysihtml5.Editor("<%= id %>_editor", { // id of textarea element
-  toolbar:      "<%= id %>_editor-toolbar", // id of toolbar element
-  parserRules:  wysihtml5ParserRules // defined in parser rules set 
+
+var editor_<%= id %> = new wysihtml5.Editor("<%= id %>_editor", { // id of textarea element
+	toolbar:      "<%= id %>_editor-toolbar", // id of toolbar element
+	parserRules:  wysihtml5ParserRules // defined in parser rules set 
 });
+
+
+editor_<%= id %>.on('load', function()
+{
+	var minheight = 150;
+	var buffer = 50;
+
+	var padding = parseFloat(editor_<%= id %>.composer.iframe.style.paddingTop) + parseFloat(editor_<%= id %>.composer.iframe.style.paddingBottom) + parseFloat(editor_<%= id %>.composer.iframe.style.borderTopWidth) + parseFloat(editor_<%= id %>.composer.iframe.style.borderBottomWidth);
+	editor_<%= id %>.composer.iframe.style.height = (minheight + padding) + 'px';
+
+	var resize = function() {
+		var $div = $('<div>').append($(editor_<%= id %>.composer.element).clone().contents()).appendTo(editor_<%= id %>.composer.element);
+		var scrollheight = $div.get(0).scrollHeight;
+		$div.remove();
+		if (scrollheight > (minheight - buffer)) editor_<%= id %>.composer.iframe.style.height = (scrollheight + buffer + padding) + 'px';
+		else editor_<%= id %>.composer.iframe.style.height = (minheight + padding) + 'px';
+	}
+
+	editor_<%= id %>.composer.element.addEventListener('keyup', resize, false)
+	editor_<%= id %>.composer.element.addEventListener('blur', resize, false)
+	editor_<%= id %>.composer.element.addEventListener('focus', resize, false)
+});
+
+
+
 </script>

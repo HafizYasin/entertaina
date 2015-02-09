@@ -111,8 +111,7 @@
 .ui-selectmenu-menu{
 	li{
 		width: 100%;
-		cursor: pointer; color: $grey; 
-		padding: 0 15px;
+		color: $grey; 
 		font: 16px/30px FuturaPTBook; 
 		transition: all 0.3s ease; 
 		padding: 0 15px;
@@ -204,3 +203,8 @@ span:focus{ outline: none; }
 
 
 
+//____________text_editor
+.wysihtml5-sandbox{
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+}

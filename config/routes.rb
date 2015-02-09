@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'kind_of_emails/welcome'
+
+  get 'kind_of_emails/news'
+
+  get 'kind_of_emails/text_center'
+
+  get 'kind_of_emails/text_left'
+
   get 'emails/welcome'
   get 'emails/news'
   get 'emails/text_center'
