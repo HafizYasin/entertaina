@@ -10,20 +10,19 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
 header{
 	padding: 10px 0;
 	background: $green_blue;
-    position: relative;
+  position: relative;
 	z-index: 2;
 	margin-bottom: 70px;
-<<<<<<< HEAD
 	.logo{ 
 		display: block;
 		height: 38px;
 		padding-top: 2px;
 		svg{
-		width: 110px;
-		path{fill: #fff;}}
+			width: 110px;
+			path{ fill: #fff; }
 		}
+	}
 	
-=======
 	#logo{
 		display: inline-block;
 		padding-left: 20px;
@@ -59,7 +58,6 @@ header{
 			}
 		}
 	}
->>>>>>> master
 	.sign_up_link{
 		display: block;
 		font: 12px/31px FuturaPTHeavy;
