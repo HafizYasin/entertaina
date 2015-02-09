@@ -23,8 +23,8 @@
 .center{ margin: 0 auto; }
 
 
-.w940px{ max-width: 940px; margin: 0 auto; }
-.w650px{ max-width: 650px; margin: 0 auto; }
+.w940px{ max-width: 940px; margin: 0 auto; padding: 0 20px;}
+.w650px{ max-width: 640px; margin: 0 auto; padding: 0 20px;}
 .w1200px{ max-width: 1200px; margin: 0 auto; }
 
 
@@ -107,8 +107,9 @@
 
 
 .entertainer{
-	width: 316px; 
+	width: 300px; 
 	box-shadow: 0 1px 2px rgba(0,0,0,.03);
+	display: inline-block;
 
 	.image{ position: relative; }
 	.image .img{ display: block; border-radius:4px 4px 0 0; width: 100%; }
@@ -352,6 +353,27 @@
 	ul li{ margin-left: 55px; margin-bottom: 15px; }
 }
 
+.column {
+    width:100%;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
+	.column {
+    width:100%;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+	}
+
+	
+	}
+
 .transparent_text_line{
 	span{ display: inline-block; }
 	span.line{
@@ -409,21 +431,71 @@
 		.item{ 
 			box-sizing: border-box; 
 			display: inline-block; 
-			font:16px/26px FuturaPTBook; 
-			width: 33%; 
+			font: 16px/24px FuturaPTBook; 
+			width: 30%; 
 			vertical-align: top; 
+			margin-top: 14px; 
 			margin-bottom: 20px;
-			&:nth-child(2){
-				padding: 0 20px;
+			margin-right: 40px;
+			&:nth-child(3n){
+				margin-right: 0;
 			}
-			.name{ color: $blue; display: inline-block; margin: 15px 0; font-size: 18px; }
-			img{ width: 20px; margin-right: 10px; }
+			
+			.name-icon{ 
+				display: block;
+				box-sizing: border-box;
+				float: left;
+				position: relative;
+				width: 30px;
+				height: 30px;
+				margin-right: 10px;
+				img{width: 30px; height: 30px;}
+			}
+			
+			.name{
+				display: inline-block; 
+				position: relative;
+				margin-top: 3px;
+				margin-bottom: 13px; 				
+				h3 {font: 18px/24px FuturaPTBook; color: $blue; }
+				}
+				
 		}
 	} // on main page wedding ring stuff and on preregister
 }
 
 
 
+@media screen and (max-width: 980px) {	
+	#index, #preregister{
+	.categories {
+		.item{ 
+			width: 45%; 
+			margin-right: 40px;
+			&:nth-child(3n){
+				margin-right: 40px;
+			}
+
+			&:nth-child(2n){
+				margin-right: 0;
+			}
+	}
+	}
+	}
+	}
+
+@media screen and (max-width: 600px) {	
+	#index, #preregister{
+	.categories {
+		.item{ 
+			width: 100%; 
+			&:nth-child(1n){
+				margin-right: 0;
+			}
+	}
+	}
+	}
+	}
 
 
 

@@ -5,13 +5,19 @@
 	.how{
 		padding-bottom: 70px;
 		p{
-			width: 48%;
+			width: 100%;
 		}
 	}
 
 	.entertainers{
-		background: -100px -130px url("/assets/index/popular_entertainers/bg.jpg");
-		position: relative;
+		background-image: url("/assets/index/popular_entertainers/bg.jpg");
+		background-position: 50% 0px;
+		background-repeat: no-repeat;
+        background-size: cover;
+		-webkit-background-size: cover;
+        box-sizing: border-box;
+        position: relative;
+
 		.width{
 			max-width: 1020px;
 			margin: 0 auto;
@@ -19,22 +25,29 @@
 		.gradient{
 			padding: 50px 0 20px 0;
 		}
+		
+		
 		.jcarousel{
 			margin: 40px 0 100px 0;
 			position: relative;
+			width: 100%;
 			overflow: hidden;
 			ul{
 				width: 10000000px;
 				position: relative;
 				list-style: none;
 			}
-			.entertainer{ margin: 0 20px; float: left; }
+
+			
+		.entertainer{ margin: 0 10px; display: inline-block; float: left; }
 		}
+		
 		.j-prev, .j-next{
 			color: white;
 			font-size: 60px;
 			position: absolute;
-			top: 260px;
+			top: 275px;
+			svg{ width: 20px; path {fill:#fff}}
 		}
 		.j-prev{ left: 10%; }
 		.j-next{ right: 10%; }

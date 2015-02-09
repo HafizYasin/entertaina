@@ -1,20 +1,48 @@
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease; text-overflow: ellipsis; color: #fff;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease; text-overflow: ellipsis; color: #fff;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease; text-overflow: ellipsis; color: #fff;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease; text-overflow: ellipsis; color: #fff;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;} 
+
 header{
 	padding: 20px 0;
 	background: $green_blue;
-	position: relative;
+    position: relative;
 	z-index: 2;
 	margin-bottom: 70px;
-	.logo img{ display: block; }
+	.logo{ 
+		display: block;
+		height: 38px;
+		padding-top: 2px;
+		svg{
+		width: 110px;
+		path{fill: #fff;}}
+		}
+	
 	.sign_up_link{
 		display: block;
-		font: 12px/32px FuturaPTHeavy;
+		font: 12px/31px FuturaPTHeavy;
 		margin-left: 25px;
-		border-radius: 3px;
-		border: 2px solid #7dcdd4;
+		margin-top: 3px;
+		border-radius: 4px;
+		border: 2px solid rgba(255, 255, 255, 0.3);
 		width: 71px;
 		text-align: center;
 		height: 30px;
 	}
+	.burger{
+	    display: none;
+		margin-left: 25px;
+		margin-top: 6px;
+		text-align: center;
+		svg{
+		width: 22px;
+		path{fill: #fff;}}
+		}
+	
 	a{ color: white; text-transform: uppercase; }
 
 	/*when signed up___*/
@@ -61,30 +89,71 @@ header{
 	/*___when signed up*/
 }
 
+
+
+
 /*_____________both footer and header____________*/
-.menu li{ list-style-type: none; display: inline-block; font: 12px/35px FuturaPTHeavy; margin-left: 25px; }
+.menu li{ list-style-type: none; display: inline-block; font: 12px/40px FuturaPTHeavy; margin-left: 25px; }
 /*_________/___both footer and header____________*/
+
+
+@media screen and (max-width: 600px) {
+    
+    header .sign_up_link, .menu li{
+	display: none;
+	}
+	
+	header{
+	padding: 15px 0;
+	.logo{ margin-top: 3px; svg{ width: 94px; path{fill: #fff;}}}
+	.burger{ display: block; }}
+     
+        
+	}
+	
+
+	
+
 
 footer{
 	background: $green_blue;
 	padding: 20px 0;
 	color: white;
 	a{ color: white; text-transform: uppercase; }
-	.copy{ font: 14px/24px FuturaPTBook; }
-	.logo{ height: 26px; margin-right: 20px; vertical-align: bottom; }
-	.social{ margin-left: 25px; height:24px; }
-	.social a{
+	.copy{ 
+		font: 14px/24px FuturaPTBook; 
+		position: relative;
 		display: inline-block;
-		border-radius: 50%;
-		width: 23px;
-		height: 23px;
-		margin-left: 12px;
+		p{margin-left: 10px; margin-top: 3px; display: inline-block; position: relative;}
+	}
+	.copy-logo{
+	    display: inline-block;
+	    position: relative;
+	    float: left;
+	    height: 17px;
+	    margin-top: 3px;
+		svg{width: 70px;
+	 		path{fill:#fff;}}
+	}
+	.social{ 
+		margin-left: 25px; 
+		height:24px; 
+		svg{width: 16px; margin: 6px 0 0 6px; path{fill:#fff;}}
+		}
+	
+	.social a{
+	    border: 1px rgba(255, 255, 255, 0.4) solid;
+		display: inline-block;
+		border-radius: 30px;
+		width: 28px;
+		height: 28px;
+		margin-left: 5px;
 	} 
 	.menu li{ line-height: 24px; font-size: 10px; }
 	.menu li:first-child{ margin-left: 0; }
 }
 
-
+.footer-container{margin-top: 20px;}
 
 .modal{ 
 	padding: 40px 60px; display: none; width: 300px;
@@ -150,95 +219,220 @@ header.big{
 	color: white;
 	text-align: center;
 	padding: 0;
-	background: url('/assets/index/footer/bg.jpg');
+	background-position: 50% 0px;
+	background-repeat: no-repeat;
+    background-size: cover;
+	-webkit-background-size: cover;
+    box-sizing: border-box;
+	background-image: url('/assets/index/footer/bg.jpg');
+	
 	#search_block{ 
+	    max-width: 940px;
+	    margin-left: auto; 
+	    margin-right: auto;
 		margin: 80px 0 85px; 
 		.title{ font: 40px FuturaPTHeavy; margin-bottom: 10px; }
 		.desc{ font: 18px FuturaPTBook; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
-		form{ display: inline-block; }
+		
+		
 		input[type=text]{
-			background: rgba(255, 255, 255, 0.23) url(/assets/common/forms/search_icon.png) 20px 17px no-repeat;
-			border-radius: 30px 0 0 30px;
-			height: 51px;
+			background: rgba(255, 255, 255, 0.2);
+			border-radius: 30px;
 			padding: 0 35px 0 50px;
-			width: 311px;
-			font: 16px/47px FuturaPTBookOblique;
+			height: 51px;
+			width: 100%;
+			max-width: 500px;
+			box-sizing: border-box;
+			margin-left: auto; 
+			margin-right: auto;
+			font: 16px/28px FuturaPTBookOblique;
+			
 		}
-		input[type=submit]{
+		
+		.form{
+		    svg{
+		    	position: absolute;
+		    	margin: 18px 0 0 22px;
+		    	width: 16px; path{fill:#fff;}}
+		}
+		
+		.button{
 			background: white;
 			width: 120px;
-			height: 51px;
-			margin-left: -25px;
+			height: 35px;
+			position: absolute;
+			float: right;
+			margin-left: -120px;
 			color: #47bbc3;
 			font: 14px FuturaPTDemi;
 			border-radius: 30px;
-			padding-bottom: 2px;
+			padding-top: 16px;
+			transition: all 0.3s ease;
+			&:hover{ opacity: 0.7; }
+				
+			}
+
 		}
-		input[type=submit].w200px{ width: 200px; }
-	}
+		
 	.gradient{ 
 		padding: 20px 0; 
 		width: 100%; 
 		height: 100%; 
 	}
 }
+
+@media screen and (max-width: 600px) {
+    
+    header.big{
+    #search_block{
+        margin: 50px 0 60px;
+		.title{ font-size: 32px;}
+		.desc{ font-size: 16px;}
+		input[type=text]{
+			padding-left: 25px;
+			font: 14px/28px FuturaPTBookOblique;
+			text-align: center;
+		}
+		.form{
+			svg{display: none;
+			}
+		}
+
+		.button{
+			display: inline-block;
+			margin: 10px auto auto auto;
+			position:relative;
+			float: none;
+			
+			}
+    }
+    }
+	}
+
+
+
 footer.big{
-	background: url(/assets/index/footer/bg.jpg) 50% 0 no-repeat;
+	background-image: url('/assets/index/footer/bg.jpg');
+	background-position: 50% 0px;
+	background-repeat: no-repeat;
+    background-size: cover;
+	-webkit-background-size: cover;
+    box-sizing: border-box;
 	position: relative;
 	padding: 0;
-
 	.gradient{
 		padding: 20px 0;
 		width: 100%;
 		height: 100%;
 	}
-
 	#top_footer{
-		padding: 20px 0;
 		font-size: 0px;
 		.w25{
-			width: 25%;
+			width: 23%;
+			margin-top: 25px;
+			margin-right: 25px;
 			display: inline-block;
-			font: 16px/24px FuturaPTBook;
+			box-sizing: border-box;
+			position: relative;
+			font: 16px/20px FuturaPTBook;
 			vertical-align: top;
+			&:nth-child(4n){margin-right: 0;}
+			p{margin-bottom: 10px;}
 		}
-		.w25>*{
-			display: block;
-			margin-bottom: 14px;
-			padding-right: 20px;
+		
+@media screen and (max-width: 980px) {
+    
+		.w25{
+			width: 45%;
+			margin-right: 40px;
+			&:nth-child(2n){
+				margin-right: 0;
+			}
 		}
+    }
+    
+@media screen and (max-width: 600px) {
+    
+		.w25{
+			width: 100%;
+			&:nth-child(2n){
+				margin-right: 0;
+			}
+		}
+
+
+    }
+	
+		.form{
+			 padding-top: 8px;
+			 input[type=text]{
+				background: rgba(255, 255, 255, 0.2);
+				position: absolute;
+				border-radius: 30px;
+				padding: 0 20px 0 20px;
+				height: 36px;
+				border: none;
+				width: 100%;
+				box-sizing: border-box;
+				font-size: 14px;
+			}	
+			.button{
+				background: white;
+				width: 36px;
+				height: 36px; 
+				position: relative;		
+				border-radius: 30px;
+				float: right;
+				transition: all 0.3s ease;
+				&:hover{ opacity: 0.7; }	
+				svg {
+					width: 6px; 
+					margin: 13px 0 0 16px;
+					padding: 0px; 
+					path{fill: $blue;}}
+				}	
+			 }
+		
+	
+		
+		
+		
+		.footer-titles {
+		    height: 30px;
+		    margin-bottom: 10px;
+			svg {
+				width: 70px; 
+				padding: 0px;
+				margin-right: 20px; 
+				path{fill: #fff;}}
+			}			
 		.bold{
 			text-transform: uppercase;
-			font-size: 13px;
+			font-size: 12px;
 			font-family: FuturaPTDemi;
-			i{
-				font-weight: 700;
-				padding-left: 5px;
-			}
-		}
-		#recent_posts{
+			margin-top: 3px;
+			height: 27px;									
+			svg {
+				width: 5px; 
+				padding: 0px;
+				margin-left: 5px; 
+				vertical-align: center; 
+				path{fill: #fff;}}			
+		}	
+		.thumbs{
+			max-width: 216px;
 			img{
-				border-radius: 5px;
-				width: 33%;
+				border-radius: 4px;
+				width: 28%;
 				font-size: 0px;
-				padding-right: 12px;
+				margin-right: 5px;
+				margin-top: 4px;
 				box-sizing: border-box;
-			}
-			.row{
-				font-size: 0;
-				margin-right: 20px;
-			}
-		}
-		.transparent_circle_form{
-			input{
-				width: 147px;
-			}
-			.circle{
-				right: 35px;
+				&:nth-child(3n){margin-right: 0;}
 			}
 		}
 		.line{
-			border-bottom: 1px #A0FAFF solid;
+			border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
 			margin-top: 40px;
 		}
 	}
