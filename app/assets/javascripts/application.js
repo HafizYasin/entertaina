@@ -56,27 +56,46 @@ $(function(){
 
 
 
-var mouseX = 0, mouseY = 0, limitX = 300-15, limitY = -100;
-$(window).mousemove(function(e){
-  var offset = $('.container').offset();
-   mouseX = Math.min(e.pageX - offset.left, limitX);
-   mouseY = Math.min(e.pageY - offset.top, limitY);
-   if (mouseX < 0) mouseX = 0;
-   if (mouseY < 0) mouseY = 0;
-});
-
-// cache the selector
-var follower = $("#a");
-var xp = 0, yp = 100;
-var loop = setInterval(function(){
-    xp += (mouseX - xp);
-    yp += (mouseY - yp);
-    follower.css({left:xp, top:yp});
-}, 30);
 
 
 
 
+	//for profiles/1 page, may translate to coffee 
+	var mouseX = 0, mouseY = 0, limitX = 300-15, limitY = -100;
+	$(window).mousemove(function(e){
+	  var offset = $('.container').offset();
+	   mouseX = Math.min(e.pageX - offset.left, limitX);
+	   mouseY = Math.min(e.pageY - offset.top, limitY);
+	   if (mouseX < 0) mouseX = 0;
+	   if (mouseY < 0) mouseY = 0;
+	});
+
+	var follower = $("#hint");
+	var xp = 0, yp = 0;
+	var loop = setInterval(function(){
+	    xp += (mouseX - xp) - 20;
+	    yp += (mouseY - yp) - 50;
+	    follower.css({left:xp, top:yp});
+	}, 30);
+
+
+	$(document).on('mousemove', '.stars' ,function(){
+		var integer = parseInt($('#hi').text().split('.')[0]);
+		var decimal = parseInt($('#hi').text().split('.')[1][0]);
+		var rounded_decimal; var add_to_integer;
+		if (decimal > 5){
+			rounded_decimal = 0;
+			add_to_integer = 1;
+		} else if (decimal < 0) {
+			rounded_decimal = 0;
+			add_to_integer = 0;
+		} else {
+			rounded_decimal = 5;
+			add_to_integer = 0;
+		} 
+		$('#hint .integer').text(integer + add_to_integer);
+		$('#hint .decimal').text( '.' + rounded_decimal );
+	});
 
 
 

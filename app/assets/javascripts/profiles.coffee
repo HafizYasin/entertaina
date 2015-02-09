@@ -54,7 +54,7 @@ $ ->
 	
 	$('.modal .stars').raty
 		number: 10
-		target: '#hint'
+		target: '#hi'
 		targetText : 'none'
 		targetKeep : true
 		targetType: 'score'
@@ -262,3 +262,5 @@ $ ->
 
 
 
+
+	
