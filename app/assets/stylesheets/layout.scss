@@ -1,16 +1,7 @@
-input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease; text-overflow: ellipsis; color: #fff;}
-input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease; text-overflow: ellipsis; color: #fff;}
-input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease; text-overflow: ellipsis; color: #fff;}
-input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease; text-overflow: ellipsis; color: #fff;}
-input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
-input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
-input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
-input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;} 
-
 header{
 	padding: 10px 0;
 	background: $green_blue;
-  position: relative;
+	position: relative;
 	z-index: 2;
 	margin-bottom: 70px;
 	.logo{ 
@@ -75,16 +66,23 @@ header{
 		margin-top: 6px;
 		text-align: center;
 		svg{
-		width: 22px;
-		path{fill: #fff;}}
+			width: 22px;
+			path{ fill: #fff; }
 		}
-	
-	a{ color: white; text-transform: uppercase; }
+	}	
+	a{ 
+		color: white; 
+		text-transform: uppercase; 
+	}
 
 	/*when signed up___*/
 	.profile{ 
 		position: relative; 
-		.account_link{ padding: 20px; margin: -20px 0 -20px 25px; font: 14px/32px FuturaPTHeavy; }
+		.account_link{ 
+			padding: 20px; 
+			margin: -20px 0 -20px 25px; 
+			font: 14px/32px FuturaPTHeavy; 
+		}
 		&:hover{
 			.account_link{ background: #3bb8bb; }
 			ul{ display: block; }
@@ -95,7 +93,10 @@ header{
 			vertical-align: middle;
 			margin-right: 12px;
 		}
-		.account_link .arrow{ vertical-align: middle; margin-left: 12px; }
+		.account_link .arrow{ 
+			vertical-align: middle; 
+			margin-left: 12px; 
+		}
 		ul{
 			position: absolute;
 			top: 45px;
@@ -106,7 +107,11 @@ header{
 			background: rgba(26,43,63,.9);
 			text-align: center;
 			display: none;
-			li{ list-style-type: none; font: 12px/40px FuturaPTHeavy; border-bottom: 1px solid #4c585e; }
+			li{ 
+				list-style-type: none; 
+				font: 12px/40px FuturaPTHeavy; 
+				border-bottom: 1px solid #4c585e; 
+			}
 			li:last-child{ border:none; }
 		}
 		ul:before{
@@ -126,41 +131,53 @@ header{
 }
 
 
-
-
 /*_____________both footer and header____________*/
-.menu li{ list-style-type: none; display: inline-block; font: 12px/40px FuturaPTHeavy; margin-left: 25px; }
+.menu li{ 
+	list-style-type: none; 
+	display: inline-block; 
+	font: 12px/40px FuturaPTHeavy; 
+	margin-left: 25px; 
+}
 /*_________/___both footer and header____________*/
 
 
 @media screen and (max-width: 600px) {
-    
-    header .sign_up_link, .menu li{
-	display: none;
+	header .sign_up_link, .menu li{
+		display: none;
 	}
-	
 	header{
-	padding: 15px 0;
-	.logo{ margin-top: 3px; svg{ width: 94px; path{fill: #fff;}}}
-	.burger{ display: block; }}
-     
-        
+		padding: 15px 0;
+		.logo{ 
+			margin-top: 3px; 
+			svg{ 
+				width: 94px; 
+				path{ fill: #fff; }
+			}
+		}
+		.burger{ 
+			display: block; 
+		}
 	}
-	
-
-	
-
+}
 
 footer{
 	background: $green_blue;
 	padding: 20px 0;
 	color: white;
-	a{ color: white; text-transform: uppercase; }
+	a{ 
+		color: white; 
+		text-transform: uppercase; 
+	}
 	.copy{ 
 		font: 14px/24px FuturaPTBook; 
 		position: relative;
 		display: inline-block;
-		p{margin-left: 10px; margin-top: 3px; display: inline-block; position: relative;}
+		p{
+			margin-left: 10px; 
+			margin-top: 3px; 
+			display: inline-block; 
+			position: relative;
+		}
 	}
 	.copy-logo{
 	    display: inline-block;
@@ -168,15 +185,20 @@ footer{
 	    float: left;
 	    height: 17px;
 	    margin-top: 3px;
-		svg{width: 70px;
-	 		path{fill:#fff;}}
+		svg{
+			width: 70px;
+	 		path{ fill:#fff; }
+	 	}
 	}
 	.social{ 
 		margin-left: 25px; 
 		height:24px; 
-		svg{width: 16px; margin: 6px 0 0 6px; path{fill:#fff;}}
+		svg{
+			width: 16px; 
+			margin: 6px 0 0 6px; 
+			path{ fill:#fff; }
 		}
-	
+	}	
 	.social a{
 	    border: 1px rgba(255, 255, 255, 0.4) solid;
 		display: inline-block;
@@ -185,17 +207,32 @@ footer{
 		height: 28px;
 		margin-left: 5px;
 	} 
-	.menu li{ line-height: 24px; font-size: 10px; }
-	.menu li:first-child{ margin-left: 0; }
+	.menu li{ 
+		line-height: 24px; 
+		font-size: 10px; 
+	}
+	.menu li:first-child{ 
+		margin-left: 0; 
+	}
 }
 
 .footer-container{margin-top: 20px;}
 
 .modal{ 
-	padding: 40px 60px; display: none; width: 300px;
-	.modal_title{ margin-bottom: 30px; text-align: center; color: $greenish; font: 30px/30px FuturaPTDemi; }
+	padding: 40px 60px; 
+	display: none; 
+	width: 300px;
+	.modal_title{ 
+		margin-bottom: 30px; 
+		text-align: center; 
+		color: $greenish; 
+		font: 30px/30px FuturaPTDemi; 
+	}
 	.other_links{
-		margin-top: 22px; color: $grey; font: 16px/28px FuturaPTBook; text-align: center;
+		margin-top: 22px; 
+		color: $grey; 
+		font: 16px/28px FuturaPTBook; 
+		text-align: center;
 		a{ color: $blue; }
 		a:hover{ text-decoration: underline; }
 	}
@@ -223,8 +260,8 @@ footer{
 			right: 10px;
 		}
 	}
-
 }
+
 #billing_form{
 	.comment{
 		color: $light;
@@ -237,19 +274,17 @@ footer{
 			margin-right: 10px;
 		}
 	}
-	.change .left{ font-family: FuturaPTDemi; }
-	.change .right{ font-family: FuturaPTHeavy; font-size: 12px; }
+	.change .left{ 
+		font-family: FuturaPTDemi; 
+	}
+	.change .right{ 
+		font-family: FuturaPTHeavy; 
+		font-size: 12px; 
+	}
 	#cvc{ 
 		background: url('/assets/common/modals/question.png') no-repeat 130px 8px;
 	}
 }
-
-
-
-
-
-
-
 
 header.big{
 	color: white;
@@ -258,19 +293,24 @@ header.big{
 	background-position: 50% 0px;
 	background-repeat: no-repeat;
     background-size: cover;
-	-webkit-background-size: cover;
     box-sizing: border-box;
 	background-image: url('/assets/index/footer/bg.jpg');
-	
 	#search_block{ 
 	    max-width: 940px;
 	    margin-left: auto; 
 	    margin-right: auto;
 		margin: 80px 0 85px; 
-		.title{ font: 40px FuturaPTHeavy; margin-bottom: 10px; }
-		.desc{ font: 18px FuturaPTBook; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
-		
-		
+		.title{ 
+			font: 40px FuturaPTHeavy; 
+			margin-bottom: 10px; 
+		}
+		.desc{ 
+			font: 18px FuturaPTBook; 
+			margin-bottom: 30px; 
+			max-width: 500px; 
+			margin-left: auto; 
+			margin-right: auto; 
+		}
 		input[type=text]{
 			background: rgba(255, 255, 255, 0.2);
 			border-radius: 30px;
@@ -281,17 +321,16 @@ header.big{
 			box-sizing: border-box;
 			margin-left: auto; 
 			margin-right: auto;
-			font: 16px/28px FuturaPTBookOblique;
-			
-		}
-		
+			font: 16px/28px FuturaPTBookOblique;	
+		}	
 		.form{
 		    svg{
 		    	position: absolute;
 		    	margin: 18px 0 0 22px;
-		    	width: 16px; path{fill:#fff;}}
+		    	width: 16px; 
+		    	path{ fill:#fff; }
+		    }
 		}
-		
 		.button{
 			background: white;
 			width: 120px;
@@ -304,12 +343,9 @@ header.big{
 			border-radius: 30px;
 			padding-top: 16px;
 			transition: all 0.3s ease;
-			&:hover{ opacity: 0.7; }
-				
-			}
-
+			&:hover{ opacity: 0.7; }		
 		}
-		
+	}	
 	.gradient{ 
 		padding: 20px 0; 
 		width: 100%; 
@@ -317,42 +353,38 @@ header.big{
 	}
 }
 
-@media screen and (max-width: 600px) {
-    
-    header.big{
-    #search_block{
-        margin: 50px 0 60px;
-		.title{ font-size: 32px;}
-		.desc{ font-size: 16px;}
-		input[type=text]{
-			padding-left: 25px;
-			font: 14px/28px FuturaPTBookOblique;
-			text-align: center;
-		}
-		.form{
-			svg{display: none;
+@media screen and (max-width: 600px) {   
+	header.big{
+	    #search_block{
+	    	margin: 50px 0 60px;
+			.title{ font-size: 32px;}
+			.desc{ font-size: 16px;}
+			input[type=text]{
+				padding-left: 25px;
+				font: 14px/28px FuturaPTBookOblique;
+				text-align: center;
 			}
-		}
-
-		.button{
-			display: inline-block;
-			margin: 10px auto auto auto;
-			position:relative;
-			float: none;
-			
+			.form{
+				svg{
+					display: none;
+					float:left;
+				}
 			}
-    }
-    }
+			.button{
+				display: inline-block;
+				margin: 10px auto auto auto;
+				position:relative;
+				float: none;
+			}
+	    }
 	}
-
-
+}
 
 footer.big{
 	background-image: url('/assets/index/footer/bg.jpg');
 	background-position: 50% 0px;
 	background-repeat: no-repeat;
     background-size: cover;
-	-webkit-background-size: cover;
     box-sizing: border-box;
 	position: relative;
 	padding: 0;
@@ -372,33 +404,24 @@ footer.big{
 			position: relative;
 			font: 16px/20px FuturaPTBook;
 			vertical-align: top;
-			&:nth-child(4n){margin-right: 0;}
-			p{margin-bottom: 10px;}
+			&:nth-child(4n){ margin-right: 0; }
+			p{ margin-bottom: 10px; }
 		}
 		
-@media screen and (max-width: 980px) {
-    
-		.w25{
-			width: 45%;
-			margin-right: 40px;
-			&:nth-child(2n){
-				margin-right: 0;
+		@media screen and (max-width: 980px) {
+			.w25{
+				width: 45%;
+				margin-right: 40px;
+				&:nth-child(2n){ margin-right: 0; }
 			}
 		}
-    }
     
-@media screen and (max-width: 600px) {
-    
-		.w25{
-			width: 100%;
-			&:nth-child(2n){
-				margin-right: 0;
+		@media screen and (max-width: 600px) {
+			.w25{
+				width: 100%;
+				&:nth-child(2n){ margin-right: 0; }
 			}
-		}
-
-
-    }
-	
+	    }	
 		.form{
 			 padding-top: 8px;
 			 input[type=text]{
@@ -425,35 +448,33 @@ footer.big{
 					width: 6px; 
 					margin: 13px 0 0 16px;
 					padding: 0px; 
-					path{fill: $blue;}}
-				}	
-			 }
-		
-	
-		
-		
-		
+					path{ fill: $blue; }
+				}
+			}	
+		}		
 		.footer-titles {
 		    height: 30px;
 		    margin-bottom: 10px;
-			svg {
+			svg{
 				width: 70px; 
 				padding: 0px;
 				margin-right: 20px; 
-				path{fill: #fff;}}
-			}			
+				path{ fill: #fff; }
+			}
+		}			
 		.bold{
 			text-transform: uppercase;
 			font-size: 12px;
 			font-family: FuturaPTDemi;
 			margin-top: 3px;
 			height: 27px;									
-			svg {
+			svg{
 				width: 5px; 
 				padding: 0px;
 				margin-left: 5px; 
 				vertical-align: center; 
-				path{fill: #fff;}}			
+				path{ fill: #fff; }
+			}			
 		}	
 		.thumbs{
 			max-width: 216px;
@@ -464,7 +485,7 @@ footer.big{
 				margin-right: 5px;
 				margin-top: 4px;
 				box-sizing: border-box;
-				&:nth-child(3n){margin-right: 0;}
+				&:nth-child(3n){ margin-right: 0; }
 			}
 		}
 		.line{

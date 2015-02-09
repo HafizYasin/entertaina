@@ -48,6 +48,7 @@
 
 .not_displayed{
 	display: none;
+	float: none;
 }
 
 
@@ -277,10 +278,6 @@
 	text-align: center;
 }
 
-
-
-
-
 .form{
 	.line{ margin-bottom: 25px; }
 	.name{ color: #c0c4c9; font: 10px/20px FuturaPTHeavy; text-transform: uppercase; }
@@ -355,24 +352,15 @@
 
 .column {
     width:100%;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
     column-count: 2;
-    -webkit-column-gap: 20px;
-    -moz-column-gap: 20px;
     column-gap: 20px;
 }
 
 @media screen and (max-width: 600px) {
 	.column {
-    width:100%;
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
+    	column-count: 1;
 	}
-
-	
-	}
+}
 
 .transparent_text_line{
 	span{ display: inline-block; }
@@ -437,10 +425,7 @@
 			margin-top: 14px; 
 			margin-bottom: 20px;
 			margin-right: 40px;
-			&:nth-child(3n){
-				margin-right: 0;
-			}
-			
+			&:nth-child(3n){ margin-right: 0; }
 			.name-icon{ 
 				display: block;
 				box-sizing: border-box;
@@ -449,60 +434,47 @@
 				width: 30px;
 				height: 30px;
 				margin-right: 10px;
-				img{width: 30px; height: 30px;}
+				img{ width: 30px; height: 30px; }
 			}
-			
 			.name{
 				display: inline-block; 
 				position: relative;
 				margin-top: 3px;
 				margin-bottom: 13px; 				
-				h3 {font: 18px/24px FuturaPTBook; color: $blue; }
+				h3{
+					font: 18px/24px FuturaPTBook; 
+					color: $blue; 
 				}
-				
+			}		
 		}
 	} // on main page wedding ring stuff and on preregister
 }
 
-
-
 @media screen and (max-width: 980px) {	
 	#index, #preregister{
-	.categories {
-		.item{ 
-			width: 45%; 
-			margin-right: 40px;
-			&:nth-child(3n){
+		.categories {
+			.item{ 
+				width: 45%; 
 				margin-right: 40px;
+				&:nth-child(3n){ margin-right: 40px; }
+				&:nth-child(2n){ margin-right: 0; }
 			}
-
-			&:nth-child(2n){
-				margin-right: 0;
-			}
+		}
 	}
-	}
-	}
-	}
+}
 
 @media screen and (max-width: 600px) {	
 	#index, #preregister{
-	.categories {
-		.item{ 
-			width: 100%; 
-			&:nth-child(1n){
-				margin-right: 0;
+		.categories {
+			.item{ 
+				width: 100%; 
+				&:nth-child(1n){ margin-right: 0; }
 			}
+		}
 	}
-	}
-	}
-	}
-
-
-
+}
 
 .loading-spinner{ margin-top: 40px; margin-bottom: 70px; }
-
-
 
 .back{
 	font-size: 13px;
@@ -511,6 +483,3 @@
 		padding-right: 5px;
 	}
 }
-
-
-

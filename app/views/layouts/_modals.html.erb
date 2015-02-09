@@ -112,3 +112,44 @@
 		<img src="/assets/common/modals/discount20.png">
 	</div>
 </div>
+
+
+<div class="modal" id="menu">
+
+
+	<nav>
+		<a href="/">home</a>
+		<a href="/about" data-no-turbolink>about</a>
+		<!-- no turbolink so google map works well -->
+		<a href="/search">find acts</a>
+		<a href="/blog_posts">blog</a>
+
+		<div class="line"></div>
+
+		<% if [true, false][rand(2)] %>
+
+			<div id="logo">
+				<a href="/profiles/1">profile</a>
+				<a href="/settings">settings</a>
+				<a href="">log out</a>
+			</div>
+
+		<% else %>
+			<a href="#login_form" class="fancy">Login</a>
+			<a class="sign_up_link right fancy" href="#register_form">Sign up</a>
+		<% end %>
+
+	</nav>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
