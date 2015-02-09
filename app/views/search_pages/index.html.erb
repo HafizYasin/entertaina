@@ -19,34 +19,28 @@
 </section>
 
 <section class="entertainers">
-	<div class="gradient text">
-		<div class="width">
+	<div class="gradient">
+		<div class="w940px">
 			<h1 class="white text_center">Popular Entertainers</h1>
 			
+			<ul class="slider">
+				<% 10.times do %>
+					<li class="entertainer">
+						<div class="image">
+							<a class="favorites_link" href="/profiles/1"><img src="/assets/common/binocle.png"> View profile</a>
+							<img class="img" src="/assets/list_item_thumb.jpg">
+							<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
+						</div>
+						
+						<div class="info">
+							<div class="name"><a href="/">Blue Jewel Ceilidh Band</a></div>
+							<span class="price">From £900</span> <span class="reviews">4560 reviews</span>
+							<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
+						</div>
+					</li>
+				<% end %>
+			</ul>
 
-			<div class="jcarousel w940px">
-				<ul>
-					<% 20.times do %>
-						<li class="entertainer">
-							<div class="image">
-								<a class="favorites_link" href="/"><img src="/assets/favorites_icon.png"> add to favorites</a>
-								<img class="img" src="/assets/list_item_thumb.jpg">
-								<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
-							</div>
-							
-							<div class="info">
-								<div class="name"><a href="/">Blue Jewel Ceilidh Band</a></div>
-								<span class="price">From £900</span> <span class="reviews">4560 reviews</span>
-								<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
-							</div>
-						</li>
-					<% end %>
-
-				</ul>
-			</div>	
-					
-			<a class="j-prev"><img class="svg" src="/assets/common/arrow_left.svg"></a>
-			<a class="j-next"><img class="svg" src="/assets/common/arrow_right.svg"></i></a>
 		</div>
 	</div>
 	<div class="clear"></div>
@@ -127,3 +121,10 @@
 
 
 </div>
+
+
+
+
+
+
+

@@ -4,53 +4,36 @@
 #index{
 	.how{
 		padding-bottom: 70px;
-		p{
-			width: 100%;
-		}
+		p{ width: 100%; }
 	}
 
 	.entertainers{
 		background-image: url("/assets/index/popular_entertainers/bg.jpg");
 		background-position: 50% 0px;
 		background-repeat: no-repeat;
-        background-size: cover;
-		-webkit-background-size: cover;
-        box-sizing: border-box;
-        position: relative;
+		background-size: cover;
+		box-sizing: border-box;
+		position: relative;
 
-		.width{
-			max-width: 1020px;
-			margin: 0 auto;
-		}	
-		.gradient{
-			padding: 50px 0 20px 0;
-		}
-		
-		
-		.jcarousel{
-			margin: 40px 0 100px 0;
-			position: relative;
-			width: 100%;
-			overflow: hidden;
-			ul{
-				width: 10000000px;
-				position: relative;
-				list-style: none;
+		.gradient{ padding: 50px 0 100px 0; }
+
+		.lSAction{
+			path{ fill: white; }
+			svg{ width: 20px; }
+			a{ 
+				width: auto; background: none; 
+				padding: 0 5%;
 			}
+		}
+		@media (max-width: 1163px){
+			.w940px{ max-width: 600px; }
+		}
+		@media (max-width: 800px){
+			.lSAction{ display: none !important;}
+			.w940px{ max-width: 300px; }
+		}
 
-			
-		.entertainer{ margin: 0 10px; display: inline-block; float: left; }
-		}
 		
-		.j-prev, .j-next{
-			color: white;
-			font-size: 60px;
-			position: absolute;
-			top: 275px;
-			svg{ width: 20px; path {fill:#fff}}
-		}
-		.j-prev{ left: 10%; }
-		.j-next{ right: 10%; }
 	}
 
 

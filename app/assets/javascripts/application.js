@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery.fancybox
@@ -59,10 +47,9 @@ $(function(){
 
 
 
-
 	//for profiles/1 page, may translate to coffee 
 	var mouseX = 0, mouseY = 0, limitX = 300-15, limitY = -100;
-	$(window).mousemove(function(e){
+	$('#review_form').mousemove(function(e){
 	  var offset = $('.container').offset();
 	   mouseX = Math.min(e.pageX - offset.left, limitX);
 	   mouseY = Math.min(e.pageY - offset.top, limitY);
@@ -79,22 +66,25 @@ $(function(){
 	}, 30);
 
 
-	$(document).on('mousemove', '.stars' ,function(){
-		var integer = parseInt($('#hi').text().split('.')[0]);
-		var decimal = parseInt($('#hi').text().split('.')[1][0]);
-		var rounded_decimal; var add_to_integer;
-		if (decimal > 5){
-			rounded_decimal = 0;
-			add_to_integer = 1;
-		} else if (decimal < 0) {
-			rounded_decimal = 0;
-			add_to_integer = 0;
-		} else {
-			rounded_decimal = 5;
-			add_to_integer = 0;
-		} 
-		$('#hint .integer').text(integer + add_to_integer);
-		$('#hint .decimal').text( '.' + rounded_decimal );
+	$('#review_form').on('mousemove', '.stars' ,function(){
+		var decimal_raw = $('#hi').text().split('.')[1];
+		if (decimal_raw != undefined){ 
+			var integer = parseInt($('#hi').text().split('.')[0]);
+			var decimal = parseInt(decimal_raw[0]);
+			var rounded_decimal; var add_to_integer;
+			if (decimal > 5){
+				rounded_decimal = 0;
+				add_to_integer = 1;
+			} else if (decimal < 0) {
+				rounded_decimal = 0;
+				add_to_integer = 0;
+			} else {
+				rounded_decimal = 5;
+				add_to_integer = 0;
+			} 
+			$('#hint .integer').text(integer + add_to_integer);
+			$('#hint .decimal').text( '.' + rounded_decimal );
+		};
 	});
 
 
