@@ -61,7 +61,7 @@ header{
 		height: 30px;
 	}
 	.burger{
-	    display: none;
+			display: none;
 		margin-left: 25px;
 		margin-top: 6px;
 		text-align: center;
@@ -141,25 +141,6 @@ header{
 /*_________/___both footer and header____________*/
 
 
-@media screen and (max-width: 600px) {
-	header .sign_up_link, .menu li{
-		display: none;
-	}
-	header{
-		padding: 15px 0;
-		.logo{ 
-			margin-top: 3px; 
-			svg{ 
-				width: 94px; 
-				path{ fill: #fff; }
-			}
-		}
-		.burger{ 
-			display: block; 
-		}
-	}
-}
-
 footer{
 	background: $green_blue;
 	padding: 20px 0;
@@ -180,15 +161,15 @@ footer{
 		}
 	}
 	.copy-logo{
-	    display: inline-block;
-	    position: relative;
-	    float: left;
-	    height: 17px;
-	    margin-top: 3px;
+			display: inline-block;
+			position: relative;
+			float: left;
+			height: 17px;
+			margin-top: 3px;
 		svg{
 			width: 70px;
-	 		path{ fill:#fff; }
-	 	}
+			path{ fill:#fff; }
+		}
 	}
 	.social{ 
 		margin-left: 25px; 
@@ -200,7 +181,7 @@ footer{
 		}
 	}	
 	.social a{
-	    border: 1px rgba(255, 255, 255, 0.4) solid;
+			border: 1px rgba(255, 255, 255, 0.4) solid;
 		display: inline-block;
 		border-radius: 30px;
 		width: 28px;
@@ -292,13 +273,10 @@ header.big{
 	padding: 0;
 	background-position: 50% 0px;
 	background-repeat: no-repeat;
-    background-size: cover;
-    box-sizing: border-box;
+	background-size: cover;
+	box-sizing: border-box;
 	background-image: url('/assets/index/footer/bg.jpg');
 	#search_block{ 
-	    max-width: 940px;
-	    margin-left: auto; 
-	    margin-right: auto;
 		margin: 80px 0 85px; 
 		.title{ 
 			font: 40px FuturaPTHeavy; 
@@ -323,13 +301,24 @@ header.big{
 			margin-right: auto;
 			font: 16px/28px FuturaPTBookOblique;	
 		}	
+		input[type=submit].w200px{ width: 200px; }
+		input[type=submit]{
+			background: white;
+			height: 51px;
+			margin-left: -25px;
+			color: $blue;
+			font: 14px FuturaPTDemi;
+			border-radius: 30px;
+			padding-bottom: 2px;
+		}
+		form{ display: inline-block; }
 		.form{
-		    svg{
-		    	position: absolute;
-		    	margin: 18px 0 0 22px;
-		    	width: 16px; 
-		    	path{ fill:#fff; }
-		    }
+			svg{
+				position: absolute;
+				margin: 18px 0 0 22px;
+				width: 16px; 
+				path{ fill:#fff; }
+			}
 		}
 		.button{
 			background: white;
@@ -353,39 +342,13 @@ header.big{
 	}
 }
 
-@media screen and (max-width: 600px) {   
-	header.big{
-	    #search_block{
-	    	margin: 50px 0 60px;
-			.title{ font-size: 32px;}
-			.desc{ font-size: 16px;}
-			input[type=text]{
-				padding-left: 25px;
-				font: 14px/28px FuturaPTBookOblique;
-				text-align: center;
-			}
-			.form{
-				svg{
-					display: none;
-					float:left;
-				}
-			}
-			.button{
-				display: inline-block;
-				margin: 10px auto auto auto;
-				position:relative;
-				float: none;
-			}
-	    }
-	}
-}
 
 footer.big{
 	background-image: url('/assets/index/footer/bg.jpg');
 	background-position: 50% 0px;
 	background-repeat: no-repeat;
-    background-size: cover;
-    box-sizing: border-box;
+		background-size: cover;
+		box-sizing: border-box;
 	position: relative;
 	padding: 0;
 	.gradient{
@@ -408,23 +371,9 @@ footer.big{
 			p{ margin-bottom: 10px; }
 		}
 		
-		@media screen and (max-width: 980px) {
-			.w25{
-				width: 45%;
-				margin-right: 40px;
-				&:nth-child(2n){ margin-right: 0; }
-			}
-		}
-    
-		@media screen and (max-width: 600px) {
-			.w25{
-				width: 100%;
-				&:nth-child(2n){ margin-right: 0; }
-			}
-	    }	
 		.form{
-			 padding-top: 8px;
-			 input[type=text]{
+			padding-top: 8px;
+			input[type=text]{
 				background: rgba(255, 255, 255, 0.2);
 				position: absolute;
 				border-radius: 30px;
@@ -453,8 +402,8 @@ footer.big{
 			}	
 		}		
 		.footer-titles {
-		    height: 30px;
-		    margin-bottom: 10px;
+				height: 30px;
+				margin-bottom: 10px;
 			svg{
 				width: 70px; 
 				padding: 0px;
@@ -494,3 +443,96 @@ footer.big{
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//_________________________responsive design
+header{
+	@media (max-width: 600px){
+		padding: 15px 0;
+		.logo{ 
+			margin-top: 3px; 
+			svg{ 
+				width: 94px; 
+				path{ fill: #fff; }
+			}
+		}
+		.burger{ 
+			display: block; 
+		}
+		.sign_up_link, .menu li{
+			display: none;
+		}
+	}
+}
+
+
+header.big{
+	@media (max-width: 600px){   
+		#search_block{
+			margin: 50px 0 60px;
+			.title{ font-size: 32px;}
+			.desc{ font-size: 16px;}
+			input[type=text]{
+				padding-left: 25px;
+				font: 14px/28px FuturaPTBookOblique;
+				text-align: center;
+			}
+			.form svg{
+				display: none;
+				float:left;
+			}
+			.button{
+				display: inline-block;
+				margin: 10px auto auto auto;
+				position:relative;
+				float: none;
+			}
+		}
+	}
+}
+
+
+footer.big{
+	@media (max-width: 980px){
+		#top_footer .w25{
+			width: 45%;
+			margin-right: 40px;
+			&:nth-child(2n){ margin-right: 0; }
+		}
+	}
+
+	@media (max-width: 600px){
+		#top_footer .w25{
+			width: 100%;
+			&:nth-child(2n){ margin-right: 0; }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

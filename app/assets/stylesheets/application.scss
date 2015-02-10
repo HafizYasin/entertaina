@@ -356,11 +356,6 @@
     column-gap: 20px;
 }
 
-@media screen and (max-width: 600px) {
-	.column {
-    	column-count: 1;
-	}
-}
 
 .transparent_text_line{
 	span{ display: inline-block; }
@@ -450,29 +445,6 @@
 	} // on main page wedding ring stuff and on preregister
 }
 
-@media screen and (max-width: 980px) {	
-	#index, #preregister{
-		.categories {
-			.item{ 
-				width: 45%; 
-				margin-right: 40px;
-				&:nth-child(3n){ margin-right: 40px; }
-				&:nth-child(2n){ margin-right: 0; }
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 600px) {	
-	#index, #preregister{
-		.categories {
-			.item{ 
-				width: 100%; 
-				&:nth-child(1n){ margin-right: 0; }
-			}
-		}
-	}
-}
 
 .loading-spinner{ margin-top: 40px; margin-bottom: 70px; }
 
@@ -483,3 +455,12 @@
 		padding-right: 5px;
 	}
 }
+
+
+
+
+
+
+
+
+
