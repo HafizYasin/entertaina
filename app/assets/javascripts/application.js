@@ -2,6 +2,7 @@
 //= require jquery.turbolinks
 //= require jquery.fancybox
 //= require jquery-ui
+//= require jquery.pickmeup
 //= require jquery.jcarousel 
 //= require jquery.raty
 //= require jquery.lightSlider
@@ -25,8 +26,19 @@ $(function(){
 
 	//_________________________modals
 	$('.fancy').fancybox();
-	$('.fancy_img').fancybox({ fitToView: false, autoResize: false, autoSize: true, padding: 30 });
+	// $('.fancy_img').fancybox({ fitToView: false, autoResize: false, autoSize: true, padding: 30 });
 	
+	$('.burger').fancybox({
+		afterLoad: function(){ 
+			// $('#menu_modal').parents('.fancybox-skin').addClass('a');  //doesn't work because of some 
+			// afterLoad peculiar specifics
+			$('.fancybox-skin').addClass('transparent_modal'); 
+		},
+		scrolling: 'no'
+	});
+
+
+
 
 
 	$("#logo").hover(

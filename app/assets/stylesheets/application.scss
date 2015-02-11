@@ -1,5 +1,6 @@
 @import 'font-awesome';
 @import 'jquery-ui';
+@import 'jquery.pickmeup'
 @import 'jquery.fancybox';
 @import 'lightSlider';
 @import 'normalize';
@@ -436,10 +437,8 @@
 				position: relative;
 				margin-top: 3px;
 				margin-bottom: 13px; 				
-				h3{
-					font: 18px/24px FuturaPTBook; 
-					color: $blue; 
-				}
+				font: 18px/24px FuturaPTBook; 
+				color: $blue; 
 			}		
 		}
 	} // on main page wedding ring stuff and on preregister

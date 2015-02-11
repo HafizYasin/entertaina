@@ -4,7 +4,7 @@ $light: #b0b9c3;
 $light_light: #f5f6f8;
 $greenish: #21c19d; //modal headings eg, stuff that used to be gradient
 $green_blue: linear-gradient(135deg,  rgba(32,194,156,0.9) 0%,rgba(44,181,189,0.9) 100%);
-
+$darken: rgba(8, 18, 29, 0.9);
 
 @font-face{
 	font-family: 'FuturaPTHeavy';
@@ -64,4 +64,11 @@ input[placeholder]{
 :focus::placeholder{
 	opacity: 0; 
 	transition: opacity 0.3s ease; 
+}
+
+
+
+body{
+	min-width: 320px;
+	overflow-x: hidden;
 }

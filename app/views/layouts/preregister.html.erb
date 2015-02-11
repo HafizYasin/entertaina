@@ -24,7 +24,7 @@
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi.</div>
 				<form>
-					<input class="left sign_up w200px" type="submit" name="submit" value="SIGN UP RIGHT NOW">
+					<input class="left sign_up w200px animation" type="submit" name="submit" value="SIGN UP RIGHT NOW">
 				</form>
 			</div>
 		</div>
@@ -33,22 +33,8 @@
 
 <%= yield %>
 
-<footer>
-	<div class="w940px">
-		<div class="copy left"><img class="logo" src="/assets/common/logo.png"> © All rights reserved</div>
-	
-		<div class="social right">
-			<a href="/"><img class="logo" src="/assets/common/footer/twitter.png"></a>
-			<a href="/"><img class="logo" src="/assets/common/footer/fb.png"></a>
-			<a href="/"><img class="logo" src="/assets/common/footer/vine.png"></a>
-		</div>
-		
-		<%= render '/layouts/_footer_menu' %>
 
-		<div class="clear"></div>
-	</div>
-</footer>
-
+<%= render '/layouts/footer' %>
 
 <%= render '/layouts/modals' %>
 

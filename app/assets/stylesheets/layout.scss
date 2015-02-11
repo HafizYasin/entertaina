@@ -61,7 +61,7 @@ header{
 		height: 30px;
 	}
 	.burger{
-			display: none;
+		display: none;
 		margin-left: 25px;
 		margin-top: 6px;
 		text-align: center;
@@ -172,6 +172,7 @@ footer{
 		}
 	}
 	.social{ 
+		float: left;
 		margin-left: 25px; 
 		height:24px; 
 		svg{
@@ -179,28 +180,29 @@ footer{
 			margin: 6px 0 0 6px; 
 			path{ fill:#fff; }
 		}
-	}	
-	.social a{
+		a{
 			border: 1px rgba(255, 255, 255, 0.4) solid;
-		display: inline-block;
-		border-radius: 30px;
-		width: 28px;
-		height: 28px;
-		margin-left: 5px;
-	} 
-	.menu li{ 
-		line-height: 24px; 
-		font-size: 10px; 
-	}
-	.menu li:first-child{ 
-		margin-left: 0; 
+			display: inline-block;
+			border-radius: 30px;
+			width: 28px;
+			height: 28px;
+			margin-left: 5px;
+		} 
+	}	
+	.menu{
+		float: left;
+		li{ 
+			line-height: 24px; 
+			font-size: 11px; 
+			&:first-child{ margin-left: 0; }
+		}
 	}
 }
 
 .footer-container{margin-top: 20px;}
 
 .modal{ 
-	padding: 40px 60px; 
+	padding: 40px auto; 
 	display: none; 
 	width: 300px;
 	.modal_title{ 
@@ -243,7 +245,7 @@ footer{
 	}
 }
 
-#billing_form{
+#billing_form.modal{
 	.comment{
 		color: $light;
 		text-align: center;
@@ -265,6 +267,35 @@ footer{
 	#cvc{ 
 		background: url('/assets/common/modals/question.png') no-repeat 130px 8px;
 	}
+}
+
+#menu_modal.modal{
+	font-family: 'FuturaPTHeavy';
+	font-size: 30px;
+	text-transform: uppercase;
+	text-align: center;
+	a{ 
+		display: block; 
+		margin-bottom: 30px;
+		margin-top: 30px;
+		color: white;
+		img{
+			width: 40px;
+			margin-right: 20px;
+			border-radius: 50%;
+			border: 2px rgba(255, 255, 255, 0.45) solid;
+			vertical-align: middle;
+		}
+	}
+	.line{
+		width: 100%;
+		border-bottom: 2px #273b44 solid;
+		margin: 40px 0;
+	}
+}
+.transparent_modal{
+	background: rgba(1,1,1,0) !important;
+	box-shadow: none !important;
 }
 
 header.big{
@@ -459,7 +490,7 @@ footer.big{
 
 
 
-//_________________________responsive design
+//_____________________________________responsive design
 header{
 	@media (max-width: 600px){
 		padding: 15px 0;
@@ -473,7 +504,7 @@ header{
 		.burger{ 
 			display: block; 
 		}
-		.sign_up_link, .menu li{
+		.menu{
 			display: none;
 		}
 	}
@@ -503,6 +534,11 @@ header.big{
 			}
 		}
 	}
+	@media (max-width: 1100px){
+		#logo{
+			margin-right: 40px;
+		}
+	}
 }
 
 
@@ -524,7 +560,34 @@ footer.big{
 }
 
 
-
+footer{
+	@media (max-width: 800px){
+		.copy-logo{
+			width: 20%;
+		}
+		.copy{
+			width: 80%;
+		}
+		.menu{
+			margin-bottom: 20px;
+			margin-top: 30px;
+			float: left;
+			li{
+				display: block;
+				margin-bottom: 10px;
+				margin-left: 0;
+			}
+		}
+		.social{
+			width: 100%;
+			margin-left: 0;
+			a:first-child{ margin-left: 0; }
+		}
+		.right.for_responsiveness{
+			width: 100%;
+		}
+	}
+}
 
 
 
