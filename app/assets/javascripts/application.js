@@ -21,7 +21,11 @@ var eventName = (isIPod() || isIPad() || isIPhone()) ? "touchstart" : "click";
 window.onload=function(){
 $(function(){
 
-
+	$.datepicker.setDefaults({
+		dayNamesMin: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+		firstDay: 1,
+		dateFormat: "mm/dd/yy"
+	});
 
 
 	//_________________________modals
@@ -62,19 +66,19 @@ $(function(){
 	//for profiles/1 page, may translate to coffee 
 	var mouseX = 0, mouseY = 0, limitX = 300-15, limitY = -100;
 	$('#review_form').mousemove(function(e){
-	  var offset = $('.container').offset();
-	   mouseX = Math.min(e.pageX - offset.left, limitX);
-	   mouseY = Math.min(e.pageY - offset.top, limitY);
-	   if (mouseX < 0) mouseX = 0;
-	   if (mouseY < 0) mouseY = 0;
+		var offset = $('.container').offset();
+		 mouseX = Math.min(e.pageX - offset.left, limitX);
+		 mouseY = Math.min(e.pageY - offset.top, limitY);
+		 if (mouseX < 0) mouseX = 0;
+		 if (mouseY < 0) mouseY = 0;
 	});
 
 	var follower = $("#hint");
 	var xp = 0, yp = 0;
 	var loop = setInterval(function(){
-	    xp += (mouseX - xp) - 20;
-	    yp += (mouseY - yp) - 50;
-	    follower.css({left:xp, top:yp});
+		xp += (mouseX - xp) - 20;
+		yp += (mouseY - yp) - 50;
+		follower.css({left:xp, top:yp});
 	}, 30);
 
 
@@ -98,6 +102,11 @@ $(function(){
 			$('#hint .decimal').text( '.' + rounded_decimal );
 		};
 	});
+
+
+
+
+	
 
 
 

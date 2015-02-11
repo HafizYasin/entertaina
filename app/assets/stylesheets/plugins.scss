@@ -44,34 +44,6 @@
 	margin-top: 16px;
 	background: $light_light;
 }
-.ui-datepicker{ padding: 0; width: 220px; background: none; border: none; }
-#ui-datepicker-div{ padding: 7px 0 0; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.2); z-index: 9 !important; }
-.ui-datepicker-calendar{ border-spacing: 0px; margin-bottom: 0 !important; border-bottom: 1px solid #ebedef; }
-.ui-datepicker-calendar td{ padding: 0; border-top: 1px solid #ebedef; border-left: 1px solid #ebedef; background: #f7f9fa; width: 30px; height: 30px; font: 12px FuturaPTDemi; }
-.ui-datepicker-calendar tr td:last-child{ border-right: 1px solid #ebedef; }
-.ui-datepicker-calendar td a.ui-state-default{ text-align: center; padding: 0; color: $grey; background: none; border:none; font-weight: 400; }
-.ui-datepicker-calendar td:hover{ background: #2cb5bd; }
-.ui-datepicker-calendar td:hover a{ color: #fff; }
-.ui-datepicker-calendar th {
-	padding: 0;
-	height: 20px;
-	color: #9da3a8;
-	font: 10px FuturaPTMedium;
-}
-.ui-datepicker-current-day{ background: $blue !important; }
-.ui-datepicker-current-day a{ color: white !important; }
-.ui-datepicker .ui-datepicker-header{ padding: 0 0 7px; height: 24px; background: none; border: none; }
-.ui-datepicker .ui-datepicker-title{ color: $grey; font: 14px/24px FuturaPTDemi; }
-.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
-	width: 9px;
-	height: 15px;
-	top: 4px;
-	cursor: pointer;
-	background: url(/assets/calendar_arrows.png) 0 0 no-repeat;
-}
-.ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover{ border: none; }
-.ui-datepicker .ui-datepicker-prev{ background-position: 0 0; left: 30px; }
-.ui-datepicker .ui-datepicker-next{ background-position: -9px 0; right: 30px; }
 
 
 
@@ -90,23 +62,7 @@
 
 
 
-.calendar, .ui-datepicker{
-	border-radius: 5px;
-	margin-bottom: 18px;
-	padding: 15px 0 0;
-	box-shadow: 0 1px 2px rgba(0,0,0,.03);
-	.selected{ 
-		background: $blue;
-		a{ color: white !important;}
-	}
-	.block_title{ padding: 0 15px; }
-	.info{ text-align: center; padding:10px 0; color: $grey; font: 12px/18px FuturaPTBook; }
-	.info > div{ display: inline-block; margin: 0 12px; }
-	.info img{ vertical-align: middle; margin-right: 7px; }
-}
-
 .input.location{ background: url(/assets/input_location_icon.png) 197px 50% no-repeat; }
-.input.datepicker{ background: url(/assets/input_date_icon.png) 197px 50% no-repeat; }
 
 .ui-selectmenu-menu{
 	li{
@@ -196,21 +152,136 @@ span:focus{ outline: none; }
 }
 
 
-
-
-
-
-
-
-
-
-
-
 //____________text_editor
 .wysihtml5-sandbox{
 	border-top-left-radius: 0 !important;
 	border-top-right-radius: 0 !important;
 }
+
+
+//___________search_page pickmeup datepicker
+.input_calendar.pickmeup{
+	font-family: 'FuturaPTDemi';
+	background: rgba(0,0,0,0);
+	font-size: 12px;
+	.pmu-instance{
+		position: relative;
+		left: 40px;
+		top: 10px;
+		background-color: rgba(26, 43, 63, 0.93);
+		z-index: 100;
+		height: initial;
+		border-radius: 5px;
+		padding: 0;
+		width: 21em;
+		nav:first-of-type{
+			width: 140px;
+			margin: 20px auto;
+			.pmu-prev img, .pmu-next img{
+				@extend .animation;
+				width: 7px;
+				position: relative;
+				top: 3px;
+			}
+		}
+	}
+	.triangle{
+		width: 0; 
+		height: 0; 
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid rgba(26, 43, 63, 0.93);
+		position: absolute;
+		top: -5px;
+		left: 50%;
+	}
+	.pmu-month{
+		@extend .animation;
+		font-size: 14px;
+		&:hover{ color: white; }
+	}
+	.pmu-day-of-week{
+		color: white;
+		div { width: 3em; }
+	}
+	.pmu-days{
+		line-height: initial;
+		.pmu-button{
+			@extend .animation;
+			border-right: 1px solid #3c4a5c;
+			border-top: 1px solid #3c4a5c;
+			width: 3em;
+			line-height: 3em;
+			color: white;
+		}
+		.pmu-selected{ 
+			background: $blue; 
+			border-right-color: $blue;
+			border-top-color: $blue;
+		}
+		.pmu-not-in-month{ color: #526173; }
+	}
+	#choose_clear{
+		border-top: 1px solid #3c4a5c;
+		text-transform: uppercase;
+		color: white;
+		font-size: 13px;
+		padding: 10px 0;
+		span{ @extend .animation; }
+	}
+
+}
+
+
+//_______________________jquery_ui_datepicker
+.ui-datepicker{ padding: 0; width: 220px; background: none; border: none; }
+#ui-datepicker-div{ padding: 7px 0 0; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.2); z-index: 9 !important; }
+.ui-datepicker-calendar{ border-spacing: 0px; margin-bottom: 0 !important; border-bottom: 1px solid #ebedef; }
+.ui-datepicker-calendar td{ padding: 0; border-top: 1px solid #ebedef; border-left: 1px solid #ebedef; background: #f7f9fa; width: 30px; height: 30px; font: 12px FuturaPTDemi; }
+.ui-datepicker-calendar tr td:last-child{ border-right: 1px solid #ebedef; }
+.ui-datepicker-calendar td a.ui-state-default{ text-align: center; padding: 0; color: $grey; background: none; border:none; font-weight: 400; }
+.ui-datepicker-calendar td:hover{ background: #2cb5bd; }
+.ui-datepicker-calendar td:hover a{ color: #fff; }
+.ui-datepicker-calendar th {
+	padding: 0;
+	height: 20px;
+	color: #9da3a8;
+	font: 10px FuturaPTMedium;
+}
+.ui-datepicker-current-day{ background: $blue !important; }
+.ui-datepicker-current-day a{ color: white !important; }
+.ui-datepicker .ui-datepicker-header{ padding: 0 0 7px; height: 24px; background: none; border: none; }
+.ui-datepicker .ui-datepicker-title{ color: $grey; font: 14px/24px FuturaPTDemi; }
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
+	width: 9px;
+	height: 20px;
+	top: 4px;
+	cursor: pointer;
+	background: url(/assets/calendar_arrows.png) 0 0 no-repeat;
+}
+.ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover{ border: none; }
+.ui-datepicker .ui-datepicker-prev{ background-position: 0 0; left: 30px; }
+.ui-datepicker .ui-datepicker-next{ background-position: -9px 0; right: 30px; }
+
+
+
+.calendar, .ui-datepicker{
+	border-radius: 5px;
+	margin-bottom: 18px;
+	padding: 15px 0 0;
+	box-shadow: 0 1px 2px rgba(0,0,0,.03);
+	.selected{ 
+		background: $blue;
+		a{ color: white !important;}
+	}
+	.block_title{ padding: 0 15px; }
+	.info{ text-align: center; padding:10px 0; color: $grey; font: 12px/18px FuturaPTBook; }
+	.info > div{ display: inline-block; margin: 0 12px; }
+	.info img{ vertical-align: middle; margin-right: 7px; }
+}
+
+
+
 
 
 

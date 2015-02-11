@@ -84,7 +84,7 @@
 			.checkbox_label.sub{ width: 220px; background: url(/assets/checkbox_icon.png) 0 0 no-repeat, url(/assets/arrow_down.png) 200px 6px no-repeat; }
 			input[type=checkbox]{ display: none; }
 			input[type=checkbox]:checked + .checkbox_label{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat; }
-			input[type=checkbox]:checked + .checkbox_label.sub{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat, url(/assets/arrow_up.png) 233px 6px no-repeat; }
+			input[type=checkbox]:checked + .checkbox_label.sub{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat, url(/assets/arrow_up.png) 200px 6px no-repeat; }
 			.ui-selectmenu-button{ width: 220px !important; box-sizing: border-box; }
 			.sub_cats{ 
 				display: none; margin-bottom: 15px; 
@@ -93,6 +93,14 @@
 				input[type=checkbox]:checked + .checkbox_label{ color: $blue; }
 				.checkbox_label sub{ vertical-align: top; font-size: 9px; position: relative; top: -3px; color: $blue; }
 			}
+
+			.input.date{
+				background: url(/assets/common/forms/calendar.png) no-repeat 195px;
+				font-size: 14px;
+			}
+
+
+
 		}
 		.ads{
 			margin-top: 40px;

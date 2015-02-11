@@ -2,7 +2,8 @@ $ ->
 	#________________found
 	#it makes some of the dates preselected in a datepicker (for sessions eg, 
 	#or for marking which dates are available)
-	$(".datepicker").datepicker
+
+	$("#profile .datepicker").datepicker
 		beforeShowDay: (d) ->
 			a = new Date(2015, 3 - 1, 20)
 			b = new Date(2015, 2 - 1, 16)
@@ -10,18 +11,31 @@ $ ->
 				true
 				(if a.getTime() is d.getTime() or b.getTime() is d.getTime() then "selected" else "")
 			]
+		
 
-		dayNamesMin: [
-			"Sun"
-			"Mon"
-			"Tue"
-			"Wed"
-			"Thu"
-			"Fri"
-			"Sat"
-		]
-		firstDay: 1
-		dateFormat: "dd/mm/yy"
+
+	#found page datepicker
+	$('#found input.date').pickmeup
+	  position: 'right'
+	  mode: 'range'
+	  position: 'bottom'
+	  format: 'm.d.Y'
+	  class_name: 'input_calendar'
+	  fill: ->
+	    $('.pmu-instance').prepend '<div class="triangle"></div>'
+	    $('.pmu-month').text $('.pmu-month').text().replace(',', '')
+	    $('.pmu-instance').append '<div id="choose_clear"><span class="choose">Choose all</span> / <span class="clear">Clear all</span></div>'
+	    return
+	  prev: '<img src="/assets/common/forms/prev_calendar_arrow.png">'
+	  next: '<img src="/assets/common/forms/next_calendar_arrow.png">'
+	  select_year: false
+	  select_month: false
+
+	$('.pickmeup.input_calendar').on 'click', '#choose_clear .clear', ->
+	  $('#found input.date').pickmeup 'clear'
+	  return
+
+
 
 	#for checkbox subcategories to slide down
 	$(".checkbox_label.sub").on eventName, ->
