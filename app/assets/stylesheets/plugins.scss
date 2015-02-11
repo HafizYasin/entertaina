@@ -166,7 +166,7 @@ span:focus{ outline: none; }
 	font-size: 12px;
 	.pmu-instance{
 		position: relative;
-		left: 40px;
+		left: 70px;
 		top: 10px;
 		background-color: rgba(26, 43, 63, 0.93);
 		z-index: 100;
@@ -196,8 +196,8 @@ span:focus{ outline: none; }
 		left: 50%;
 	}
 	.pmu-month{
-		@extend .animation;
 		font-size: 14px;
+		color: white;
 		&:hover{ color: white; }
 	}
 	.pmu-day-of-week{
@@ -234,53 +234,61 @@ span:focus{ outline: none; }
 
 
 //_______________________jquery_ui_datepicker
-.ui-datepicker{ padding: 0; width: 220px; background: none; border: none; }
-#ui-datepicker-div{ padding: 7px 0 0; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.2); z-index: 9 !important; }
-.ui-datepicker-calendar{ border-spacing: 0px; margin-bottom: 0 !important; border-bottom: 1px solid #ebedef; }
-.ui-datepicker-calendar td{ padding: 0; border-top: 1px solid #ebedef; border-left: 1px solid #ebedef; background: #f7f9fa; width: 30px; height: 30px; font: 12px FuturaPTDemi; }
-.ui-datepicker-calendar tr td:last-child{ border-right: 1px solid #ebedef; }
-.ui-datepicker-calendar td a.ui-state-default{ text-align: center; padding: 0; color: $grey; background: none; border:none; font-weight: 400; }
-.ui-datepicker-calendar td:hover{ background: #2cb5bd; }
-.ui-datepicker-calendar td:hover a{ color: #fff; }
-.ui-datepicker-calendar th {
-	padding: 0;
-	height: 20px;
-	color: #9da3a8;
-	font: 10px FuturaPTMedium;
-}
-.ui-datepicker-current-day{ background: $blue !important; }
-.ui-datepicker-current-day a{ color: white !important; }
-.ui-datepicker .ui-datepicker-header{ padding: 0 0 7px; height: 24px; background: none; border: none; }
-.ui-datepicker .ui-datepicker-title{ color: $grey; font: 14px/24px FuturaPTDemi; }
-.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
-	width: 9px;
-	height: 20px;
-	top: 4px;
-	cursor: pointer;
-	background: url(/assets/calendar_arrows.png) 0 0 no-repeat;
-}
-.ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover{ border: none; }
-.ui-datepicker .ui-datepicker-prev{ background-position: 0 0; left: 30px; }
-.ui-datepicker .ui-datepicker-next{ background-position: -9px 0; right: 30px; }
-
-
-
-.calendar, .ui-datepicker{
-	border-radius: 5px;
-	margin-bottom: 18px;
-	padding: 15px 0 0;
-	box-shadow: 0 1px 2px rgba(0,0,0,.03);
+.datepicker{
+	padding-top: 15px;
+	.ui-datepicker{
+		padding: 0; width: 220px; background: none; border: none; 
+		border-radius: 5px;
+		box-shadow: 0 1px 2px rgba(0,0,0,.03);
+	}
+	#ui-datepicker-div{ padding: 7px 0 0; background: white; box-shadow: 0 1px 5px rgba(0,0,0,.2); z-index: 9 !important; }
+	.ui-datepicker-calendar{ 
+		border-spacing: 0px; margin-bottom: 0 !important; border-bottom: 1px solid #ebedef;
+		td{ padding: 0; border-top: 1px solid #ebedef; border-left: 1px solid #ebedef; background: #f7f9fa; width: 30px; height: 30px; font: 12px FuturaPTDemi; }
+		tr td:last-child{ border-right: 1px solid #ebedef; }
+		td a.ui-state-default{ text-align: center; padding: 0; color: $grey; background: none; border:none; font-weight: 400; }
+		td:hover{ background: #2cb5bd; }
+		td:hover a{ color: white; }
+		th {
+			padding: 0;
+			height: 20px;
+			color: $grey;
+			font: 11px FuturaPTMedium;
+		}
+	}
+	.ui-datepicker-header{ padding: 0 0 7px; height: 24px; background: none; border: none; }
+	.ui-datepicker-title{ color: $grey; font: 14px/24px FuturaPTDemi; }
+	.ui-datepicker-prev, .ui-datepicker-next{
+		width: 9px;
+		height: 20px;
+		top: 4px;
+		cursor: pointer;
+		background: url(/assets/calendar_arrows.png) 0 0 no-repeat;
+	}
+	.ui-datepicker-prev:hover, .ui-datepicker-next:hover{ border: none; }
+	.ui-datepicker-prev{ background-position: 0 0; left: 30px; }
+	.ui-datepicker-next{ background-position: -9px 0; right: 30px; }
 	.selected{ 
-		background: $blue;
+		background: $blue !important;
 		a{ color: white !important;}
+		border-left-color: $blue !important;
 	}
 	.block_title{ padding: 0 15px; }
+	.ui-datepicker-other-month{
+		color: $light;
+		span{ text-align: center; }
+	}
+}
+.calendar{
+	border-radius: 5px;
 	.info{ text-align: center; padding:10px 0; color: $grey; font: 12px/18px FuturaPTBook; }
 	.info > div{ display: inline-block; margin: 0 12px; }
 	.info img{ vertical-align: middle; margin-right: 7px; }
 }
-
-
+.datepicker.readonly{
+	td:hover span, td:hover a{ color: $grey; }
+	td:hover{ background: #f7f9fa; }
+}
 
 
 

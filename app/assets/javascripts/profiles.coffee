@@ -262,5 +262,16 @@ $ ->
 
 
 
+	#availability datepicker
+	$("#settings .datepicker").datepicker
+		beforeShowDay: (d) ->
+			a = new Date(2015, 2 - 1, 17)
+			b = new Date(2015, 2 - 1, 16)
+			[
+				true
+				(if a.getTime() is d.getTime() or b.getTime() is d.getTime() then "selected" else "")
+			]
+		showOtherMonths: true
+
 
 	

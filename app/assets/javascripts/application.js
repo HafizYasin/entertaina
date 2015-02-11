@@ -21,11 +21,6 @@ var eventName = (isIPod() || isIPad() || isIPhone()) ? "touchstart" : "click";
 window.onload=function(){
 $(function(){
 
-	$.datepicker.setDefaults({
-		dayNamesMin: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
-		firstDay: 1,
-		dateFormat: "mm/dd/yy"
-	});
 
 
 	//_________________________modals
