@@ -25,6 +25,11 @@
 	<!-- structure class lets you structure page with aside and #main_container -->
 	<div class="w940px structure">	
 
+		<section class="send_add not_displayed responsive">
+			<a href="#enquiry_form" class="flat_button send fancy"><i class="fa fa-paper-plane"></i> send enquiry</a>
+			<a href="#" class="flat_button add"><i class="fa fa-heart"></i> add to favorite</a>
+		</section>
+
 		<div id="main_container">
 			<div class="tabs">
 				<ul class="nav">
@@ -167,15 +172,13 @@
 				</div>
 				<% end %>
 				
-				
-				<div class="loading-spinner text_center"><img src="/assets/common/ajax-loader.gif"></div>
 			</div>
 		</div>
 
 
 		<aside>
 			<!-- in blog aside sections were named by classes. I don't know what makes more sense. -->
-			<section id="send_add">
+			<section class="send_add">
 				<a href="#enquiry_form" class="flat_button send fancy"><i class="fa fa-paper-plane"></i> send enquiry</a>
 				<a href="#" class="flat_button add"><i class="fa fa-heart"></i> add to favorite</a>
 			</section>

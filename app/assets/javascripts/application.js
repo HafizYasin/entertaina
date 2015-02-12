@@ -26,6 +26,26 @@ $(function(){
 	//_________________________modals
 	$('.fancy').fancybox();
 	// $('.fancy_img').fancybox({ fitToView: false, autoResize: false, autoSize: true, padding: 30 });
+	$('.tabs').tabs({
+		show: true,
+		hide: true, //I cant move it to coffee somehow and I cant disable vibration effect (false doesnt work)
+		active: 0
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	$('.burger').fancybox({
 		afterLoad: function(){ 
@@ -49,7 +69,6 @@ $(function(){
 
 
 	img_to_svg();
-
 
 
 
@@ -97,7 +116,6 @@ $(function(){
 			$('#hint .decimal').text( '.' + rounded_decimal );
 		};
 	});
-
 
 
 

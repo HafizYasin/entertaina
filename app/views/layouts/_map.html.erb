@@ -4,15 +4,17 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false&language=en"></script>
 
 <script type="text/javascript">
-$(document).ready(function () {
 
+var map_init = false;
+$( ".tabs" ).on( "tabsactivate", function( event, ui ) {  
+	
+	if (ui.newPanel[0].id === 'contact' && !map_init){
+		init();
+	};
 
-// When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', init);
-
+} );
 
 function init() {
-	// Basic options for a simple Google Map
 	// For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
 	var mapOptions = {
 		// How zoomed in you want the map to start at (always required)
@@ -21,23 +23,21 @@ function init() {
 		// The latitude and longitude to center the map (always required)
 		center: new google.maps.LatLng(40.6700, -73.9400), // New York
 
-		// How you would like to style the map. 
-		// This is where you would paste any style found on Snazzy Maps.
 		styles: [
 
-		{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":80}]},
-		{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":50}]},
-		{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},
-		{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":80}]},{"featureType":"administrative.province","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":50}]},
-					 
-		{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#e3e3e3"}]},                    
-		{"featureType":"landscape.natural","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
+			{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":80}]},
+			{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":50}]},
+			{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+			{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":80}]},{"featureType":"administrative.province","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":50}]},
+						 
+			{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#e3e3e3"}]},                    
+			{"featureType":"landscape.natural","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
 
-		{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#cccccc"},{"lightness":1}]},
-		{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#cccccc"},{"lightness":16},{"weight":0.2}]},
-		{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#cccccc"},{"lightness":2}]},
-		{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#cccccc"},{"lightness":0}]},
-		{"featureType":"transit","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"transit.line","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"transit.station.airport","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"transit.station.airport","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#FFFFFF"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]}]
+			{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#cccccc"},{"lightness":1}]},
+			{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#cccccc"},{"lightness":16},{"weight":0.2}]},
+			{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#cccccc"},{"lightness":2}]},
+			{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#cccccc"},{"lightness":0}]},
+			{"featureType":"transit","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"transit.line","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"transit.station.airport","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"transit.station.airport","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#FFFFFF"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]}]
 	};
 
 	// Get the HTML DOM element that will contain your map 
@@ -48,21 +48,15 @@ function init() {
 	var map = new google.maps.Map(mapElement, mapOptions);
 	// map.checkResize();
 
-		// var marker = new google.maps.Marker({
-  //     position: map.getCenter(),
-  //     icon: 'http://imageshack.us/a/img826/9489/x1my.png',
-  //     map: map
+  // Let's also add a marker while we're at it
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(40.6700, -73.9400),
+      map: map,
+      icon: '/assets/common/map_pointer.png'
+  });
   //   });
-}
+	map_init = true;
+};
 
-
-google.maps.event.addListener(map, 'bounds_changed', function() {
-  console.log(map.getBounds());
-  google.maps.event.trigger(map, "resize");
-});
-
-
-
-})
 </script>
 

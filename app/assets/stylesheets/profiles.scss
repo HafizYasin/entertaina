@@ -14,6 +14,7 @@
 			li{
 				display: inline-block;
 				list-style: none;
+				&:focus{ outline: none; }
 			}
 			a{
 				padding-bottom: 13px;
@@ -21,10 +22,11 @@
 				margin-right: 29px;
 				&:focus{ outline: none; }
 			}
-			a.active{
+			.ui-state-active a{
 				color: $blue;
 				border-bottom: 2px solid $blue;
 				margin-bottom: -2px;
+				&:hover{ cursor: pointer; }
 			}
 		}
 	}
@@ -70,15 +72,6 @@
 			line-height: 0;
 			margin-bottom: 40px; 
 			.text_line{ margin-bottom: 31px; }
-		}
-
-		#send_add{
-			i{ padding-right: 5px; }
-			a{ margin-bottom: 10px; }
-			.add{
-				background: $light_light;
-				color: #26afb7;
-			}
 		}
 
 		#photos{
@@ -165,6 +158,7 @@
 
 	#main_container{
 		float: left;
+		
 		.tabs{
 			.middle_heading{
 				margin-top: 20px;
@@ -181,32 +175,44 @@
 			#technical ul, #prices ul{ margin-top: 15px; }
 
 			#contact{
+				font-size: 0px;
 				margin-top: 25px;
 				#map{
-					width: 315px;
+					display: inline-block;
+					width: 50%;
 					height: 315px;
 					border-radius: 5px;
 				}
-				ul{ 
-					
-					font-family: FuturaPTDemi;
-					span{ display: inline-block; }
-					li{
-						list-style: none;
-						margin-bottom: 7px
+				.touch{
+					display: inline-block;
+					width: 50%;
+					box-sizing: border-box;
+					padding-left: 20px;
+					font-size: 14px;
+					ul{ 
+						font-family: FuturaPTDemi;
+						padding-left: 20px;
+						padding-top: 10px;
+						padding-bottom: 20px;
+						span{ display: inline-block; }
+						li{
+							list-style: none;
+							margin-bottom: 7px
+						}
+						.icon{ width: 20px; }
+						.icon img{ width: 13px; height: 14px; }
 					}
-					.icon{ width: 20px; }
-					.icon img{ width: 13px; height: 14px; }
-				}
-				.social{
-					
-					img{
-						width: 27px;
-						height: 27px;
-						margin-right: 4px;
+					.social{
+						padding-left: 20px;
+						img{
+							width: 27px;
+							height: 27px;
+							margin-right: 4px;
+						}
 					}
 
 				}
+				
 
 			}
 		}
@@ -252,6 +258,15 @@
 				.text{ color: $grey; font: 15px/22px FuturaPTBook; padding-bottom: 10px; }
 				.vote a{ margin: 0 5px; }
 			}
+		}
+	}
+
+	.send_add{
+		i{ padding-right: 5px; }
+		a{ margin-bottom: 10px; }
+		.add{
+			background: $light_light;
+			color: #26afb7;
 		}
 	}
 }
@@ -748,8 +763,56 @@
 
 #profile{
 	@media (max-width: 860px){
+		#profile_info{
+			margin-bottom: 50px;
+			.logo{ display: block; margin-bottom: 21px; }
+			.name{ padding-left: 0; }
+		}
 		#main_container{
 			float: none; margin-right: 0; padding-right: 0;
+		}
+		aside{
+			float: none; 
+			width: 100%;
+			font-size: 0;
+			section{
+				font-size: 14px;
+				display: inline-block;
+				box-sizing: border-box;
+				width: 50%;
+				vertical-align: top;
+				&:nth-of-type(2n+1){ padding-left: 20px; }
+				&:nth-of-type(2n){ padding-right: 20px; }
+				&>*{ width: 255px; display: block; margin: 0 auto; }
+			}
+		}
+		aside .send_add{ display: none; }
+		.send_add.responsive{
+			display: block; 
+			margin: 0 auto;
+			margin-bottom: 30px;
+			max-width: 400px;
+		}
+	}
+	@media (max-width: 650px){
+		#main_container .tabs #contact{
+			#map{ width: 100%; }
+			.touch{ 
+				padding-left: 0; display: block; max-width: 300px; margin: 0 auto; width: auto; 
+				ul{ padding-left: 0; }
+				.social{ padding-left: 0; }
+			}
+		}
+	}
+	@media (max-width: 600px){
+		aside{
+			section{ width: 100%; padding-right: 0 !important; padding-left: 0 !important; }
+		}
+	}
+	@media (max-width: 500px){
+		#main_container .reviews .review .rating{ 
+			float: none; 
+			span{ margin-left: 0; }
 		}
 	}
 }
