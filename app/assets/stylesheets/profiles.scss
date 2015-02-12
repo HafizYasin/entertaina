@@ -185,18 +185,10 @@
 				#map{
 					width: 315px;
 					height: 315px;
-					float: left;
-					margin-right: 20px;
-					img{
-						border-radius: 5px;
-
-					}
+					border-radius: 5px;
 				}
 				ul{ 
-					padding-left: 20px; 
-					margin-top: 15px;
-					margin-bottom: 10px;
-					float: left; 
+					
 					font-family: FuturaPTDemi;
 					span{ display: inline-block; }
 					li{
@@ -207,7 +199,7 @@
 					.icon img{ width: 13px; height: 14px; }
 				}
 				.social{
-					float: left;
+					
 					img{
 						width: 27px;
 						height: 27px;
@@ -749,8 +741,26 @@
 			margin-right: 0;
 		}
 	}
-
 }
+
+
+//______________responsive designs
+
+#profile{
+	@media (max-width: 860px){
+		#main_container{
+			float: none; margin-right: 0; padding-right: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
 
 
 

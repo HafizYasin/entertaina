@@ -28,11 +28,12 @@
 		.subscribing{
 			color: white;
 			background-image: url('/assets/blog/follow_violin.png');
+			background-size: cover;
 			width: 100%;
 			position: relative;
 			border-radius: 5px;
 			min-height: 180px;
-			.gradient{ border-radius: 5px; min-height: 180px; }
+			.gradient{ border-radius: 5px; min-height: 180px; height: 100%; }
 			.transparent_text_line{ padding-top: 20px; }
 			.text{ padding: 0 20px; }
 			form{ width: 174px; margin: 20px auto;}
@@ -119,7 +120,7 @@
 
 //_________________________responsive
 #blog{
-	@media (max-width: 800px){
+	@media (max-width: 985px){
 		#main_container{
 			float: none;
 			padding-right: 0;
@@ -129,9 +130,33 @@
 		}
 		aside{
 			float: none;
-			// width: auto;
-			margin: 0 auto;
+			width: 100%;
+			font-size: 0px;
+			section{
+				font-size: 14px;
+				width: 50%;
+				display: inline-block;
+				box-sizing: border-box;
+				vertical-align: top;
+				margin-bottom: 60px;
+			}
+			.entertaina_blog, .pinterest{ padding-right: 20px; }
+			.follow, .twitter{ padding-left: 20px; }
+			.ads{ margin-right: auto; margin-left: auto; display: block; width: 300px; }
+			section.subscribing{ width: 100%; padding-right: 0; text-align: center; }
+			.follow{
+				text-align: center;
+				.inline-block{ display: inline-block; }
+			}
+			.pinterest{
+				text-align: center;
+				.inline-block{ display: inline-block; }
+			}
 		}
+	} 
+
+	@media (max-width: 620px){
+		aside section{ width: 100%; }
 	}
 }
 
