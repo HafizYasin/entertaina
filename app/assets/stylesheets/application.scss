@@ -448,7 +448,6 @@
 }
 
 
-.loading-spinner{ margin-top: 40px; margin-bottom: 70px; }
 
 .back{
 	font-size: 13px;
@@ -459,7 +458,27 @@
 }
 
 
-
+.page_pagination{ 
+	padding: 20px 0 38px; 
+	text-align: center;
+	a{
+		display: block;
+		margin-right: 8px;
+		text-align: center;
+		width: 32px;
+		height: 32px;
+		color: $grey;
+		font: 14px/32px FuturaPTDemi;
+		float: left;
+	}
+	a.active{ 
+		color: $blue; 
+		font-size: 17px; 
+		position: relative; 
+		bottom: 2px; 
+	}
+	i{ font-weight: 700; }
+}
 
 
 
