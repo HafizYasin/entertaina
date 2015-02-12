@@ -821,9 +821,25 @@
 
 
 
+.modal.gallery {
+	@media (max-width: 1290px){ 
+		width: 900px; .lSSlideWrapper img{ max-width: 900px !important; } 
+	}
+	@media (max-width: 1000px){ 
+		width: 600px; .lSSlideWrapper img{ max-width: 600px !important; } 
+	}
+	@media (max-width: 700px){ 
+		width: 300px; .lSSlideWrapper img{ max-width: 300px !important; } 
+	}
+}
 
-
-
+// .fancybox-wrap{
+// 	width: auto !important;
+// 	.fancybox-inner{
+// 		width: auto !important;
+// 		height: auto !important;
+// 	}
+// }
 
 
 
