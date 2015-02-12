@@ -1,62 +1,8 @@
 <% provide(:title, 'Search') %>
 
-<div class="w940px" id="found" >	
-	<div id="main_container">
+<div class="w940px" id="found">
 
-		<% 2.times do %>
-		<div class="entertainer paid_place">
-			<div class="image">
-				<a class="favorites_link" href="/profiles/1"><img src="/assets/common/binocle.png"> View profile</a>
-				<img class="img" src="/assets/list_item_thumb.jpg">
-				<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
-			</div>
-			
-			<div class="info">
-				<div class="like_play">
-					<a class="like"><i class="fa fa-heart"></i></a>
-					<% if [true, false][rand(2)] %>
-					<a class="play gradient"><i class="fa fa-caret-right"></i></a>
-					<% end %>
-				</div>
-				<div class="name"><a href="/profiles/1">Blue Jewel Ceilidh Band</a></div>
-				<span class="price">From £900</span> <span class="reviews"><%= rand(10000) %> reviews</span>
-				<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
-			</div>
-		</div>
-		<% end %>
-
-		<% 8.times do %>
-		<div class="entertainer">
-			<div class="image">
-				<a class="favorites_link" href="/profiles/1"><img src="/assets/common/binocle.png"> View profile</a>
-				<img class="img" src="/assets/list_item_thumb.jpg">
-				<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
-			</div>
-			
-			<div class="info">
-				<div class="like_play">
-					<a class="like"><i class="fa fa-heart"></i></a>
-					<% if [true, false][rand(2)] %>
-					<a class="play gradient"><i class="fa fa-caret-right"></i></a>
-					<% end %>
-				</div>
-				<div class="name"><a href="/profiles/1">Blue Jewel Ceilidh Band</a></div>
-				<span class="price">From £900</span> <span class="reviews"><%= rand(10000) %> reviews</span>
-				<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
-			</div>
-		</div>
-		<% end %>		
-		<div class="clear"></div>
-		
-		<div class="page_pagination">
-			<a href="/"><i class="fa fa-angle-left"></i></a>
-			<a class="active">1</a>
-			<a href="/">2</a>
-			<a href="/">3</a>
-			<a href="/"><i class="fa fa-angle-right"></i></a>
-			<div class="clear"></div>
-		</div>
-	</div>
+	<a href="/favorites" id="favorites_relative" class="flat_button"><i class="fa fa-heart"></i>favorites</a>
 
 	<aside>
 		<div class="filter">
@@ -85,7 +31,7 @@
 
 	
 					<div class="title">Date</div>
-					<div class="line"><input readonly="readonly" class="input date" type="date" name="date" value="Any date"></div>
+					<div class="line"><input class="input date" type="text" name="date" value="Any date"></div>
 					
 					<div class="title">Price Range</div>
 					<div class="line price">
@@ -146,11 +92,71 @@
 		</div>
 	</aside>
 
+	<div class="flat_button" id="show_filters"><img src="/assets/common/filters.png"><span>show filters</span></div>
+
+	<div id="main_container">
+
+		<% 2.times do %>
+		<div class="entertainer paid_place">
+			<div class="image">
+				<a class="favorites_link" href="/profiles/1"><img src="/assets/common/binocle.png"> View profile</a>
+				<img class="img" src="/assets/list_item_thumb.jpg">
+				<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
+			</div>
+			
+			<div class="info">
+				<div class="like_play">
+					<a class="like"><i class="fa fa-heart"></i></a>
+					<% if [true, false][rand(2)] %>
+					<a class="play gradient"><i class="fa fa-caret-right"></i></a>
+					<% end %>
+				</div>
+				<div class="name"><a href="/profiles/1">Blue Jewel Ceilidh Band</a></div>
+				<span class="price">From £900</span> <span class="reviews"><%= rand(10000) %> reviews</span>
+				<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
+			</div>
+		</div>
+		<% end %>
+
+		<% 8.times do %>
+		<div class="entertainer">
+			<div class="image">
+				<a class="favorites_link" href="/profiles/1"><img src="/assets/common/binocle.png"> View profile</a>
+				<img class="img" src="/assets/list_item_thumb.jpg">
+				<div class="location"><img src="/assets/location_icon.png">Birmingham</div>
+			</div>
+			
+			<div class="info">
+				<div class="like_play">
+					<a class="like"><i class="fa fa-heart"></i></a>
+					<% if [true, false][rand(2)] %>
+					<a class="play gradient"><i class="fa fa-caret-right"></i></a>
+					<% end %>
+				</div>
+				<div class="name"><a href="/profiles/1">Blue Jewel Ceilidh Band</a></div>
+				<span class="price">From £900</span> <span class="reviews"><%= rand(10000) %> reviews</span>
+				<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
+			</div>
+		</div>
+		<% end %>		
+		<div class="clear"></div>
+		
+		<div class="page_pagination">
+			<div class="inline-block">
+				<a href="/"><i class="fa fa-angle-left"></i></a>
+				<a class="active">1</a>
+				<a href="/">2</a>
+				<a href="/">3</a>
+				<a href="/"><i class="fa fa-angle-right"></i></a>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+
 	<div class="clear"></div>
 
-	<a href="/favorites" id="favorites" class="uppercase">
-		Favorites <i class="fa fa-heart fa-rotate-90"></i>
-	</a>
+	<a href="/favorites" id="favorites_fixed" class="uppercase"> favorites <i class="fa fa-heart fa-rotate-90"></i></a>
+
 </div>
 
 

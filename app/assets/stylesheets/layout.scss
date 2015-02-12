@@ -380,10 +380,11 @@ footer.big{
 	background-image: url('/assets/index/footer/bg.jpg');
 	background-position: 50% 0px;
 	background-repeat: no-repeat;
-		background-size: cover;
-		box-sizing: border-box;
+	background-size: cover;
+	box-sizing: border-box;
 	position: relative;
 	padding: 0;
+	footer{ background: none; } //for index page
 	.gradient{
 		padding: 20px 0;
 		width: 100%;
@@ -495,6 +496,7 @@ footer.big{
 //_____________________________________responsive design
 header{
 	@media (max-width: 600px){
+		margin-bottom: 45px;
 		padding: 15px 0;
 		.logo{ 
 			margin-top: 3px; 

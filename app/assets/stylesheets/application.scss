@@ -110,9 +110,7 @@
 
 .entertainer{
 	width: 300px; 
-	box-shadow: 0 1px 2px rgba(0,0,0,.03);
 	display: inline-block;
-
 	.image{ position: relative; }
 	.image .img{ display: block; border-radius:4px 4px 0 0; width: 100%; }
 	.location{
@@ -147,7 +145,12 @@
 	}
 	.favorites_link img{ vertical-align: middle; margin-right: 3px; margin-top: -1px; position: relative; bottom: 1px;  }
 	.favorites_link:hover{ opacity: 1; font-size: 16px; }
-	.info{ padding: 10px 20px 20px; background: white; border-radius: 0 0 5px 5px; }
+	.info{ 
+		padding: 10px 20px 20px; background: white; border-radius: 0 0 5px 5px; 
+		border-bottom: 2px #ebedef solid;
+		border-left: 2px #ebedef solid;
+		border-right: 2px #ebedef solid;
+	}
 	.name{ font: 18px FuturaPTDemi; }
 
 	.price{ color: $blue; font: 12px/20px FuturaPTDemi; margin-right: 10px; text-transform: uppercase; }

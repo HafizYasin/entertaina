@@ -3,20 +3,6 @@ $ ->
 	#it makes some of the dates preselected in a datepicker (for sessions eg, 
 	#or for marking which dates are available)
 
-	$("#profile .datepicker").datepicker
-		beforeShowDay: (d) ->
-			a = new Date(2015, 2 - 1, 17)
-			b = new Date(2015, 2 - 1, 16)
-			[
-				true
-				(if a.getTime() is d.getTime() or b.getTime() is d.getTime() then "selected" else "")
-			]
-		beforeShow: (i) ->  
-			return false #makes it readonly
-		showOtherMonths: true
-
-		
-
 
 	#found page datepicker
 	$('#found input.date').pickmeup
@@ -112,5 +98,11 @@ $ ->
 
 
 
-
-
+	#adaptive search filter toggle
+	$('#found #show_filters').on 'click', ->
+		$('aside').slideToggle()
+		if $(this).text() == 'hide filters'
+			$(this).find('span').text 'show filters'
+		else
+			$(this).find('span').text 'hide filters'
+		return
