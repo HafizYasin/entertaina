@@ -697,24 +697,22 @@
 .fancybox-skin.transparent{
 	background: rgba(255, 255, 255, 0);
 	box-shadow: none;
+	.fancybox-inner{ overflow: hidden !important; }
 	.lSPrev{
 		background: url("/assets/common/slider_arrow_left_white.png") no-repeat;
 	}
 	.lSNext{ 
 		background: url("/assets/common/slider_arrow_right_white.png") no-repeat;
 	}
-	.lSPrev, .lSNext{ padding: 200px  0px; }
+	.lSPrev, .lSNext{ padding: 200px 0px; width: 20px; }
 
 	.lSPager{
-		// max-width: 940px !important;
-		margin: 0 auto;
 		.active img{
 			border: $grey 2px solid;
 			box-sizing: border-box;
 		}
 		li{
 			@extend .animation;
-			width: 100px !important;
 			border-radius: 3px;
 			opacity: 1;
 		}
@@ -823,23 +821,23 @@
 
 .modal.gallery {
 	@media (max-width: 1290px){ 
-		width: 900px; .lSSlideWrapper img{ max-width: 900px !important; } 
+		width: 1000px; .lSSlideWrapper img{ max-width: 1000px !important; } 
 	}
-	@media (max-width: 1000px){ 
-		width: 600px; .lSSlideWrapper img{ max-width: 600px !important; } 
+	@media (max-width: 1100px){ 
+		width: 700px; .lSSlideWrapper img{ max-width: 700px !important; } 
 	}
-	@media (max-width: 700px){ 
+	@media (max-width: 800px){ 
+		width: 400px; .lSSlideWrapper img{ max-width: 400px !important; } 
+	}
+	@media (max-width: 500px){ 
 		width: 300px; .lSSlideWrapper img{ max-width: 300px !important; } 
+	}
+	@media (max-width: 400px){ 
+		width: 200px; .lSSlideWrapper img{ max-width: 200px !important; } 
 	}
 }
 
-// .fancybox-wrap{
-// 	width: auto !important;
-// 	.fancybox-inner{
-// 		width: auto !important;
-// 		height: auto !important;
-// 	}
-// }
+
 
 
 

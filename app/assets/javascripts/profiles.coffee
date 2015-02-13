@@ -41,10 +41,12 @@ $ ->
 				adaptiveHeight: false
 				galleryMargin: 40
 				thumbMargin: 20
+				thumbItem: 12
+				autowidth: true
 				responsive : [
-					{ breakpoint: 1290, settings: { thumbItem: 8 } },
-					{ breakpoint: 1000, settings: { thumbItem: 5 } },
-					{ breakpoint: 700, settings: { thumbItem: 3 } },
+					{ breakpoint: 1290, settings: { thumbItem: 8, adaptiveHeight: true } },
+					{ breakpoint: 1100, settings: { thumbItem: 5, adaptiveHeight: true } },
+					{ breakpoint: 500, settings: { thumbItem: 3, adaptiveHeight: true } },
 				]
 		return #photos in modal in profile
 

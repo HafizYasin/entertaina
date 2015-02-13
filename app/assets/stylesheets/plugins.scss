@@ -149,6 +149,7 @@ span:focus{ outline: none; }
 		width: 20px;
 		path{ fill: white; }
 	}
+	.lSPrev, .lSNext{ @extend .animation; opacity: 1; }
 }
 
 
