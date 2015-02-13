@@ -51,7 +51,8 @@ header{
 		}
 	}
 	.sign_up_link{
-		display: block;
+		display: inline-block;
+		float: none;
 		font: 12px/31px FuturaPTHeavy;
 		margin-left: 25px;
 		margin-top: 3px;
