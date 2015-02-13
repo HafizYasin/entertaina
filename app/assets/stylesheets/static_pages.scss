@@ -7,8 +7,6 @@
 	}
 }
 
-
-
 #about{
 	margin-top: 380px;
 	#map{
@@ -150,6 +148,10 @@
 }
 
 
-
+#about{
+	@media (max-width: 665px){
+		.input{ width: 100%; float: none; box-sizing: border-box; }
+	}
+}
 
 
