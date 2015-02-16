@@ -42,7 +42,8 @@
 .black_gradient{ background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.35) 100%); }
 
 .darken{
-	background: rgba(136, 136, 136, 0.27);
+	background: rgba(26, 43, 63, 0.4);
+	border-radius: 4px;
 	width: 100%;
 	height: 100%;
 }
@@ -68,11 +69,12 @@
 }
 
 .ads{ 
-	background: #f7f8f9; border-radius: 3px;
+	background: #f7f8f9; border-radius: 4px;
 	a{ height: 275px; width: 260px; display: table-cell; padding: 0 70px; vertical-align: middle; }
 	.logo img{ display: inline-block; margin-bottom: 30px; width: 120px; }
 	.desc{ color: #b0b8c3; font: 20px FuturaPTDemi; text-transform: uppercase; }
 	.details{ display: inline-block; margin-top: 30px; font-size: 12px; }
+	i{ font-weight: 700; margin-left: 5px;}
 }
 
 #audios{
@@ -93,7 +95,7 @@
 			max-width: 188px;
 		}
 		.time{
-			color: #5acdd0;
+			color: $blue;
 			float: right;
 		}
 		i.fa-times{
@@ -141,12 +143,12 @@
 		background: $green_blue;
 		z-index: 9;
 		opacity: 0;
-		border-radius: 5px 5px 0 0;
+		border-radius: 4px 4px 0 0;
 	}
 	.favorites_link img{ vertical-align: middle; margin-right: 3px; margin-top: -1px; position: relative; bottom: 1px;  }
 	.favorites_link:hover{ opacity: 1; font-size: 16px; }
 	.info{ 
-		padding: 10px 20px 20px; background: white; border-radius: 0 0 5px 5px; 
+		padding: 10px 20px 20px; background: white; border-radius: 0 0 4px 4px; 
 		border-bottom: 2px #ebedef solid;
 		border-left: 2px #ebedef solid;
 		border-right: 2px #ebedef solid;
@@ -229,7 +231,7 @@
 	color: #fff;
 	font: 13px/48px FuturaPTHeavy;
 	height: 48px;
-	border-radius: 5px;
+	border-radius: 4px;
 	text-decoration: none;
 	text-transform: uppercase;
 	background: $green_blue;
@@ -289,7 +291,7 @@
 	.name .logo_link:hover{ opacity: 1; }
 	.input{
 		border: 1px solid #d7dce0;
-		border-radius: 6px;
+		border-radius: 4px;
 		width: 268px;
 		height: 42px;
 		padding: 0 15px;
@@ -300,7 +302,7 @@
 	}
 	textarea{
 		border: 1px solid #d7dce0;
-		border-radius: 6px;
+		border-radius: 4px;
 		width: 100%;
 		height: 118px;
 		padding: 5px 15px;
@@ -312,8 +314,8 @@
 		&::placeholder { color: $grey; }
 	}
 	.input.required{ background: url(/assets/common/forms/required_icon.png) 97% 8px no-repeat; }
-	.input.success{ border-color: $blue; color: $blue; font-family: FuturaPTMedium; background: url(/assets/common/forms/input_success_icon.png) 97% 8px no-repeat; }
-	.input.error{ color: #f28e8e; border-color: #f28e8e; font-family: FuturaPTMedium; background: url(/assets/common/forms/input_error_icon.png) 97% 8px no-repeat; }
+	.input.success{ border-color: $blue; color: $blue; font-family: FuturaPTDemi; background: url(/assets/common/forms/input_success_icon.png) 97% 8px no-repeat; }
+	.input.error{ color: #f28e8e; border-color: #f28e8e; font-family: FuturaPTDemi; background: url(/assets/common/forms/input_error_icon.png) 97% 8px no-repeat; }
 	.input.mini{ width: 113px; }
 	input[type=checkbox]{ display: none; }
 	.checkbox_label{
@@ -330,7 +332,7 @@
 	input[type=checkbox]:checked + .checkbox_label{ background: url(/assets/common/forms/checkbox_icon_h.png) 0 0 no-repeat; }
 	.submit_btn{
 		@extend .animation;
-		border-radius: 6px;
+		border-radius: 4px;
 		height: 44px;
 		color: #fff;
 		width: 100%;
@@ -350,7 +352,7 @@
 	p, ul{ margin-bottom: 25px; }
 	h1{ font: 30px FuturaPTDemi; margin-bottom: 5px; }
 	h2{ font: 20px/28px FuturaPTDemi; margin-bottom: 25px; }
-	.text blockquote{ color: $blue; font: 24px/32px FuturaPTBookOblique; padding-left: 17px; border-left: 1px solid $blue; margin-bottom: 25px; }
+	.text blockquote{ color: $blue; font: 24px/32px FuturaPTBook; padding-left: 17px; border-left: 1px solid $blue; margin-bottom: 25px; }
 	ul li{ margin-left: 55px; margin-bottom: 15px; }
 }
 
@@ -385,21 +387,21 @@
 		background: #f5f6f7;
 		border: 1px solid #d7dce0;
 		box-sizing: border-box;
-		border-radius: 5px 5px 0 0;
+		border-radius: 4px 4px 0 0;
 		border-bottom: none;
 		a{
 			display: inline-block;
 			padding-left: 11px;
 			padding-right: 11px;
 			border: 1px solid #d7dce0;
-			border-radius: 5px;
+			border-radius: 4px;
 			color: #b0b9c3;
 			cursor: pointer;
 		}
 	}
 	section{
 		border: 1px solid #d7dce0;
-		border-radius: 0 0 5px 5px;
+		border-radius: 0 0 4px 4px;
 		padding: 0 15px;
 		&:focus{
 			outline: none;

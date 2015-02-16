@@ -1,19 +1,21 @@
 <%= provide :title, 'Profile' %>
 
+<%= render '/layouts/icons' %>
+
 <div id="profile">
 	<section id="profile_info">
 		<div class="black_gradient">
 			<div class="w940px">
 				<div class="info">
 					<div class="logo">
-						<img src="/assets/profile/entertainers/rolling_stones/logo.png">
+						<img src="/assets/profile/avatar.jpg">
 					</div>
 					<div class="name">
 						<h2>The Rolling Stones</h2>
 						<div class="categories">
 							<a href="" class="animation">Bands & Ensembles</a><span class="slash"> / </span>
 							<a href="" class="animation">Manchester</a><span class="slash"> / </span>
-							<a href="" class="animation">From 22000</a>
+							<a href="" class="animation">From £22000</a>
 						</div>
 					</div>
 				</div>
@@ -124,28 +126,28 @@
 						<p>The Rolling Stones would love to hear from you and are happy to play any event. Get in touch today to discuss your event.</p>
 						<ul>
 							<li>
-								<span class="icon"><img src="/assets/profile/design/1.png"></span>
-								Manchester
+								<a href=""><span class="icon"><img src="/assets/profile/design/1.png"></span>
+								Manchester</a>
 							</li>
 							<li>
-								<span class="icon"><img src="/assets/profile/design/2.png"></span>
-								+44 20 3456 7894
+								<a href=""><span class="icon"><img src="/assets/profile/design/2.png"></span>
+								+44 20 3456 7894</a>
 							</li>
 							<li>
-								<span class="icon"><img src="/assets/profile/design/3.png"></span>
-								rollingslones@gmail.com
+								<a href=""><span class="icon"><img src="/assets/profile/design/3.png"></span>
+								rollingslones@gmail.com</a>
 							</li>
 							<li>
-								<span class="icon"><img src="/assets/profile/design/4.png"></span>
-								www.rollingstones.com
+								<a href=""><span class="icon"><img src="/assets/profile/design/4.png"></span>
+								www.rollingstones.com</a>
 							</li>
 						</ul>
 						<div class="social">
-							<a href=""><img src="/assets/common/social_icons/1.png"></a>
-							<a href=""><img src="/assets/common/social_icons/2.png"></a>
-							<a href=""><img src="/assets/common/social_icons/3.png"></a>
-							<a href=""><img src="/assets/common/social_icons/4.png"></a>
-							<a href=""><img src="/assets/common/social_icons/5.png"></a>
+							<a href=""><span><svg viewbox="0 0 32 32"><use xlink:href="#twitter"></svg></span></a>
+							<a href=""><span><svg viewbox="0 0 32 32"><use xlink:href="#facebook"></svg></span></a>
+							<a href=""><span><svg viewbox="0 0 32 32"><use xlink:href="#pinterest"></svg></span></a>
+							<a href=""><span><svg viewbox="0 0 32 32"><use xlink:href="#instagram"></svg></span></a>
+							<a href=""><span><svg viewbox="0 0 32 32"><use xlink:href="#google"></svg></span></a>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -187,15 +189,19 @@
 				<div class="text_line">
 					<span>Photos</span>
 				</div>
-				<a href="#photo_modal" class="gallery">
-					<% 5.times do %><img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg"><% end %>
-					
-					<div class="gradient_out">
+				
+				<div class="gallery">
+					<a href="#photo_modal" class="fancy"><img src="/assets/profile/photo_thumbs/1.jpg"></a>
+					<a href="#photo_modal" class="fancy"><img src="/assets/profile/photo_thumbs/2.jpg"></a>
+					<a href="#photo_modal" class="fancy"><img src="/assets/profile/photo_thumbs/3.jpg"></a>
+					<a href="#photo_modal" class="fancy"><img src="/assets/profile/photo_thumbs/4.jpg"></a>
+					<a href="#photo_modal" class="fancy"><img src="/assets/profile/photo_thumbs/5.jpg"></a>			
+					<a href="#photo_modal" class="fancy"><div class="gradient_out">
 						<div class="gradient_in">
 							<div>134 <br><span class="ellipsis">...</span></div>
 						</div>
-					</div>
-				</a>
+					</div></a>
+				</div>
 			</section>
 
 			<section id="availability">
@@ -300,9 +306,6 @@
 		<div class="clear"></div>
 	</div>
 
-
-
-
 </div>
 
 
@@ -310,12 +313,18 @@
 
 <div class="modal gallery" id="photo_modal">
 	<ul class="slider">
-		<% 10.times do %>
-		<li data-thumb="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
-			<img src="/assets/profile/entertainers/rolling_stones/photos/1.jpg">
+		<% 5.times do %>
+		<li data-thumb="/assets/profile/photos/1.jpg">
+			<img src="/assets/profile/photos/1.jpg">
 		</li>
-		<li data-thumb="/assets/profile/entertainers/rolling_stones/photos/1.jpg">
-			<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
+		<li data-thumb="/assets/profile/photos/2.jpg">
+			<img src="/assets/profile/photos/2.jpg">
+		</li>
+		<li data-thumb="/assets/profile/photos/3.jpg">
+			<img src="/assets/profile/photos/3.jpg">
+		</li>
+		<li data-thumb="/assets/profile/photos/4.jpg">
+			<img src="/assets/profile/photos/4.jpg">
 		</li>
 		<% end %>
 	</ul>

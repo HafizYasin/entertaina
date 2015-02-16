@@ -1,5 +1,6 @@
 @import 'application';
 
+#integration{display: none;}
 
 #profile, #settings{
 	.tabs{
@@ -37,7 +38,7 @@
 	#profile_info{
 		height: 420px; 
 		margin-top: -145px; 
-		background: url(/assets/profile/entertainers/rolling_stones/bg.jpg) 50% 0 no-repeat; background-size: cover;
+		background: url(/assets/profile/cover.jpg) 50% 0 no-repeat; background-size: cover;
 		position: relative;
 		font: 14px/20px FuturaPTDemi;
 		margin-bottom: 70px;
@@ -51,12 +52,12 @@
 				font-weight: 400;
 				margin-bottom: 11px;
 			}
-			a, span{ color: #5acdd0; }
+			a, span{ color: #33d6e0; }
 		}
 
 		.logo img{
 			border-radius: 50%;
-			border: 3px rgba(255, 255, 255, 0.45) solid;
+			border: 3px rgba(255, 255, 255, 0.3) solid;
 			width: 80px;
 			height: 80px;
 		}
@@ -76,14 +77,14 @@
 
 		#photos{
 			img{
-				width: 85px;
-				height: 85px;
+				width: 86px;
+				height: 86px;
 			}
 			.gradient_in{
 				background: $green_blue;
 				width: 100%;
 				height: 100%;
-				border-bottom-right-radius: 5px;
+				border-bottom-right-radius: 4px;
 				div{
 					color: white;
 					text-align: center;
@@ -99,20 +100,21 @@
 				}
 			}
 			.gradient_out{
-				background: url(/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg);
+				background: url(/assets/profile/photo_thumbs/6.jpg);
 				display: inline-block;
-				width: 85px;
-				height: 85px;
+				width: 86px;
+				height: 86px;
 				vertical-align: top;
-				border-bottom-right-radius: 5px;
+				border-bottom-right-radius: 4px;
 			}
 			.gallery{
 				font-size: 0;
 				line-height: 0;
-				img:nth-child(1){ border-top-left-radius: 5px;}
-				img:nth-child(3){ border-top-right-radius: 5px;}
-				img:nth-child(4){ border-bottom-left-radius: 5px;}
-				&:hover{ opacity: 0.7; }
+				width: 258px;
+				height: 172px;
+				box-sizing: border-box;
+				border-radius: 4px;
+				overflow: hidden;
 			}
 		}
 
@@ -125,11 +127,12 @@
 
 		#videos{
 			.thumb{
-				background: url(/assets/profile/entertainers/rolling_stones/video_thumbs/1.jpg);
+				background: url(/assets/profile/video_thumbs/1.jpg);
 				width: 100px;
 				height: 70px;
 				position: relative;
 				float: left;
+				border-radius: 4px;
 				@extend .animation;
 				.play{
 					position: absolute;
@@ -149,7 +152,7 @@
 				overflow: hidden;
 				color: #4f5762;
 			}
-			.time{ color: #5acdd0; }
+			.time{ color: $blue; }
 			.views{ color: #c4c5c9; font: 13px FuturaPTBook;}
 			.description div{ padding-bottom: 1px; }
 			.video{ margin-bottom: 20px; display: block; }
@@ -181,7 +184,7 @@
 					display: inline-block;
 					width: 50%;
 					height: 315px;
-					border-radius: 5px;
+					border-radius: 4px;
 				}
 				.touch{
 					display: inline-block;
@@ -199,21 +202,30 @@
 							list-style: none;
 							margin-bottom: 7px
 						}
-						.icon{ width: 20px; }
-						.icon img{ width: 13px; height: 14px; }
+						.icon{ padding-top: 2px; width: 20px; }
+						.icon img{ width: 13px; height: 13px; }
 					}
 					.social{
 						padding-left: 20px;
-						img{
-							width: 27px;
-							height: 27px;
-							margin-right: 4px;
+						a span{
+							position: relative;
+							top: 2px;
+							width: 26px;
+							height: 26px;
+							border: 1px $light solid;
+							border-radius: 14px;
+							display: inline-block;
+							margin: 0 3px 0 3px;					
+						}
+						svg{
+							width:16px;
+							height:16px;
+							margin-left: 5px;
+							margin-top: 5px;
+							fill: $grey;
 						}
 					}
-
 				}
-				
-
 			}
 		}
 		.reviews{
@@ -279,7 +291,7 @@
 		color: $light;
 		font-family: FuturaPTDemi;
 		position: absolute;
-		top: 63px;
+		top: 60px;
 		padding: 14px 0;
 		font-size: 14px;
 		i.fa-exclamation-triangle{
@@ -345,13 +357,13 @@
 					background: #f5f6f7;
 					border: 1px solid #d7dce0;
 					box-sizing: border-box;
-					border-radius: 5px 0 0 5px;
+					border-radius: 4px 0 0 4px;
 					border-right: none;
 				}
 				input{
 					display: inline-block;
 					width: 80%;
-					border-radius: 0 5px 5px 0;
+					border-radius: 0 4px 4px 0;
 				}
 			}
 			//dependable selects
@@ -382,19 +394,18 @@
 				span{
 					@extend .animation;
 					background: url(/assets/common/social_icons/dashed_border.png) 0 0 no-repeat;
-					width: 37px;
-					height: 37px;
+					width: 36px;
+					height: 36px;
 					display: inline-block;
 					margin-right: 5px;
 				}
 				svg{
-					width: 17px;
-					margin-left: 9px;
-					margin-top: 9px;
-					path{
-						fill: $light;
-					}
-				}
+					width: 16px;
+					height: 16px;
+					margin-left: 10px;
+					margin-top: 10px;
+					fill: $light;
+				}				
 			}
 			#network_names{
 				label{
@@ -422,7 +433,7 @@
 						font-family: FuturaPTDemi;
 						background: #f5f6f7;
 						box-sizing: border-box;
-						border-radius: 5px 0 0 5px;
+						border-radius: 4px 0 0 4px;
 						border-right: none;
 						padding: 0;
 						i{
@@ -436,7 +447,7 @@
 				input{
 					display: inline-block;
 					width: 85%;
-					border-radius: 0 5px 5px 0;
+					border-radius: 0 4px 4px 0;
 				}
 			}
 			.flat_button{ width: 222px; }
@@ -497,7 +508,7 @@
 				img{
 					width: 100%;
 					height: 100%;
-					border-radius: 5px;
+					border-radius: 4px;
 				}
 			}
 			.uploading{
@@ -547,7 +558,8 @@
 				.song{
 					padding: 13px 20px 5px 20px;
 					margin-bottom: 0;
-					border-radius: 5px;
+					border-radius: 4px;
+					time{ color: $blue; }
 				}
 				.playing{
 					background: $light_light;
@@ -576,17 +588,17 @@
 					.thumb{
 						width: 235px;
 						height: 170px;
-						background-image: url(/assets/profile/entertainers/rolling_stones/video_thumbs/1_larger.jpg);
+						background-image: url(/assets/profile/video_thumbs/1_larger.jpg);
 						background-size: 100% auto;
-						border-radius: 5px;
+						border-radius: 4px;
 						.play{ 
 							position: absolute;
-							left: 50%;
-							top: 50%;
+							left: 44%;
+							top: 44%;
 						}
 						.darken{ 
 							position: relative;
-							border-radius: 5px;
+							border-radius: 4px;
 						}
 					}
 					.title{
@@ -650,7 +662,7 @@
 			}
 			.calendar{
 				border: 2px $light_light solid;
-				border-radius: 5px;
+				border-radius: 4px;
 				margin-bottom: 0px;
 				.ui-datepicker{
 					margin: 0 auto;
@@ -668,7 +680,7 @@
 	}
 
 	.upload, .uploading, .uploaded{
-		border-radius: 5px;
+		border-radius: 4px;
 		text-align: center;
 		color: $light;
 		font-size: 14px;
@@ -713,7 +725,7 @@
 		}
 		li{
 			@extend .animation;
-			border-radius: 3px;
+			border-radius: 4px;
 			opacity: 1;
 		}
 		
@@ -727,7 +739,7 @@
 		position: absolute;
 		background: url(/assets/profile/design/hint_bg.png) no-repeat;
 		font-family: 'FuturaPTDemi';
-		border-radius: 5px;
+		border-radius: 4px;
 		text-align: center;
 		.integer{
 			font-size: 20px;

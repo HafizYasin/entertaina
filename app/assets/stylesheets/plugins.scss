@@ -15,54 +15,40 @@
 	text-align: center;
 	color: $grey;
 	font: 20px/47px FuturaPTDemi;
-	border-radius:5px;
+	border-radius: 4px;
 	width: 60px;
 	padding: 0;
 	height: 47px;
 	border: none;	
 }
-.ui-tooltip:after{
-	position: absolute;
-	left: 50%;
-	bottom: -8px;
-	margin-left: -5px;
-	width: 10px;
-	height: 8px;
-	background: url(/assets/tooltip_arrow.png) 0 0 no-repeat;
-	display: block;
-	content: '1';
-	text-indent: -9999px;
-}
+
 .ui-corner-all{
 	.ui-icon{
 		background: none;
 	}
 }
 .ui-slider-horizontal{
-	height: 3px;
+	height: 2px;
 	border: none;
+	border-radius: 1px;
 	margin-top: 16px;
 	background: $light_light;
 }
 
+.ui-slider-horizontal .ui-slider-range{ background: $blue; border-radius: 1px; height: 2px;}
 
-
-
-.ui-slider-horizontal .ui-slider-range{ background: #2ab8b6; }
-.ui-slider .ui-slider-handle{ width: 20px; height: 21px; background: url(/assets/polzynok.png) 0 0 no-repeat; border: none; }
+.ui-slider .ui-slider-handle{ 
+	width: 23px; 
+	height: 22px; 
+	margin-top: -1px;
+	background: url(/assets/common/slider.png) 0 0 no-repeat; 
+	border: none; 
+}
 .ui-slider-horizontal .ui-slider-handle{ margin-left: -10px; top: -8px; }
 .ui-slider-horizontal .ui-slider-handle:hover{ cursor: pointer; }
 
 
-
-
-
-
-
-
-
-
-.input.location{ background: url(/assets/input_location_icon.png) 197px 50% no-repeat; }
+.input.location{  }
 
 .ui-selectmenu-menu{
 	li{
@@ -86,7 +72,7 @@ span:focus{ outline: none; }
 	outline: none;
 	background: #fff;
 	border: 1px solid #d7dce0;
-	border-radius: 6px;
+	border-radius: 4px;
 	height: 42px;
 	margin-bottom: 20px;
 	cursor: pointer;
@@ -99,7 +85,7 @@ span:focus{ outline: none; }
 
 
 #sort_by .ui-selectmenu-button {
-	background: url(/assets/select_trigger.png) 197px no-repeat;
+	background: url(/assets/common/forms/dropdown.png) 198px no-repeat;
 }
 
 
@@ -108,7 +94,7 @@ span:focus{ outline: none; }
 	display: inline;
 }
 .ui-menu{
-	border-radius: 5px;
+	border-radius: 4px;
 	border: 1px solid #d7dce0;
 	background: white;
 }
@@ -123,7 +109,7 @@ span:focus{ outline: none; }
 // _______________fancybox
 
 .fancybox-close{
-	background: url('/assets/fancybox/close.png') no-repeat;
+	background: url('/assets/common/close.png') no-repeat;
 }
 .fancybox-overlay{
 	background: rgba(8, 18, 29, 0.9);
@@ -172,7 +158,7 @@ span:focus{ outline: none; }
 		background-color: rgba(26, 43, 63, 0.93);
 		z-index: 100;
 		height: initial;
-		border-radius: 5px;
+		border-radius: 4px;
 		padding: 0;
 		width: 21em;
 		nav:first-of-type{
@@ -239,7 +225,7 @@ span:focus{ outline: none; }
 	padding-top: 15px;
 	.ui-datepicker{
 		padding: 0; width: 220px; background: none; border: none; 
-		border-radius: 5px;
+		border-radius: 4px;
 		box-shadow: 0 1px 2px rgba(0,0,0,.03);
 	}
 	#ui-datepicker-div{ padding: 7px 0 0; background: white; box-shadow: 0 1px 5px rgba(0,0,0,.2); z-index: 9 !important; }
@@ -254,7 +240,7 @@ span:focus{ outline: none; }
 			padding: 0;
 			height: 20px;
 			color: $grey;
-			font: 11px FuturaPTMedium;
+			font: 11px FuturaPTDemi;
 		}
 	}
 	.ui-datepicker-header{ padding: 0 0 7px; height: 24px; background: none; border: none; }
@@ -281,7 +267,7 @@ span:focus{ outline: none; }
 	}
 }
 .calendar{
-	border-radius: 5px;
+	border-radius: 4px;
 	.info{ text-align: center; padding:10px 0; color: $grey; font: 12px/18px FuturaPTBook; }
 	.info > div{ display: inline-block; margin: 0 12px; }
 	.info img{ vertical-align: middle; margin-right: 7px; }

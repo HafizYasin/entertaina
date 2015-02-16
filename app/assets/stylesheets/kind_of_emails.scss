@@ -20,7 +20,7 @@
 		}
 	}
 	.find{
-		font-family: 'FuturaPTMedium';
+		font-family: 'FuturaPTDemi';
 	}
 	.unsubscribe{
 		margin-top: 30px;
@@ -38,18 +38,20 @@
 
 #welcome{
 	.welcome{
-		background: url('/assets/emails/gradient_bg.png') no-repeat;
+		background: url('/assets/emails/gradient_bg.jpg') no-repeat;
+		border-top-left-radius: 4px; 
+		border-top-right-radius: 4px;
 		color: white;
 		padding: 40px 0;
 		h1{ 
 			margin-top: 60px; 
 			line-height: 0px;
 			font-size: 40px;
-			font-family: 'FuturaPTHeavy';
+			font-family: 'FuturaPTBook';
 		}
 		div{ 
 			margin-bottom: 40px; 
-			font-family: 'FuturaPTMedium'
+			font-family: 'FuturaPTBook'
 		}
 	}
 	.flat_button{
@@ -84,12 +86,12 @@
 #news{
 	.this_week{
 		h1{
-			font-family: 'FuturaPTLight';
+			font-family: 'FuturaPTBook';
 			margin-bottom: 0; margin-top: 0;
-			font-size: 40px;
+			font-size: 36px;
 		}
 		.month{
-			font-family: 'FuturaPTMedium';
+			font-family: 'FuturaPTDemi';
 			color: #d2d3d5;
 			font-size: 14px;
 			margin-bottom: 50px;
@@ -99,7 +101,7 @@
 		max-width: 600px;
 		img{
 			width: 100%;
-			border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+			border-top-left-radius: 4px; border-top-right-radius: 4px;
 		}
 	}
 	.flat_button{
@@ -124,7 +126,7 @@ body, header, footer{
 
 .white_box{
 	background: white;
-	border-radius: 5px;
+	border-radius: 4px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 	padding-bottom: 40px;
 }

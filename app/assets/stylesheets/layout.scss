@@ -8,9 +8,8 @@ header{
 		display: block;
 		height: 38px;
 		padding-top: 2px;
-		svg{
+		img{
 			width: 110px;
-			path{ fill: #fff; }
 		}
 	}
 	
@@ -29,7 +28,7 @@ header{
 			position: absolute;
 			text-align: center;
 			right: -52px;
-			border-radius: 5px;
+			border-radius: 4px;
 			background-color: rgba(26, 43, 63, 0.93);
 			box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.08);
 			li{
@@ -67,9 +66,8 @@ header{
 		margin-left: 25px;
 		margin-top: 6px;
 		text-align: center;
-		svg{
+		img{
 			width: 22px;
-			path{ fill: #fff; }
 		}
 	}	
 	a{ 
@@ -104,7 +102,7 @@ header{
 			top: 45px;
 			right: 45px;
 			width: 130px;
-			border-radius: 5px;
+			border-radius: 4px;
 			background: #1a2b3f;
 			background: rgba(26,43,63,.9);
 			text-align: center;
@@ -168,9 +166,8 @@ footer{
 			float: left;
 			height: 17px;
 			margin-top: 3px;
-		svg{
+		img{
 			width: 70px;
-			path{ fill:#fff; }
 		}
 	}
 	.social{ 
@@ -225,7 +222,7 @@ footer{
 	.plan{
 		background: $light_light;
 		padding: 20px 20px;
-		border-radius: 5px;
+		border-radius: 4px;
 		text-align: center;
 		position: relative;
 		margin-bottom: 20px;
@@ -309,7 +306,7 @@ header.big{
 	background-repeat: no-repeat;
 	background-size: cover;
 	box-sizing: border-box;
-	background-image: url('/assets/index/footer/bg.jpg');
+	background-image: url('/assets/index/main.jpg');
 	#search_block{ 
 		margin: 80px 0 85px; 
 		.title{ 
@@ -333,7 +330,7 @@ header.big{
 			box-sizing: border-box;
 			margin-left: auto; 
 			margin-right: auto;
-			font: 16px/28px FuturaPTBookOblique;	
+			font: 16px/28px FuturaPTBook;	
 		}	
 		input[type=submit].w200px{ width: 200px; }
 		input[type=submit]{
@@ -347,11 +344,10 @@ header.big{
 		}
 		form{ display: inline-block; }
 		.form{
-			svg{
+			img{
 				position: absolute;
 				margin: 18px 0 0 22px;
 				width: 16px; 
-				path{ fill:#fff; }
 			}
 		}
 		.button{
@@ -378,7 +374,7 @@ header.big{
 
 
 footer.big{
-	background-image: url('/assets/index/footer/bg.jpg');
+	background-image: url('/assets/index/main.jpg');
 	background-position: 50% 0px;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -404,6 +400,10 @@ footer.big{
 			vertical-align: top;
 			&:nth-child(4n){ margin-right: 0; }
 			p{ margin-bottom: 10px; }
+			i{  
+				font-weight: 700;
+				margin-left: 5px;
+			}
 		}
 		
 		.form{
@@ -423,27 +423,27 @@ footer.big{
 				background: white;
 				width: 36px;
 				height: 36px; 
+				padding: 8px 0 0 17px; 
 				position: relative;		
 				border-radius: 30px;
+				box-sizing: border-box;
 				float: right;
 				transition: all 0.3s ease;
-				&:hover{ opacity: 0.7; }	
-				svg {
-					width: 6px; 
-					margin: 13px 0 0 16px;
-					padding: 0px; 
-					path{ fill: $blue; }
+				@extend .animation;	
+				i{  
+					font-weight: 700;
+					margin-left: 0px;
+					color: $blue;
 				}
 			}	
 		}		
 		.footer-titles {
 				height: 30px;
 				margin-bottom: 10px;
-			svg{
+			img{
 				width: 70px; 
 				padding: 0px;
 				margin-right: 20px; 
-				path{ fill: #fff; }
 			}
 		}			
 		.bold{
@@ -457,7 +457,6 @@ footer.big{
 				padding: 0px;
 				margin-left: 5px; 
 				vertical-align: center; 
-				path{ fill: #fff; }
 			}			
 		}	
 		.thumbs{
@@ -501,9 +500,8 @@ header{
 		padding: 15px 0;
 		.logo{ 
 			margin-top: 3px; 
-			svg{ 
+			img{ 
 				width: 94px; 
-				path{ fill: #fff; }
 			}
 		}
 		.burger{ 
@@ -524,12 +522,11 @@ header.big{
 			.desc{ font-size: 16px;}
 			input[type=text]{
 				padding-left: 25px;
-				font: 14px/28px FuturaPTBookOblique;
+				font: 14px/28px FuturaPTBook;
 				text-align: center;
 			}
-			.form svg{
+			.form img{
 				display: none;
-				float:left;
 			}
 			.button{
 				display: inline-block;

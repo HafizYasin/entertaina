@@ -37,8 +37,11 @@
 		.desc{ padding-right: 20px; }
 		.stats{
 			padding-left: 57px;
-			ul{ padding-top: 15px; }
+			ul{ padding-top: 15px; margin-right: 10px; }
 			li{ list-style-type: none; margin-bottom: 10px; }
+			img{
+				width: 220px;
+			}
 			.circle{
 				width: 7px;
 				height: 7px;
@@ -54,42 +57,46 @@
 			.c5{ background: #3a4c60; }
 		}
 	}
+	
+	h1{ font: 30px FuturaPTDemi; margin-bottom: 20px; }
+	.big { font: 18px/26px FuturaPTBook; }
 
 	.reviews{
 		margin: 80px 0 120px 0;
 		text-align: center;
 		.slider{
+		    margin-bottom: 20px;
 			height: 200px;
 			.review{				
 				max-width: 600px;
 				margin: 20px auto;
 			}
 			.name{
-
+			    padding-top: 10px;
+				font: 16px/10px FuturaPTDemi;
 			}
 			.profession{
-				font-size: 12px;
+				font-size: 14px;
 			}
 
 		}
 		.lSGallery{
-			width: 300px !important;
+			width: 198px !important;
 			margin: 0 auto;
-			li{ width: auto !important; padding: 0 20px; opacity: 1; }
+			li{ width: auto !important; margin: 0 6px !important; opacity: 1; }
 			li.active a{ border: $blue 2px solid; }
 			a{
 				border: #eaeaea 2px solid;
-				width: 49px;
-				height: 49px;
+				width: 50px;
+				height: 50px;
 				border-radius: 50%;
 				display: block;
 				img{
-					width: 43px;
-					height: 43px;
+					width: 44px;
+					height: 44px;
 					border-radius: 50%;
 					margin: 0 auto;
-					position: relative;
-					top: 3px;
+					padding-top: 3px;
 				}
 			}
 		}
