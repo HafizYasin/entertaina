@@ -1,4 +1,5 @@
-<a class="burger right" href="#menu_modal"><img class="svg" src="/assets/common/burger.svg"></a>
+<div class="not_displayed"><%= render '/layouts/icons' %></div>
+<a class="burger right" href="#menu_modal"><img class="svg" src="/assets/common/burger.png"></a>
 
 <ul class="menu right">
 	<li><a href="/">home</a></li>
@@ -7,10 +8,10 @@
 	<li><a href="/search">find acts</a></li>
 	<li><a href="/blog_posts">blog</a></li>
 
-	<% if [true, false][rand(2)] %>
-
+	<% if true %>
+		<span id="padding_for_logo">
 		<div id="logo">
-			<img src="/assets/profile/entertainers/rolling_stones/logo.png">
+			<img src="/assets/profile/avatar.jpg">
 			<ul class="dropdown not_displayed">
 				<div class="triangle"></div>
 				<li><a href="/profiles/1">profile</a></li>
@@ -18,6 +19,7 @@
 				<li><a href="">log out</a></li>
 			</ul>
 		</div>
+		</span>
 
 	<% else %>
 		<li><a href="#login_form" class="fancy">Login</a></li>

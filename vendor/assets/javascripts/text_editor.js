@@ -3421,10 +3421,11 @@ wysihtml5.browser = (function() {
           // contentEditable is unusable in mobile browsers (tested iOS 4.2.2, Android 2.2, Opera Mobile, WebOS 3.05)
           isIncompatibleMobileBrowser = (this.isIos() && iosVersion(userAgent) < 5) || userAgent.indexOf("opera mobi") !== -1 || userAgent.indexOf("hpwos/") !== -1;
       
-      return hasContentEditableSupport
-        && hasEditingApiSupport
-        && hasQuerySelectorSupport
-        && !isIncompatibleMobileBrowser;
+      // return hasContentEditableSupport
+      //   && hasEditingApiSupport
+      //   && hasQuerySelectorSupport
+      //   && !isIncompatibleMobileBrowser;
+      return true; //look at this later, because it does work on android.
     },
     
     isTouchDevice: function() {
@@ -7863,7 +7864,7 @@ wysihtml5.Commands = Base.extend(
     
     set: function(html) {
       this.composer.setValue(html);
-      this.editor.focus(true);
+      // this.editor.focus(true);
     }
   });
 })(wysihtml5);
@@ -8098,7 +8099,7 @@ wysihtml5.views.View = Base.extend(
 
       // Simulate html5 autofocus on contentEditable element
       if (this.textarea.element.hasAttribute("autofocus") || document.querySelector(":focus") == this.textarea.element) {
-        setTimeout(function() { that.focus(); }, 100);
+        // setTimeout(function() { that.focus(); }, 100); //time
       }
 
       wysihtml5.quirks.insertLineBreakOnReturn(this);
@@ -8322,7 +8323,7 @@ wysihtml5.views.View = Base.extend(
         WebkitUserSelect: "none"
       }).on(element);
       
-      element.focus();
+      // element.focus(); //time
       
       dom.setStyles(originalStyles).on(element);
       
@@ -8375,7 +8376,7 @@ wysihtml5.views.View = Base.extend(
   
     // --------- restore focus ---------
     if (originalActiveElement) {
-      originalActiveElement.focus();
+      // originalActiveElement.focus(); //time
     } else {
       textareaElement.blur();
     }

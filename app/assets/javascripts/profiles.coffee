@@ -1,7 +1,14 @@
 
 $ ->
-	# profile show
 
+	#profile, settings
+	$('.tabs').tabs
+		show: true
+		hide: true #I cant move it to coffee somehow and I cant disable vibration effect (false doesnt work)
+		active: 0
+		
+
+	# profile show
 	$('.review .stars').raty
 		number: 10
 		readOnly: true
@@ -37,22 +44,28 @@ $ ->
 				gallery: true
 				item: 1
 				loop: true
-				slideMargin: 0
-				adaptiveHeight: false
+				# adaptiveHeight: true
+				# autowidth: true
 				galleryMargin: 40
 				thumbMargin: 20
-				thumbItem: 12
-				autowidth: true
+				thumbItem: 10
+				keyPress: true
+				onBeforeSlide: ->
+					$('.lSPager li').css('max-height', '100%' )
 				responsive : [
-					{ breakpoint: 1290, settings: { thumbItem: 8, adaptiveHeight: true } },
-					{ breakpoint: 1100, settings: { thumbItem: 5, adaptiveHeight: true } },
-					{ breakpoint: 500, settings: { thumbItem: 3, adaptiveHeight: true } },
+					{ breakpoint: 1000, settings: {  
+						gallery: false
+						pager: false
+						onSliderLoad: ->
+							$('.lightSlider img').css('max-height', $('.fancybox-inner').height() )
+					}}
 				]
 		return #photos in modal in profile
 
 	$('body').on 'DOMNodeInserted', '.fancybox-skin', ->
 		if $('.modal.gallery').parents('.fancybox-skin.transparent').length == 0
 			$('.modal.gallery').parents('.fancybox-skin').addClass('transparent')
+			$('.modal.gallery').parents('.fancybox-wrap').addClass('position')
 		return
 
 	$("a.video").fancybox
@@ -76,6 +89,11 @@ $ ->
 	input.keyup =>
 		$('#username_future').text input.val().replace(/\ /g, "_") #later see what addresses are okay
 		return
+
+	###focusing not on iframes when settings page loads
+	# edited focus functions in the source, sorry. could find no way to do it
+	# any other way. find commented out lines by searching for '//time' in 
+	# text_editor.js in vendors
 
 
 	#####dependable selects
@@ -126,7 +144,7 @@ $ ->
 	make_closable = (type) ->
 		type.addClass 'closable'
 		type.removeClass 'potential'
-		type.append '<div class="close"></div>'
+		type.find('.right').append '<div class="close"></div>'
 		return
 
 	remove_option = (type, option_value) ->
@@ -202,11 +220,10 @@ $ ->
 
 	#social inputs appear disappear
 	create_media = (media) ->
-		icon = '<img class="svg" src="/assets/common/social_icons/' + media + '.svg">'
+		icon = '<svg viewBox="0 0 32 32"><use xlink:href="#'+media+'"></use></svg>'
 		label = '<label>' + media + icon + '</label>'
 		input = '<input class="input" name="' + media + '">'
 		$('#network_names').append '<div class="line not_displayed">' + label + '<div class="right"><div class="close"></div> ' + input + ' </div> <div class="clear"></div></div>'
-		img_to_svg()
 		$('#network_names .not_displayed').slideDown().removeClass 'not_displayed'
 		return
 
@@ -250,3 +267,37 @@ $ ->
 			]
 		showOtherMonths: true
 	
+
+
+	# editor_biography = new (wysihtml5.Editor)('biography_editor',
+	#   toolbar: 'biography_editor-toolbar'
+	#   parserRules: wysihtml5ParserRules)
+
+	# editor_biography.on 'load', ->
+	#   minheight = 150
+	#   buffer = 50
+	#   padding = parseFloat(editor_biography.composer.iframe.style.paddingTop) + parseFloat(editor_biography.composer.iframe.style.paddingBottom) + parseFloat(editor_biography.composer.iframe.style.borderTopWidth) + parseFloat(editor_biography.composer.iframe.style.borderBottomWidth)
+	#   editor_biography.composer.iframe.style.height = minheight + padding + 'px'
+
+	#   resize = ->
+	#     $div = $('<div>').append($(editor_biography.composer.element).clone().contents()).appendTo(editor_biography.composer.element)
+	#     scrollheight = $div.get(0).scrollHeight
+	#     $div.remove()
+	#     if scrollheight > minheight - buffer
+	#       editor_biography.composer.iframe.style.height = scrollheight + buffer + padding + 'px'
+	#     else
+	#       editor_biography.composer.iframe.style.height = minheight + padding + 'px'
+	#     return
+
+	#   editor_biography.composer.element.addEventListener 'keyup', resize, false
+	#   editor_biography.composer.element.addEventListener 'blur', resize, false
+	#   editor_biography.composer.element.addEventListener 'focus', resize, false
+	#   return
+
+
+
+
+
+
+
+

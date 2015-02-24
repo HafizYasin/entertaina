@@ -1,5 +1,6 @@
 @import 'application';
 
+#integration{display: none;}
 
 #profile, #settings{
 	.tabs{
@@ -37,7 +38,7 @@
 	#profile_info{
 		height: 420px; 
 		margin-top: -145px; 
-		background: url(/assets/profile/entertainers/rolling_stones/bg.jpg) 50% 0 no-repeat; background-size: cover;
+		background: url(/assets/profile/cover.jpg) 50% 0 no-repeat; background-size: cover;
 		position: relative;
 		font: 14px/20px FuturaPTDemi;
 		margin-bottom: 70px;
@@ -47,18 +48,21 @@
 			padding-left: 20px;
 			h2{
 				color: white;
-				font-size: 36px;
+				font-size: 36px; line-height: 45px;
 				font-weight: 400;
 				margin-bottom: 11px;
 			}
-			a, span{ color: #5acdd0; }
+			a, span{ color: #33d6e0; }
 		}
-
-		.logo img{
+		.logo{
+			border: 3px rgba(255, 255, 255, 0.3) solid;
 			border-radius: 50%;
-			border: 3px rgba(255, 255, 255, 0.45) solid;
-			width: 80px;
-			height: 80px;
+			img{
+				display: block;
+				border-radius: 50%;
+				width: 80px;
+				height: 80px;
+			}
 		}
 		.name, .logo{
 			display: inline-block;
@@ -76,14 +80,14 @@
 
 		#photos{
 			img{
-				width: 85px;
-				height: 85px;
+				width: 86px;
+				height: 86px;
 			}
 			.gradient_in{
 				background: $green_blue;
 				width: 100%;
 				height: 100%;
-				border-bottom-right-radius: 5px;
+				border-bottom-right-radius: 4px;
 				div{
 					color: white;
 					text-align: center;
@@ -99,20 +103,21 @@
 				}
 			}
 			.gradient_out{
-				background: url(/assets/profile/entertainers/rolling_stones/photo_thumbs/1.jpg);
+				background: url(/assets/profile/photo_thumbs/6.jpg);
 				display: inline-block;
-				width: 85px;
-				height: 85px;
+				width: 86px;
+				height: 86px;
 				vertical-align: top;
-				border-bottom-right-radius: 5px;
+				border-bottom-right-radius: 4px;
 			}
 			.gallery{
 				font-size: 0;
 				line-height: 0;
-				img:nth-child(1){ border-top-left-radius: 5px;}
-				img:nth-child(3){ border-top-right-radius: 5px;}
-				img:nth-child(4){ border-bottom-left-radius: 5px;}
-				&:hover{ opacity: 0.7; }
+				width: 258px;
+				height: 172px;
+				box-sizing: border-box; -moz-box-sizing: border-box;
+				border-radius: 4px;
+				overflow: hidden;
 			}
 		}
 
@@ -125,11 +130,12 @@
 
 		#videos{
 			.thumb{
-				background: url(/assets/profile/entertainers/rolling_stones/video_thumbs/1.jpg);
+				background: url(/assets/profile/video_thumbs/1.jpg);
 				width: 100px;
 				height: 70px;
 				position: relative;
 				float: left;
+				border-radius: 4px;
 				@extend .animation;
 				.play{
 					position: absolute;
@@ -149,7 +155,7 @@
 				overflow: hidden;
 				color: #4f5762;
 			}
-			.time{ color: #5acdd0; }
+			.time{ color: $blue; }
 			.views{ color: #c4c5c9; font: 13px FuturaPTBook;}
 			.description div{ padding-bottom: 1px; }
 			.video{ margin-bottom: 20px; display: block; }
@@ -170,23 +176,25 @@
 				width: 50%;
 				float: left;
 				padding-bottom: 10px;
+				padding-right: 20px;
+				box-sizing: border-box; -moz-box-sizing: border-box;
 			}
 
 			#technical ul, #prices ul{ margin-top: 15px; }
 
 			#contact{
 				font-size: 0px;
-				margin-top: 25px;
 				#map{
 					display: inline-block;
 					width: 50%;
 					height: 315px;
-					border-radius: 5px;
+					border-radius: 4px;
+					margin-top: 30px;
 				}
 				.touch{
 					display: inline-block;
 					width: 50%;
-					box-sizing: border-box;
+					box-sizing: border-box; -moz-box-sizing: border-box;
 					padding-left: 20px;
 					font-size: 14px;
 					ul{ 
@@ -199,21 +207,30 @@
 							list-style: none;
 							margin-bottom: 7px
 						}
-						.icon{ width: 20px; }
-						.icon img{ width: 13px; height: 14px; }
+						.icon{ padding-top: 2px; width: 20px; }
+						.icon img{ width: 13px; height: 13px; }
 					}
 					.social{
 						padding-left: 20px;
-						img{
-							width: 27px;
-							height: 27px;
-							margin-right: 4px;
+						a span{
+							position: relative;
+							top: 2px;
+							width: 26px;
+							height: 26px;
+							border: 1px $light solid;
+							border-radius: 14px;
+							display: inline-block;
+							margin: 0 3px 0 3px;					
+						}
+						svg{
+							width:16px;
+							height:16px;
+							margin-left: 5px;
+							margin-top: 5px;
+							fill: $grey;
 						}
 					}
-
 				}
-				
-
 			}
 		}
 		.reviews{
@@ -232,8 +249,8 @@
 					height: 34px;
 					font-size: 13px;
 					float: right;					
-					i{ padding-right: 6px; }
-					span{ position: relative; bottom: 5px; }
+					i{ padding-right: 6px; position: relative; top: 1px; }
+					span{ position: relative; bottom: 7px; }
 
 				}
 			}
@@ -277,18 +294,27 @@
 		width: 100%;
 		background: $light_light;
 		color: $light;
-		font-family: FuturaPTDemi;
-		position: absolute;
-		top: 63px;
+		font-family: FuturaPTBook;
 		padding: 14px 0;
 		font-size: 14px;
+		margin-top: -70px;
+		margin-bottom: 20px;
 		i.fa-exclamation-triangle{
 			font-size: 20px;
 			color: $blue;
 			vertical-align: middle;
 			padding-right: 10px;
 		}
-		.close img{ 
+		a{
+			display: inline-block;
+			width: 90%;
+		}
+		.close{
+			display: inline-block;
+			width: 10%;
+			text-align: right;
+		}
+		.close img{
 			width: 8px;
 			padding: 0 10px;
 		}
@@ -324,12 +350,12 @@
 				}
 				.input, select{
 					width: 100%;
-					box-sizing: border-box;
+					box-sizing: border-box; -moz-box-sizing: border-box;
 					margin-bottom: 3px;
 				}
 				.ui-selectmenu-button{ 
 					margin-bottom: 3px; 
-					background: url(/assets/common/forms/open.png) 450px no-repeat;
+					background: url(/assets/common/forms/open.png) right 20px center no-repeat
 				}
 			}
 			.line.website{
@@ -341,17 +367,18 @@
 					display: inline-block;
 					text-align: center;
 					font-family: FuturaPTDemi;
-					padding: 6px 0;
 					background: #f5f6f7;
 					border: 1px solid #d7dce0;
-					box-sizing: border-box;
-					border-radius: 5px 0 0 5px;
-					border-right: none;
+					box-sizing: border-box; -moz-box-sizing: border-box;
+					border-radius: 4px 0 0 4px; border-right: none;
+					line-height: 0;
+					height: 42px;
+					vertical-align: top;
 				}
 				input{
 					display: inline-block;
 					width: 80%;
-					border-radius: 0 5px 5px 0;
+					border-radius: 0 4px 4px 0;
 				}
 			}
 			//dependable selects
@@ -382,27 +409,28 @@
 				span{
 					@extend .animation;
 					background: url(/assets/common/social_icons/dashed_border.png) 0 0 no-repeat;
-					width: 37px;
-					height: 37px;
+					width: 36px;
+					height: 36px;
 					display: inline-block;
 					margin-right: 5px;
 				}
 				svg{
-					width: 17px;
-					margin-left: 9px;
-					margin-top: 9px;
-					path{
-						fill: $light;
-					}
-				}
+					width: 16px;
+					height: 16px;
+					margin-left: 10px;
+					margin-top: 10px;
+					fill: $light;
+
+				}				
 			}
 			#network_names{
 				label{
 					svg{
 						width: 17px;
+						height: 17px;
 						margin-left: 9px;
 						vertical-align: text-bottom;
-						path{
+						use{
 							fill: $grey;
 						}
 					}
@@ -421,8 +449,8 @@
 						text-align: center;
 						font-family: FuturaPTDemi;
 						background: #f5f6f7;
-						box-sizing: border-box;
-						border-radius: 5px 0 0 5px;
+						box-sizing: border-box; -moz-box-sizing: border-box;
+						border-radius: 4px 0 0 4px;
 						border-right: none;
 						padding: 0;
 						i{
@@ -436,10 +464,9 @@
 				input{
 					display: inline-block;
 					width: 85%;
-					border-radius: 0 5px 5px 0;
+					border-radius: 0 4px 4px 0;
 				}
 			}
-			.flat_button{ width: 222px; }
 			.checkbox_label{
 				color: #394c60;
 				display: inline-block;
@@ -463,14 +490,13 @@
 
 		}
 		#account_tab{
-			.flat_button, .small_fat_blue{
-				display: inline-block;
-			}
 			.small_fat_blue{
-				margin-left: 30px;
+				text-align: center;
+				padding-top: 10px;
 			}
 		}
 		#billing_tab{
+			.line{ margin-bottom: 40px; }
 			.info{
 				font: 'FuturaPTBook';
 				color: $light;
@@ -478,6 +504,7 @@
 			.flat_button{
 				font-size: 12px;
 				width: 200px;
+				margin-top: 10px;
 			}
 			.current_plan .flat_button{
 				background: $light_light;
@@ -497,14 +524,14 @@
 				img{
 					width: 100%;
 					height: 100%;
-					border-radius: 5px;
+					border-radius: 4px;
 				}
 			}
 			.uploading{
 				border: solid #ebedef 2px;
 				padding-top: 36px;
 				img{
-					margin-bottom: 10px;
+					margin-bottom: 10px; margin-top: 10px;
 				}
 			}
 
@@ -531,13 +558,14 @@
 					width: 30px;
 					height: 30px;
 					top: -5px;
+					line-height: 0;
 					.fa-pause, .fa-play{
-						left: 12px;
-						top: 10px;
+						left: 13px;
+						top: 15px;
 						font-size: 9px;
 						cursor: pointer;
 					}
-					.fa-pause{ left: 11px; }
+					.fa-pause{ left: 12px; }
 				}
 				.title{
 					font-size: 15px;
@@ -547,7 +575,8 @@
 				.song{
 					padding: 13px 20px 5px 20px;
 					margin-bottom: 0;
-					border-radius: 5px;
+					border-radius: 4px;
+					time{ color: $blue; }
 				}
 				.playing{
 					background: $light_light;
@@ -576,17 +605,17 @@
 					.thumb{
 						width: 235px;
 						height: 170px;
-						background-image: url(/assets/profile/entertainers/rolling_stones/video_thumbs/1_larger.jpg);
+						background-image: url(/assets/profile/video_thumbs/1_larger.jpg);
 						background-size: 100% auto;
-						border-radius: 5px;
+						border-radius: 4px;
 						.play{ 
 							position: absolute;
-							left: 50%;
-							top: 50%;
+							left: 44%;
+							top: 44%;
 						}
 						.darken{ 
 							position: relative;
-							border-radius: 5px;
+							border-radius: 4px;
 						}
 					}
 					.title{
@@ -616,10 +645,7 @@
 		
 	}
 
-	aside{
-		section{
-			margin-bottom: 30px;
-		}
+	.activate_view{
 		.flat_button.activate{
 			margin-bottom: 10px;
 		}
@@ -627,6 +653,12 @@
 			background: $light_light;
 			color: $blue;
 			margin-bottom: 40px;
+		}
+	}
+	.responsive{ display: none; }
+	aside{
+		section{
+			margin-bottom: 30px;
 		}
 		#avatar{
 			.text_line{ margin-bottom: 20px; }
@@ -650,10 +682,12 @@
 			}
 			.calendar{
 				border: 2px $light_light solid;
-				border-radius: 5px;
+				border-radius: 4px;
 				margin-bottom: 0px;
 				.ui-datepicker{
-					margin: 0 auto;
+					width: 100%;
+					td{ height: 35px; }
+					td:nth-child(7n+1){ border-left: none; }
 				}
 				.info{
 					font-family: 'FuturaPTDemi';
@@ -668,7 +702,7 @@
 	}
 
 	.upload, .uploading, .uploaded{
-		border-radius: 5px;
+		border-radius: 4px;
 		text-align: center;
 		color: $light;
 		font-size: 14px;
@@ -684,37 +718,40 @@
 
 
 .modal.gallery{
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
+	padding: 0px;
 	.lightSlider{
-		img{
-			max-width: 700px;
-			max-height: 900px;
-			display: block;
-			margin: 0 auto;
+		li{ text-align: center; }
+		img{ 
+			max-width: 100%;
+			margin-left: 7px;
 		}
 	}
 }
 .fancybox-skin.transparent{
 	background: rgba(255, 255, 255, 0);
 	box-shadow: none;
-	.fancybox-inner{ overflow: hidden !important; }
+	padding: 0 !important;
 	.lSPrev{
 		background: url("/assets/common/slider_arrow_left_white.png") no-repeat;
 	}
 	.lSNext{ 
 		background: url("/assets/common/slider_arrow_right_white.png") no-repeat;
 	}
-	.lSPrev, .lSNext{ padding: 200px 0px; width: 20px; }
+	.lSPrev, .lSNext{ padding-bottom: 20px; width: 20px; }
 
 	.lSPager{
-		.active img{
-			border: $grey 2px solid;
-			box-sizing: border-box;
-		}
 		li{
 			@extend .animation;
-			border-radius: 3px;
+			border-radius: 4px;
 			opacity: 1;
+			box-sizing: border-box;
+			// height: inherit;
+			&.active{
+				border: $grey 2px solid;
+				box-sizing: border-box;
+			}
 		}
 		
 	}
@@ -727,7 +764,7 @@
 		position: absolute;
 		background: url(/assets/profile/design/hint_bg.png) no-repeat;
 		font-family: 'FuturaPTDemi';
-		border-radius: 5px;
+		border-radius: 4px;
 		text-align: center;
 		.integer{
 			font-size: 20px;
@@ -763,26 +800,16 @@
 	@media (max-width: 860px){
 		#profile_info{
 			margin-bottom: 50px;
-			.logo{ display: block; margin-bottom: 21px; }
+			.logo{ margin-bottom: 21px; }
 			.name{ padding-left: 0; }
+			.categories a:last-of-type{ display: block; }
 		}
 		#main_container{
 			float: none; margin-right: 0; padding-right: 0;
 		}
 		aside{
 			float: none; 
-			width: 100%;
-			font-size: 0;
-			section{
-				font-size: 14px;
-				display: inline-block;
-				box-sizing: border-box;
-				width: 50%;
-				vertical-align: top;
-				&:nth-of-type(2n+1){ padding-left: 20px; }
-				&:nth-of-type(2n){ padding-right: 20px; }
-				&>*{ width: 255px; display: block; margin: 0 auto; }
-			}
+			margin: 0 auto;
 		}
 		aside .send_add{ display: none; }
 		.send_add.responsive{
@@ -801,11 +828,7 @@
 				.social{ padding-left: 0; }
 			}
 		}
-	}
-	@media (max-width: 600px){
-		aside{
-			section{ width: 100%; padding-right: 0 !important; padding-left: 0 !important; }
-		}
+		#main_container .tabs ul:not(.nav){ padding-left: 20px; }
 	}
 	@media (max-width: 500px){
 		#main_container .reviews .review .rating{ 
@@ -815,27 +838,81 @@
 	}
 }
 
-
-
-
-
-.modal.gallery {
-	@media (max-width: 1290px){ 
-		width: 1000px; .lSSlideWrapper img{ max-width: 1000px !important; } 
-	}
-	@media (max-width: 1100px){ 
-		width: 700px; .lSSlideWrapper img{ max-width: 700px !important; } 
-	}
-	@media (max-width: 800px){ 
-		width: 400px; .lSSlideWrapper img{ max-width: 400px !important; } 
-	}
-	@media (max-width: 500px){ 
-		width: 300px; .lSSlideWrapper img{ max-width: 300px !important; } 
-	}
-	@media (max-width: 400px){ 
-		width: 200px; .lSSlideWrapper img{ max-width: 200px !important; } 
+@media (max-width: 400px){
+	#profile .tabs .nav a, #settings .tabs .nav a{ 
+		margin-right: 18px; font-size: 12px; 
 	}
 }
+.fancybox-skin.transparent{
+	.fancybox-close{ right: 27px; }
+
+	@media (max-width: 1000px){ 
+		.fancybox-inner{ overflow-y: hidden !important; }
+		.lightSlider{ height: 100% !important; }
+	
+	}
+
+}
+
+#settings{
+	@media (max-width: 990px){
+		aside{ 
+			float: none; margin: 0 auto; 
+			.activate_view{ display: none; }
+		}
+		#main_container{ 
+			float: none; margin-right: 0; padding-right: 0;
+			.line label{ width: 220px; }
+			.tabs #media_tab{
+				.photos .upload, .photos .uploaded, .photos .uploading{
+					margin-right: 20px;
+				}
+				.audios .upload{
+					text-align: center;
+					&>*{ width: 100%; }
+					.small_fat_blue{ float: none; }
+				}
+			}
+
+		}
+		.activate_view.responsive{ 
+			display: block; 
+			max-width: 300px; 
+			margin: 0 auto; 
+		}
+	}
+	@media (max-width: 800px){
+		#main_container .line label{ width: initial; }
+		.tabs #billing_tab .flat_button{ width: 100%; }
+	}
+	@media (max-width: 690px){
+		#main_container .line label{ width: 100%; text-align: left; }
+		.tabs form .right{ width: 100%; }
+		.text_editor .toolbar a{ margin-bottom: 10px; }
+		.tabs #media_tab{
+			.cover .upload{ width: initial; }
+			.audios .title{ max-width: 60%; }
+		}
+	}
+	@media (max-width: 600px){
+		#free_trial_warning{
+			margin-top: -45px;
+		}
+		.tabs #media_tab .audios .title{ max-width: 50%; }
+	}
+	@media (max-width: 430px){
+		.tabs #media_tab .videos .video .thumb{ width: 100%; }
+	}
+
+
+}
+
+@media (max-width: 370px){
+	#review_form .stars img{ width: 14px; margin-right: 0; }
+}
+
+
+
 
 
 

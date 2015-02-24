@@ -1,10 +1,10 @@
 <div id="favorites" class="w940px">
-	<a href="/search" class="back small_fat_blue uppercase"><i class="fa fa-angle-left"></i>Back to results</a>
+	<a href="/search" class="back small_fat_blue uppercase"><i class="fa fa-angle-left"></i>Back</a>
 	<h1 class="blue text_center">Favorites</h1>
 
 	<section id="entertainers">
-		<% 8.times do %>
-		<div class="entertainer">
+		
+		<% 8.times do %><div class="entertainer">
 			<div class="image">
 				<a class="favorites_link" href="/profiles/1"><img src="/assets/common/binocle.png"> View profile</a>
 				<img class="img" src="/assets/list_item_thumb.jpg">
@@ -20,8 +20,8 @@
 				<span class="price">From £900</span> <span class="reviews"><%= rand(1000) %> reviews</span>
 				<div class="desc">A swinging jazz band guaranteed to get your party dancing. We bring the party to the band guaranteed to get your</div>
 			</div>
-		</div>
-		<% end %>	
+		</div><% end %>
+			
 	</section>
 
 

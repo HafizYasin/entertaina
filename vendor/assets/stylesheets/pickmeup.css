@@ -47,8 +47,8 @@
     .pickmeup .pmu-instance nav {
       color: #eee;
       display: -ms-flexbox;
-      display: -webkit-flex;
       display: flex;
+      display: -webkit-flex;
       line-height: 2em; }
       .pickmeup .pmu-instance nav *:first-child :hover {
         color: #88c5eb; }

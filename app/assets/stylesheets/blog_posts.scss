@@ -1,5 +1,7 @@
 @import 'application';
 
+#integration{display: none;}
+
 #blog{
 	aside{
 		font-size: 14px;
@@ -7,8 +9,23 @@
 		float: right;
 		.follow{
 			.social{
-				a{ margin-right: 2px; margin-left: 2px; }
-				img{ width: 30px; }
+				a span{
+					position: relative;
+					top: 2px;
+					width: 26px;
+					height: 26px;
+					border: 1px $light solid;
+					border-radius: 14px;
+					display: inline-block;
+					margin: 0 3px 0 3px;					
+				}
+				svg{
+					width:16px;
+					height:16px;
+					margin-left: 5px;
+					margin-top: 5px;
+					fill: $grey;
+				}
 			}
 		}
 
@@ -16,7 +33,8 @@
 			font-size: 15px;
 			line-height: 24px;
 			.photo{
-				padding-right: 20px;
+				border-radius: 50%;
+				margin-right: 20px;
 				float: left;
 			}
 			.signature{
@@ -27,26 +45,67 @@
 
 		.subscribing{
 			color: white;
-			background-image: url('/assets/blog/follow_violin.png');
+			background-image: url('/assets/blog/follow_violin.jpg');
 			background-size: cover;
 			width: 100%;
 			position: relative;
 			border-radius: 5px;
 			min-height: 180px;
-			.gradient{ border-radius: 5px; min-height: 180px; height: 100%; }
+			.gradient{ 
+				border-radius: 4px; 
+				min-height: 180px; 
+				height: 100%; 
+			}
 			.transparent_text_line{ padding-top: 20px; }
 			.text{ padding: 0 20px; }
-			form{ width: 174px; margin: 20px auto;}
+			.form{
+				margin: 0 20px;
+				position: relative;
+				padding-top: 8px;
+				input[type=text]{
+					background: rgba(255, 255, 255, 0.2);
+					position: absolute;
+					border-radius: 30px;
+					padding: 0 20px 0 20px;
+					height: 36px;
+					border: none;
+					width: 100%;
+					box-sizing: border-box; -moz-box-sizing: border-box;
+					font-size: 14px;
+				}	
+				.button{
+					background: white;
+					width: 36px;
+					height: 36px; 
+					padding: 7px 0 0 17px; 
+					position: relative;		
+					border-radius: 30px;
+					box-sizing: border-box; -moz-box-sizing: border-box;
+					float: right;
+					right: 2px;
+					@extend .animation;
+					i{  
+						font-weight: 700;
+						color: $blue;
+					}
+				}	
+			}	
 		}
 
 		.pinterest{
 			img{
 				width: 80px;
 				height: 80px;
-				border-radius: 5px;
+				border-radius: 4px;
 			}
-			a:not(:last-child) img{ margin-right: 10px; }
-			a{ float: left; }
+			a{ 
+				float: left;
+				width: 80px;
+				height: 80px;
+				margin-right: 10px;
+				margin-top: 10px;
+				&:last-child {margin-right: 0px;}
+			 }
 		}
 
 		.twitter{
@@ -56,6 +115,7 @@
 				color: rgb(176, 175, 175);
 				padding-left: 10px;
 			}
+			i{ font-weight: 700; margin-left: 5px; }
 			b{ font-family: FuturaPTBook; font-size: 16px;}
 			.next{ color: $blue; font: 13px/19px FuturaPTDemi; text-transform: uppercase; margin-top: 12px; }
 		}
@@ -80,12 +140,23 @@
 				font: 13px/19px FuturaPTDemi;
 				text-transform: uppercase;
 				color: #394c60;
-			}
-			.title .share img{
-				width: 22px;
-				position: relative;
-				top: 5px;
-				margin-left: 5px;
+				a span{
+					position: relative;
+					top: 3px;
+					width: 22px;
+					height: 22px;
+					border: 1px #d7dce0 solid;
+					border-radius: 12px;
+					display: inline-block;
+					margin-left: 4px;
+				}
+				svg{
+					width:14px;
+					height:14px;
+					margin-left: 4px;
+					margin-top: 4px;
+					fill: $grey;
+				}
 			}
 			.text{ 
 				color: #394c60; font: 16px/28px FuturaPTBook; 
@@ -96,14 +167,14 @@
 					color: #b0b9c3;
 					font-size: 26px;
 					line-height: 35px;
-					font-family: 'FuturaPTBookOblique';
+					font-family: FuturaPTBook;
 					margin-bottom: 20px;
 				}
 				ul{
 					margin-bottom: 20px;
 				}
 			}
-			.img{ width: 100%; display: block; margin-bottom: 25px; border-radius:5px; }
+			.img{ width: 100%; display: block; margin-bottom: 25px; border-radius:4px; }
 
 		}
 
@@ -120,7 +191,7 @@
 
 //_________________________responsive
 #blog{
-	@media (max-width: 985px){
+	@media (max-width: 800px){
 		#main_container{
 			float: none;
 			padding-right: 0;
@@ -130,34 +201,10 @@
 		}
 		aside{
 			float: none;
-			width: 100%;
-			font-size: 0px;
-			section{
-				font-size: 14px;
-				width: 50%;
-				display: inline-block;
-				box-sizing: border-box;
-				vertical-align: top;
-				margin-bottom: 60px;
-			}
-			.entertaina_blog, .pinterest{ padding-right: 20px; }
-			.follow, .twitter{ padding-left: 20px; }
-			.ads{ margin-right: auto; margin-left: auto; display: block; width: 300px; }
-			section.subscribing{ width: 100%; padding-right: 0; text-align: center; }
-			.follow{
-				text-align: center;
-				.inline-block{ display: inline-block; }
-			}
-			.pinterest{
-				text-align: center;
-				.inline-block{ display: inline-block; }
-			}
+			margin: 0 auto;
 		}
 	} 
 
-	@media (max-width: 620px){
-		aside section{ width: 100%; }
-	}
 }
 
 

@@ -24,26 +24,9 @@ $(function(){
 
 
 	//_________________________modals
-	$('.fancy').fancybox();
-	// $('.fancy_img').fancybox({ fitToView: false, autoResize: false, autoSize: true, padding: 30 });
-	$('.tabs').tabs({
-		show: true,
-		hide: true, //I cant move it to coffee somehow and I cant disable vibration effect (false doesnt work)
-		active: 0
+	$('.fancy').fancybox({
+		fitToView: false, autoResize: false, autoSize: true
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	
@@ -53,25 +36,17 @@ $(function(){
 			// afterLoad peculiar specifics
 			$('.fancybox-skin').addClass('transparent_modal'); 
 		},
-		scrolling: 'no'
+		fitToView: false, autoResize: false, autoSize: true
 	});
 
 
 
 
 
-	$("#logo").hover(
+	$("#padding_for_logo").hover(
 		function () { $('.dropdown').slideDown(); },
-		function () { $('.dropdown').slideUp(); }
+		function () { $('.dropdown').hide(); }
 	);
-
-
-
-
-	img_to_svg();
-
-
-
 
 
 
@@ -124,17 +99,129 @@ $(function(){
 
 
 
+if ($('#settings').length!=0){
+// сделать код нормальным и перевести в правильное место
+var editor_biography = new wysihtml5.Editor("biography_editor", { // id of textarea element
+	toolbar:      "biography_editor-toolbar", // id of toolbar element
+	parserRules:  wysihtml5ParserRules // defined in parser rules set 
+});
+var editor_pricing_options = new wysihtml5.Editor("pricing_options_editor", { // id of textarea element
+	toolbar:      "pricing_options_editor-toolbar", // id of toolbar element
+	parserRules:  wysihtml5ParserRules // defined in parser rules set 
+});
+var editor_technical_specs = new wysihtml5.Editor("technical_specs_editor", { // id of textarea element
+	toolbar:      "technical_specs_editor-toolbar", // id of toolbar element
+	parserRules:  wysihtml5ParserRules // defined in parser rules set 
+});
 
 
+editor_biography.on('load', function()
+{
+	//эта штука расширяет dynamically text_editor если нужно будет
+	var minheight = 150;
+	var buffer = 50;
 
+	var padding = parseFloat(editor_biography.composer.iframe.style.paddingTop) + parseFloat(editor_biography.composer.iframe.style.paddingBottom) + parseFloat(editor_biography.composer.iframe.style.borderTopWidth) + parseFloat(editor_biography.composer.iframe.style.borderBottomWidth);
+	editor_biography.composer.iframe.style.height = (minheight + padding) + 'px';
 
+	var resize = function() {
+		var $div = $('<div>').append($(editor_biography.composer.element).clone().contents()).appendTo(editor_biography.composer.element);
+		var scrollheight = $div.get(0).scrollHeight;
+		$div.remove();
+		if (scrollheight > (minheight - buffer)) editor_biography.composer.iframe.style.height = (scrollheight + buffer + padding) + 'px';
+		else editor_biography.composer.iframe.style.height = (minheight + padding) + 'px';
+	};
+
+	editor_biography.composer.element.addEventListener('keyup', resize, false);
+	editor_biography.composer.element.addEventListener('blur', resize, false);
+	editor_biography.composer.element.addEventListener('focus', resize, false);
 
 });
+
+
+
+editor_pricing_options.on('load', function()
+{
+	var minheight = 150;
+	var buffer = 50;
+
+	var padding = parseFloat(editor_pricing_options.composer.iframe.style.paddingTop) + parseFloat(editor_pricing_options.composer.iframe.style.paddingBottom) + parseFloat(editor_pricing_options.composer.iframe.style.borderTopWidth) + parseFloat(editor_pricing_options.composer.iframe.style.borderBottomWidth);
+	editor_pricing_options.composer.iframe.style.height = (minheight + padding) + 'px';
+
+	var resize = function() {
+		var $div = $('<div>').append($(editor_pricing_options.composer.element).clone().contents()).appendTo(editor_pricing_options.composer.element);
+		var scrollheight = $div.get(0).scrollHeight;
+		$div.remove();
+		if (scrollheight > (minheight - buffer)) editor_pricing_options.composer.iframe.style.height = (scrollheight + buffer + padding) + 'px';
+		else editor_pricing_options.composer.iframe.style.height = (minheight + padding) + 'px';
+	};
+
+	editor_pricing_options.composer.element.addEventListener('keyup', resize, false);
+	editor_pricing_options.composer.element.addEventListener('blur', resize, false);
+	editor_pricing_options.composer.element.addEventListener('focus', resize, false);
+
+});
+
+
+
+
+
+
+
+
+editor_technical_specs.on('load', function()
+{
+	var minheight = 150;
+	var buffer = 50;
+
+	var padding = parseFloat(editor_technical_specs.composer.iframe.style.paddingTop) + parseFloat(editor_technical_specs.composer.iframe.style.paddingBottom) + parseFloat(editor_technical_specs.composer.iframe.style.borderTopWidth) + parseFloat(editor_technical_specs.composer.iframe.style.borderBottomWidth);
+	editor_technical_specs.composer.iframe.style.height = (minheight + padding) + 'px';
+
+	var resize = function() {
+		var $div = $('<div>').append($(editor_technical_specs.composer.element).clone().contents()).appendTo(editor_technical_specs.composer.element);
+		var scrollheight = $div.get(0).scrollHeight;
+		$div.remove();
+		if (scrollheight > (minheight - buffer)) editor_technical_specs.composer.iframe.style.height = (scrollheight + buffer + padding) + 'px';
+		else editor_technical_specs.composer.iframe.style.height = (minheight + padding) + 'px';
+	};
+
+	editor_technical_specs.composer.element.addEventListener('keyup', resize, false);
+	editor_technical_specs.composer.element.addEventListener('blur', resize, false);
+	editor_technical_specs.composer.element.addEventListener('focus', resize, false);
+
+
+
+
+	var stylesheet = $('head link').prop('outerHTML');
+	$('.wysihtml5-sandbox').contents().find('head').append(stylesheet);
+
+});
+
 }
 
 
 
+//move to search coffee
+$('input.date').bind("keypress", function(e){
+  if(e.which === 13){
+		e.preventDefault()
+    $('.date').pickmeup('hide');
+  }
+})
 
+
+
+
+
+
+
+
+
+
+
+
+
+});}
 
 
 

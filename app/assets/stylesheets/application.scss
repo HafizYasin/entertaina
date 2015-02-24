@@ -39,10 +39,13 @@
 
 .gradient{ background: $green_blue; }
 
-.black_gradient{ background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.35) 100%); }
+.black_gradient{ 
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.67) 100%);
+}
 
 .darken{
-	background: rgba(136, 136, 136, 0.27);
+	background: rgba(26, 43, 63, 0.4);
+	border-radius: 4px;
 	width: 100%;
 	height: 100%;
 }
@@ -64,15 +67,17 @@
 		margin-right: -260px;
 		width: 100%;
 		box-sizing: border-box;
+		-moz-box-sizing: border-box;
 	}
 }
 
 .ads{ 
-	background: #f7f8f9; border-radius: 3px;
+	background: #f7f8f9; border-radius: 4px;
 	a{ height: 275px; width: 260px; display: table-cell; padding: 0 70px; vertical-align: middle; }
 	.logo img{ display: inline-block; margin-bottom: 30px; width: 120px; }
 	.desc{ color: #b0b8c3; font: 20px FuturaPTDemi; text-transform: uppercase; }
 	.details{ display: inline-block; margin-top: 30px; font-size: 12px; }
+	i{ font-weight: 700; margin-left: 5px;}
 }
 
 #audios{
@@ -93,7 +98,7 @@
 			max-width: 188px;
 		}
 		.time{
-			color: #5acdd0;
+			color: $blue;
 			float: right;
 		}
 		i.fa-times{
@@ -111,8 +116,11 @@
 .entertainer{
 	width: 300px; 
 	display: inline-block;
+	border: 2px #ebedef solid;
+	border-radius: 5px;
+	box-sizing: border-box; -moz-box-sizing: border-box;
 	.image{ position: relative; }
-	.image .img{ display: block; border-radius:4px 4px 0 0; width: 100%; }
+	.image .img{ display: block; border-radius: 4px 4px 0 0; width: 100%; }
 	.location{
 		display: inline-block;
 		position: absolute;
@@ -126,7 +134,7 @@
 		font: 13px/28px FuturaPTDemi;
 		background: $green_blue;
 	}
-	.location img{ vertical-align: middle; margin-right: 3px; }
+	.location img{ vertical-align: middle; margin-right: 3px; z-index: 0; }
 	.favorites_link{
 		display: block;
 		width: 100%;
@@ -139,17 +147,14 @@
 		font: 12px/150px FuturaPTDemi;
 		text-transform: uppercase;
 		background: $green_blue;
-		z-index: 9;
+		z-index: 1;
 		opacity: 0;
-		border-radius: 5px 5px 0 0;
+		border-radius: 4px 4px 0 0;
 	}
 	.favorites_link img{ vertical-align: middle; margin-right: 3px; margin-top: -1px; position: relative; bottom: 1px;  }
 	.favorites_link:hover{ opacity: 1; font-size: 16px; }
 	.info{ 
-		padding: 10px 20px 20px; background: white; border-radius: 0 0 5px 5px; 
-		border-bottom: 2px #ebedef solid;
-		border-left: 2px #ebedef solid;
-		border-right: 2px #ebedef solid;
+		padding: 10px 20px 20px; background: white; 
 	}
 	.name{ font: 18px FuturaPTDemi; }
 
@@ -166,7 +171,10 @@
 			display: inline-block;
 			position: relative;
 		}
-		i{ position: absolute; }
+		i{ 
+			position: absolute; 
+			line-height: 0; 
+		}
 		.play{ margin-left: 6px; }
 		.like{ background: #f5f6f7; }
 		.like.favorited{
@@ -175,14 +183,14 @@
 		}
 		.like i{
 			font-size: 10px;
-			top: 9px;
+			top: 13px;
 			left: 8px;
 			color: $blue;
 		}
 		.play i{
 			font-size: 17px;
 			left: 11px;
-			top: 5px;
+			top: 13px;
 			color: white;
 		}
 	}
@@ -229,7 +237,7 @@
 	color: #fff;
 	font: 13px/48px FuturaPTHeavy;
 	height: 48px;
-	border-radius: 5px;
+	border-radius: 4px;
 	text-decoration: none;
 	text-transform: uppercase;
 	background: $green_blue;
@@ -252,9 +260,9 @@
 	display: inline-block;
 	background: $green_blue;
 	@extend .animation;
-	i{ font-size: 8px; position: absolute; }
-	.fa-pause{ left: 9px; top: 8px; }
-	.fa-play{ left: 10px; top: 9px; }
+	i{ font-size: 8px; position: absolute; line-height: 0; }
+	.fa-pause{ left: 9px; top: 13px; }
+	.fa-play{ left: 10px; top: 13px; }
 }
 
 .text_line{
@@ -289,31 +297,32 @@
 	.name .logo_link:hover{ opacity: 1; }
 	.input{
 		border: 1px solid #d7dce0;
-		border-radius: 6px;
+		border-radius: 4px;
 		width: 268px;
 		height: 42px;
 		padding: 0 15px;
 		color: $grey;
-		font: 16px/42px FuturaPTBook;
+		font: 16px FuturaPTBook;
 		margin-bottom: 9px;
+		// -moz-box-sizing: border-box; //fixes modals
 		&::placeholder { color: $grey; }
 	}
 	textarea{
 		border: 1px solid #d7dce0;
-		border-radius: 6px;
+		border-radius: 4px;
 		width: 100%;
 		height: 118px;
 		padding: 5px 15px;
 		color: $grey;
 		font: 16px FuturaPTBook;
-		box-sizing:border-box;
+		box-sizing: border-box; -moz-box-sizing: border-box;
 		resize: none;
 		&:focus{ outline: none; }
 		&::placeholder { color: $grey; }
 	}
 	.input.required{ background: url(/assets/common/forms/required_icon.png) 97% 8px no-repeat; }
-	.input.success{ border-color: $blue; color: $blue; font-family: FuturaPTMedium; background: url(/assets/common/forms/input_success_icon.png) 97% 8px no-repeat; }
-	.input.error{ color: #f28e8e; border-color: #f28e8e; font-family: FuturaPTMedium; background: url(/assets/common/forms/input_error_icon.png) 97% 8px no-repeat; }
+	.input.success{ border-color: $blue; color: $blue; font-family: FuturaPTDemi; background: url(/assets/common/forms/input_success_icon.png) 97% 8px no-repeat; }
+	.input.error{ color: #f28e8e; border-color: #f28e8e; font-family: FuturaPTDemi; background: url(/assets/common/forms/input_error_icon.png) 97% 8px no-repeat; }
 	.input.mini{ width: 113px; }
 	input[type=checkbox]{ display: none; }
 	.checkbox_label{
@@ -330,7 +339,7 @@
 	input[type=checkbox]:checked + .checkbox_label{ background: url(/assets/common/forms/checkbox_icon_h.png) 0 0 no-repeat; }
 	.submit_btn{
 		@extend .animation;
-		border-radius: 6px;
+		border-radius: 4px;
 		height: 44px;
 		color: #fff;
 		width: 100%;
@@ -350,7 +359,7 @@
 	p, ul{ margin-bottom: 25px; }
 	h1{ font: 30px FuturaPTDemi; margin-bottom: 5px; }
 	h2{ font: 20px/28px FuturaPTDemi; margin-bottom: 25px; }
-	.text blockquote{ color: $blue; font: 24px/32px FuturaPTBookOblique; padding-left: 17px; border-left: 1px solid $blue; margin-bottom: 25px; }
+	.text blockquote{ color: $blue; font: 24px/32px FuturaPTBook; padding-left: 17px; border-left: 1px solid $blue; margin-bottom: 25px; }
 	ul li{ margin-left: 55px; margin-bottom: 15px; }
 }
 
@@ -384,22 +393,22 @@
 		padding: 6px 0;
 		background: #f5f6f7;
 		border: 1px solid #d7dce0;
-		box-sizing: border-box;
-		border-radius: 5px 5px 0 0;
+		box-sizing: border-box; -moz-box-sizing: border-box;
+		border-radius: 4px 4px 0 0;
 		border-bottom: none;
 		a{
 			display: inline-block;
 			padding-left: 11px;
 			padding-right: 11px;
 			border: 1px solid #d7dce0;
-			border-radius: 5px;
+			border-radius: 4px;
 			color: #b0b9c3;
 			cursor: pointer;
 		}
 	}
 	section{
 		border: 1px solid #d7dce0;
-		border-radius: 0 0 5px 5px;
+		border-radius: 0 0 4px 4px;
 		padding: 0 15px;
 		&:focus{
 			outline: none;
@@ -416,7 +425,7 @@
 		padding-top: 40px;
 		padding-bottom: 70px;
 		.item{ 
-			box-sizing: border-box; 
+			box-sizing: border-box; -moz-box-sizing: border-box;
 			display: inline-block; 
 			font: 16px/24px FuturaPTBook; 
 			width: 30%; 
@@ -427,7 +436,7 @@
 			&:nth-child(3n){ margin-right: 0; }
 			.name-icon{ 
 				display: block;
-				box-sizing: border-box;
+				box-sizing: border-box; -moz-box-sizing: border-box;
 				float: left;
 				position: relative;
 				width: 30px;

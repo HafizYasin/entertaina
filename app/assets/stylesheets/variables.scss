@@ -6,35 +6,40 @@ $greenish: #21c19d; //modal headings eg, stuff that used to be gradient
 $green_blue: linear-gradient(135deg,  rgba(32,194,156,0.9) 0%,rgba(44,181,189,0.9) 100%);
 $darken: rgba(8, 18, 29, 0.9);
 
-@font-face{
-	font-family: 'FuturaPTHeavy';
-	src: url(FuturaPTHeavy.otf), url(FuturaPTHeavy.eot);
-}
-@font-face{
+
+@font-face {
 	font-family: 'FuturaPTBook';
-	src: url(FuturaPTBook.otf), url(FuturaPTBook.eot);
+	src: url('FuturaPT-Book.eot');
+	src: url('FuturaPT-Book.eot?#iefix') format('embedded-opentype'),
+			 url('FuturaPT-Book.woff2') format('woff2'),
+			 url('FuturaPT-Book.woff') format('woff'),
+			 url('FuturaPT-Book.ttf') format('truetype'),
+			 url('FuturaPT-Book.svg#FuturaPT-Book') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
-@font-face{
-	font-family: 'FuturaPTBookOblique';
-	src: url(FuturaPTBookOblique.otf), url(FuturaPTBookOblique.eot);
-}
-@font-face{
+@font-face {
 	font-family: 'FuturaPTDemi';
-	src: url(FuturaPTDemi.otf), url(FuturaPTDemi.eot);
+	src: url('FuturaPT-Demi.eot');
+	src: url('FuturaPT-Demi.eot?#iefix') format('embedded-opentype'),
+			 url('FuturaPT-Demi.woff2') format('woff2'),
+			 url('FuturaPT-Demi.woff') format('woff'),
+			 url('FuturaPT-Demi.ttf') format('truetype'),
+			 url('FuturaPT-Demi.svg#FuturaPT-Demi') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
-@font-face{
-	font-family: 'FuturaPTMedium';
-	src: url(FuturaPTMedium.otf), url(FuturaPTMedium.eot);
+@font-face {
+	font-family: 'FuturaPTHeavy';
+	src: url('FuturaPT-Heavy.eot');
+	src: url('FuturaPT-Heavy.eot?#iefix') format('embedded-opentype'),
+			 url('FuturaPT-Heavy.woff2') format('woff2'),
+			 url('FuturaPT-Heavy.woff') format('woff'),
+			 url('FuturaPT-Heavy.ttf') format('truetype'),
+			 url('FuturaPT-Heavy.svg#FuturaPT-Heavy') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
-@font-face{
-	font-family: 'FuturaPTLight';
-	src: url(FuturaPTLight.otf);
-}
-
-
-
-
-
 
 /*______________normallier_______________*/
 *{ margin: 0; padding: 0;}
@@ -47,14 +52,14 @@ a{
 }
 body{
 	color: $grey;
-	font: 16px/28px FuturaPTBook;
+	font: 16px/28px FuturaPTBook, Helvetica;
 	-webkit-font-smoothing: antialiased;
 }
-button, input{ border: none; outline: none; }
-
+button, input{ border: none; outline: none; -webkit-appearance: none !important; }
+textarea{ -webkit-appearance: none !important; }
 input[placeholder]{
 	text-overflow:ellipsis;
-}  
+}
 ::placeholder { 
 	text-overflow:ellipsis;
 	opacity: 1; 
@@ -70,5 +75,6 @@ input[placeholder]{
 
 body{
 	min-width: 320px;
+	box-sizing: border-box; -moz-box-sizing: border-box;
 	overflow-x: hidden;
 }

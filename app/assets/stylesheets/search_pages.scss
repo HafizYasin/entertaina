@@ -5,14 +5,15 @@
 		padding-bottom: 70px;
 		p{ width: 100%; }
 	}
-
+	.lightSlider{ overflow: visible; }
 	.entertainers{
-		background-image: url("/assets/index/popular_entertainers/bg.jpg");
+		background-image: url("/assets/index/entertainer.jpg");
 		background-position: 50% 0px;
 		background-repeat: no-repeat;
 		background-size: cover;
-		box-sizing: border-box;
+		box-sizing: border-box; -moz-box-sizing: border-box;
 		position: relative;
+
 
 		.gradient{ padding: 50px 0 100px 0; }
 
@@ -26,7 +27,7 @@
 		}
 	}
 	
-	h1{ margin-bottom: 40px; }
+	h1{ font: 30px FuturaPTDemi; margin-bottom: 40px; }
 }
 
 #found{
@@ -34,9 +35,11 @@
 	aside{
 		width: 264px;
 		float: left;
+		position: relative; 
+		z-index: 2;
 		.filter{
-			border: 2px solid #E3E8EC;
-			border-radius: 5px;
+			border: 2px solid #ebedef;
+			border-radius: 4px;
 			.block{
 				margin-bottom: 18px;
 				background: #fff;
@@ -50,14 +53,14 @@
 			}
 			.input{
 				border: 1px solid #d7dce0;
-				border-radius: 6px;
+				border-radius: 4px;
 				width: 220px;
-				box-sizing: border-box;
+				box-sizing: border-box; -moz-box-sizing: border-box;
 				height: 42px;
 				padding: 0 35px 0 15px;
 				margin-bottom: 25px;
 			}
-			.price, #distance{ color: $grey; font: 18px FuturaPTMedium; }
+			.price, #distance{ color: $grey; font: 18px FuturaPTDemi; }
 			#slider-distance{
 				height: 3px;
 				border: none;
@@ -82,7 +85,7 @@
 			input[type=checkbox]{ display: none; }
 			input[type=checkbox]:checked + .checkbox_label{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat; }
 			input[type=checkbox]:checked + .checkbox_label.sub{ background: url(/assets/checkbox_icon_h.png) 0 0 no-repeat, url(/assets/arrow_up.png) 200px 6px no-repeat; }
-			.ui-selectmenu-button{ width: 220px !important; box-sizing: border-box; }
+			.ui-selectmenu-button{ width: 220px !important; box-sizing: border-box; -moz-box-sizing: border-box; }
 			.sub_cats{ 
 				display: none; margin-bottom: 15px; 
 				.line{ padding-left: 30px; }
@@ -108,7 +111,7 @@
 		padding-left: 291px;
 		margin-left: -300px;
 		width: 100%;
-		box-sizing: border-box;
+		box-sizing: border-box; -moz-box-sizing: border-box;
 		float: right;
 		.entertainer{
 			margin-bottom: 30px;
@@ -117,7 +120,7 @@
 		}
 		.entertainer.paid_place{
 			border: $blue 2px solid;
-			border-radius: 7px;
+			border-radius: 4px;
 			margin-right: -1px;
 			margin-left: -1px;
 			.info{ border: none; }
@@ -125,7 +128,6 @@
 
 	}
 	#favorites_relative, #show_filters{ display: none; }
-
 }
 
 a#favorites_fixed{
@@ -134,7 +136,7 @@ a#favorites_fixed{
 	right: -54px;
 	background: $light_light;
 	color: $blue;
-	border-radius: 3px;
+	border-radius: 4px;
 	padding: 10px 35px;
 	transform: rotate(270deg);
 	font-family: FuturaPTDemi;
@@ -152,6 +154,7 @@ a#favorites_fixed{
 		line-height: 13px;
 	}
 	h1{
+		font: 30px FuturaPTDemi;
 		display: inline-block;
 		width: 60%;
 		margin-top: 0;
@@ -223,7 +226,7 @@ a#favorites_fixed{
 
 #found{
 	@media (max-width: 1070px){
-		.entertainer{ width: 49%; min-height: 320px; box-sizing: border-box; }
+		.entertainer{ width: 49%; min-height: 320px; }
 	}
 	@media (max-width: 850px){
 		aside{ 

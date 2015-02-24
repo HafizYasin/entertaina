@@ -1,5 +1,6 @@
 <% provide :title, 'Settings' %>
 
+<%= render '/layouts/icons' %>
 
 <div id="settings">
 	<div id="free_trial_warning">
@@ -7,12 +8,17 @@
 			<a href="#upgrade_form" class="fancy">
 				<i class="fa fa-exclamation-triangle"></i>
 				During your free trial, your profile is not visible to the public. To share with the rest of the world, <span class="uppercase blue">upgrade your account</span>
-			</a>
-			<div class="right close animation">
+			</a><!-- 
+			--><div class="right close animation">
 				<img src="/assets/common/grey_close.png">
 			</div>
 		</div>
 	</div>
+
+	<section class="activate_view responsive">
+		<a href="#" class="flat_button activate">Activate profile</a>
+		<a href="#" class="flat_button view">View profile</a>
+	</section>
 
 	<!-- structure class lets you structure page with aside and #main_container -->
 	<div class="w940px structure">	
@@ -90,7 +96,8 @@
 							</div>
 							<!-- <div class="right"> -->
 								<div class="comment right">Your occupation category and type that will affect on the search result</div>
-						</div>
+						</div><br>
+
 
 						<div class="line">
 							<label for="location">Location<i class="fa fa-asterisk"></i></label>
@@ -120,8 +127,8 @@
 						<div class="line website">
 							<label for="website">Website</label>
 							<div class="right">
-								<div id="http">http:/<span style="margin-left: -3px;">/</span></div>
-								<input class="input" id="website">
+								<div id="http"><span style="display: inline-block; padding-top: 19px;">http:/<span style="margin-left: -3px;">/</span></span></div><!--
+								--><input class="input" id="website">
 								<div class="comment">Public contact details to communicate with you</div>
 							</div>
 							<div class="clear"></div>
@@ -136,18 +143,21 @@
 
 						<section id="network">
 							<div class="line">
-								<label>Add another one</label>
-								<div class="right">
-									<span id="twitter"><img class="svg" src="/assets/common/social_icons/twitter.svg"></span>
-									<span id="tumblr"><img class="svg" src="/assets/common/social_icons/tumblr.svg"></span>
-									<span id="facebook"><img class="svg" src="/assets/common/social_icons/facebook.svg"></span>
-									<span id="pinterest"><img class="svg" src="/assets/common/social_icons/pinterest.svg"></span>
-									<span id="instagram"><img class="svg" src="/assets/common/social_icons/instagram.svg"></span>
-									<span id="google+"><img class="svg" src="/assets/common/social_icons/google+.svg"></span>
-									<span id="linkedin"><img class="svg" src="/assets/common/social_icons/linkedin.svg"></span>
-									<!-- <span id="vimeo"><img class="svg" src="/assets/common/social_icons/vimeo.svg"></span> -->
-									<span id="flickr"><img class="svg" src="/assets/common/social_icons/flickr.svg"></span>
-									<span id="youtube"><img class="svg" src="/assets/common/social_icons/youtube.svg"></span>
+								<label>Add network</label>
+								<div class="right">	
+								
+									<span id="twitter"><svg viewbox="0 0 32 32"><use xlink:href="#twitter"></svg></span>
+									<span id="facebook"><svg viewbox="0 0 32 32"><use xlink:href="#facebook"></svg></span>
+									<span id="linkedin"><svg viewbox="0 0 32 32"><use xlink:href="#linkedin"></svg></span>
+									<span id="vimeo"><svg viewbox="0 0 32 32"><use xlink:href="#vimeo"></svg></span>
+									<span id="flickr"><svg viewbox="0 0 32 32"><use xlink:href="#flickr"></svg></span>
+									<span id="youtube"><svg viewbox="0 0 32 32"><use xlink:href="#youtube"></svg></span>
+									<span id="pinterest"><svg viewbox="0 0 32 32"><use xlink:href="#pinterest"></svg></span>
+									<span id="tumblr"><svg viewbox="0 0 32 32"><use xlink:href="#tumblr"></svg></span>
+									<span id="google"><svg viewbox="0 0 32 32"><use xlink:href="#google"></svg></span>
+									<span id="instagram"><svg viewbox="0 0 32 32"><use xlink:href="#instagram"></svg></span>
+									<span id="vine"><svg viewbox="0 0 32 32"><use xlink:href="#vine"></svg></span>
+									
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -178,8 +188,8 @@
 						</div>
 
 						<div class="line price">
-							<label for="price">Price from</label>
-							<div class="right">
+							<label for="price">Price from</label><!-- 
+							--><div class="right">
 
 								<div id="currency">
 									<select id="">
@@ -211,6 +221,7 @@
 						<div class="right">
 							<a class="flat_button uppercase">Update</a>
 						</div>
+						<div class="clear"></div>
 					</form>
 				</div>
 
@@ -239,7 +250,7 @@
 
 								<% 4.times do |i| %>
 									<div class="uploaded animation">
-										<img src="/assets/profile/entertainers/rolling_stones/photo_thumbs/1_larger.jpg">
+										<img src="/assets/profile/photo_thumbs/1_large.jpg">
 									</div>
 								<% end %>
 
@@ -320,7 +331,6 @@
 									</div>
 								</div>
 
-
 							</div>
 						</div>		
 
@@ -329,6 +339,7 @@
 								<a class="flat_button uppercase">Update</a>
 							</div>
 						</div>				
+						<div class="clear"></div>
 
 					</form>
 				</div>
@@ -394,6 +405,7 @@
 									<a href=""><div class="small_fat_blue uppercase">Delete yout account</div></a>
 								</div>
 							</div>
+							<div class="clear"></div>
 						</form>
 				</div>
 
@@ -439,7 +451,7 @@
 
 
 		<aside class="right">
-			<section id="send_add">
+			<section class="activate_view">
 				<a href="#" class="flat_button activate">Activate profile</a>
 				<a href="#" class="flat_button view">View profile</a>
 			</section>
@@ -450,12 +462,12 @@
 				</div>
 
 				<div class="img left">
-					<img src="/assets/profile/entertainers/rolling_stones/logo.png">
+					<img src="/assets/profile/avatar.jpg">
 				</div>
 				<div class="upload right">
 					<div class="grey_fat">Upload Your Avatar</div>
 					<div class="grey_thin">Min 160x160px, Max 1mb</div>
-					<div class="small_fat_blue uppercase">Drag or browse</div>
+					<a href""><div class="small_fat_blue uppercase">Drag or browse</div></a>
 				</div>
 				<div class="clear"></div>
 			</section>
