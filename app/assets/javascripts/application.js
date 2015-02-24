@@ -192,7 +192,7 @@ editor_technical_specs.on('load', function()
 
 
 
-	var stylesheet = $('head link').prop('outerHTML');
+	var stylesheet = $('head').html();
 	$('.wysihtml5-sandbox').contents().find('head').append(stylesheet);
 
 });
