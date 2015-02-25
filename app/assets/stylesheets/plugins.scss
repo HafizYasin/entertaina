@@ -147,7 +147,17 @@ span:focus{ outline: none; }
 	font-size: 14px !important;
 }
 div[data-wysihtml5-dialog="createLink"]{ padding-top: 10px; }
-
+.wysihtml5-editor{
+	min-width: initial;
+	ul{
+		margin-left: 20px;
+		list-style-type: disk;
+	}
+	ol{
+		margin-left: 20px;
+		list-style-type: decimal;
+	}
+}
 
 //___________search_page pickmeup datepicker
 .input_calendar.pickmeup{

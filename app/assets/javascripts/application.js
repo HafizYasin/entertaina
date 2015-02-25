@@ -194,7 +194,7 @@ editor_technical_specs.on('load', function()
 
 	var stylesheet = $('head').html();
 	$('.wysihtml5-sandbox').contents().find('head').append(stylesheet);
-
+	$(window).scrollTop(-10000000);
 });
 
 }
@@ -223,10 +223,3 @@ $('input.date').bind("keypress", function(e){
 
 });}
 
-
-
-
-
-
-// Позвонили что посылка приехала в Питер. Можно забрать завтра с 14 до 19 часов. Адрес: Лиговский проспект , д.50, корпус 13, помещение 100А. Можно посмотреть на сайте СДЕКа как доехать
-// 24.02.15

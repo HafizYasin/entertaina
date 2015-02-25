@@ -290,12 +290,16 @@
 	text-align: center;
 }
 
+.modal .form .input{
+	box-sizing: content-box; -moz-box-sizing: content-box; //fixes modals
+}
 .form{
 	.line{ margin-bottom: 25px; }
 	.name{ color: #c0c4c9; font: 10px/20px FuturaPTHeavy; text-transform: uppercase; }
 	.name .logo_link{ opacity: .2; vertical-align: middle; transition: all 0.3s ease; } 
 	.name .logo_link:hover{ opacity: 1; }
 	.input{
+		box-sizing: border-box; -moz-box-sizing: border-box; //fixes modals
 		border: 1px solid #d7dce0;
 		border-radius: 4px;
 		width: 268px;
@@ -304,7 +308,6 @@
 		color: $grey;
 		font: 16px FuturaPTBook;
 		margin-bottom: 9px;
-		// -moz-box-sizing: border-box; //fixes modals
 		&::placeholder { color: $grey; }
 	}
 	textarea{
