@@ -6077,7 +6077,7 @@ wysihtml5.quirks.cleanPastedHTML = (function() {
         this.setSelection(newRange);
       } else {
         // fallback for when all hell breaks loose
-        body.focus();
+        // body.focus(); //time
       }
 
       if (restoreScrollPosition) {
@@ -7902,7 +7902,9 @@ wysihtml5.views.View = Base.extend(
       return;
     }
     
-    try { this.element.focus(); } catch(e) {}
+    try { 
+        // this.element.focus(); //time
+    } catch(e) {}
   },
   
   hide: function() {
@@ -8495,7 +8497,7 @@ wysihtml5.views.View = Base.extend(
         } catch(e) {
           element.appendChild(input);
         }
-        input.focus();
+        // input.focus(); //time
         input.parentNode.removeChild(input);
         
         window.scrollTo(originalScrollLeft, originalScrollTop);
@@ -8521,7 +8523,7 @@ wysihtml5.views.View = Base.extend(
         data = dataTransfer.getData("text/html") || dataTransfer.getData("text/plain");
       }
       if (data) {
-        element.focus();
+        // element.focus(); //time
         that.commands.exec("insertHTML", data);
         that.parent.fire("paste").fire("paste:composer");
         event.stopPropagation();
@@ -8944,7 +8946,7 @@ wysihtml5.views.Textarea = wysihtml5.views.View.extend(
       this.fire("show");
       if (firstField && !elementToChange) {
         try {
-          firstField.focus();
+          // firstField.focus(); //time
         } catch(e) {}
       }
     },
