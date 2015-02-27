@@ -8,7 +8,6 @@
 //= require jquery.lightSlider
 //= require text_editor_parser
 //= require text_editor
-//= require shared
 //= require_tree .
 //= require turbolinks
 
@@ -211,8 +210,8 @@ $('input.date').bind("keypress", function(e){
 
 //move to search coffee
 $('header video').on('ended', function () {
-  this.load();
-  this.play();
+	this.load();
+	this.play();
 });
 
 
