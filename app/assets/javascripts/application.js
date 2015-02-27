@@ -209,11 +209,11 @@ $('input.date').bind("keypress", function(e){
   }
 })
 
-
-
-
-
-
+//move to search coffee
+$('header video').on('ended', function () {
+  this.load();
+  this.play();
+});
 
 
 
