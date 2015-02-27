@@ -164,6 +164,7 @@ div[data-wysihtml5-dialog="createLink"]{ padding-top: 10px; }
 	font-family: 'FuturaPTDemi';
 	background: rgba(0,0,0,0);
 	font-size: 12px;
+
 	.pmu-instance{
 		position: relative;
 		left: 70px;
@@ -177,6 +178,11 @@ div[data-wysihtml5-dialog="createLink"]{ padding-top: 10px; }
 		nav:first-of-type{
 			width: 140px;
 			margin: 20px auto;
+			.pmu-month{
+				display: inline-block;
+				width: 109px;
+				text-align: center;
+			}
 			.pmu-prev img, .pmu-next img{
 				@extend .animation;
 				width: 7px;

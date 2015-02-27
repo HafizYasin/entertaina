@@ -46,9 +46,6 @@
       background: #17384d; }
     .pickmeup .pmu-instance nav {
       color: #eee;
-      display: -ms-flexbox;
-      display: flex;
-      display: -webkit-flex;
       line-height: 2em; }
       .pickmeup .pmu-instance nav *:first-child :hover {
         color: #88c5eb; }
@@ -76,7 +73,7 @@
       line-height: 1.8em; }
   .pickmeup .pmu-instance:first-child .pmu-prev,
   .pickmeup .pmu-instance:last-child .pmu-next {
-    display: block; }
+    display: inline-block; }
   .pickmeup .pmu-instance:first-child .pmu-month,
   .pickmeup .pmu-instance:last-child .pmu-month {
     width: 13em; }

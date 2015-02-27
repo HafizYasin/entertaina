@@ -59,6 +59,7 @@
 				height: 42px;
 				padding: 0 35px 0 15px;
 				margin-bottom: 25px;
+				color: $grey;
 			}
 			.price, #distance{ color: $grey; font: 18px FuturaPTDemi; }
 			#slider-distance{
@@ -98,7 +99,10 @@
 				background: url(/assets/common/forms/calendar.png) no-repeat 195px;
 				font-size: 15px;
 			}
-
+			.input.location{
+				background: url(/assets/common/forms/pin.png) no-repeat 195px;
+				font-size: 15px;
+			}
 
 
 		}
