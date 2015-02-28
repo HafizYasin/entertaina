@@ -209,17 +209,18 @@ $('input.date').bind("keypress", function(e){
 })
 
 //move to search coffee
-// var video = $('header video').get(0);
-// video.load();
-// video.play();
-// $('header video').on('ended', function () {
-// 	video.load();
-// 	video.play();
-// });
-if ( !isIPod() || !isIPad() || !isIPhone() ){
-	$('header video').prepend('<source src="/assets/index/piano.mp4" type="video/mp4"><source src="/assets/index/piano.webm" type="video/webm">');
-}
+var videos = $('header video');
+var video = videos.get(0);
+if ( !isIPod() && !isIPad() && !isIPhone() ){
+	videos.prepend('<source src="/assets/index/piano.mp4" type="video/mp4"><source src="/assets/index/piano.webm" type="video/webm">');
+};
 
+video.load();
+video.play();
+$('header video').on('ended', function () {
+	video.load();
+	video.play();
+});
 
 
 
