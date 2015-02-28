@@ -209,27 +209,31 @@ $('input.date').bind("keypress", function(e){
   }
 })
 
-// //move to search coffee
-// var video_header = $('#video_header .gradient')
-// if ( !isIPod() && !isIPad() && !isIPhone() ){
-// 	video_header.prepend('\
-// 		<video>\
-// 			<source src="/assets/index/piano.mp4" type="video/mp4">\
-// 			<source src="/assets/index/piano.webm" type="video/webm">\
-// 			<img id="video" src="/assets/index/piano.jpg">\
-// 		</video>\
-// 	');
-
-// 	var video = $('header video').get(0);
-// 	video.load();
-// 	video.oncanplaythrough = function() {
-// 		video.play();
-// 		$('header video').on('ended', function () {
-// 			video.play();
-// 		});
-// 	};
+//move to search coffee
+var video_header = $('#video_header .gradient')
+if ( !isIPod() && !isIPad() && !isIPhone() ){
 	
-// };
+	video_header.prepend('\
+		<video id="video">\
+			<source src="/assets/index/piano.mp4" type="video/mp4">\
+			<source src="/assets/index/piano.webm" type="video/webm">\
+			<img id="video" src="/assets/index/piano.jpg">\
+		</video>\
+	');
+
+	videojs('video', {'autoplay': true, 'loop': true, 'ControlBar': false}, function(){} );
+
+	// var video = $('header video').get(0);
+	// video.load();
+	// video.oncanplaythrough = function() {
+	// 	video.play();
+	// 	$('header video').on('ended', function () {
+	// 		video.play();
+	// 	});
+	// };
+
+	
+};
 
 
 

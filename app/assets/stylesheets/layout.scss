@@ -387,14 +387,16 @@ header#video_header{
 	overflow: hidden;
 	z-index: 3;
 	background-size: cover;
+	.vjs-control-bar, .vjs-caption-settings, .vjs-loading-spinner, .vjs-hidden{ 
+		display:none !important; 
+	}
 	video{
 		position: absolute;
-		left: 50%;
-		top: 50%;
-		min-width: 100%;
-		min-height: 100%;
+		left: 50%; top: 50%;
+		min-width: 100%; min-height: 100%;
 		transform: translate(-50%,-50%);
 		z-index: -1;
+		width: auto !important; height: auto !important;
 	}
 }
 
