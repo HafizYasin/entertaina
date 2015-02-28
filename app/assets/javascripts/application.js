@@ -216,6 +216,9 @@ $('input.date').bind("keypress", function(e){
 // 	video.load();
 // 	video.play();
 // });
+if ( !isIPod() || !isIPad() || !isIPhone() ){
+	$('header video').prepend('<source src="/assets/index/piano.mp4" type="video/mp4"><source src="/assets/index/piano.webm" type="video/webm">');
+}
 
 
 
