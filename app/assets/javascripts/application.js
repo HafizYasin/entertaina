@@ -209,18 +209,18 @@ $('input.date').bind("keypress", function(e){
 })
 
 //move to search coffee
-var videos = $('header video');
-var video = videos.get(0);
+var video_header = $('#video_header .gradient')
 if ( !isIPod() && !isIPad() && !isIPhone() ){
-	videos.prepend('<source src="/assets/index/piano.mp4" type="video/mp4"><source src="/assets/index/piano.webm" type="video/webm">');
-};
-
-video.load();
-video.play();
-$('header video').on('ended', function () {
-	video.load();
-	video.play();
-});
+	video_header.prepend('\
+		<video poster="/assets/index/piano.jpg" loop autoplay>\
+			<source src="/assets/index/piano.mp4" type="video/mp4">\
+			<source src="/assets/index/piano.webm" type="video/webm">\
+			<img src="/assets/index/piano.jpg">\
+		</video>\
+	');
+} else{
+	video_header.prepend('<img id="video" src="/assets/index/piano.jpg">')
+}
 
 
 

@@ -379,14 +379,14 @@ header.big{
 	}
 }
 
-header.video_header{
+header#video_header{
 	background-image: url('/assets/index/piano.jpg');
 	width: 100%;
 	height: 100%;
 	position: relative;
 	overflow: hidden;
 	z-index: 3;
-	video{
+	video, img#video{
 		position: absolute;
 		left: 50%;
 		top: 50%;
