@@ -212,15 +212,25 @@ $('input.date').bind("keypress", function(e){
 var video_header = $('#video_header .gradient')
 if ( !isIPod() && !isIPad() && !isIPhone() ){
 	video_header.prepend('\
-		<video poster="/assets/index/piano.jpg" loop autoplay>\
+		<video poster="/assets/index/piano.jpg">\
 			<source src="/assets/index/piano.mp4" type="video/mp4">\
 			<source src="/assets/index/piano.webm" type="video/webm">\
 			<img src="/assets/index/piano.jpg">\
 		</video>\
 	');
+
+	var video = $('header video').get(0);
+
+	video.load();
+	video.play();
+	$('header video').on('ended', function () {
+		video.load();
+		video.play();
+	});
+	
 } else{
 	video_header.prepend('<img id="video" src="/assets/index/piano.jpg">')
-}
+};
 
 
 
