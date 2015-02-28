@@ -229,8 +229,6 @@ if ( !isIPod() && !isIPad() && !isIPhone() ){
 		});
 	};
 	
-} else{
-	video_header.prepend('<img id="video" src="/assets/index/piano.jpg">')
 };
 
 
