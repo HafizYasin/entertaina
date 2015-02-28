@@ -217,20 +217,20 @@ if ( !isIPod() && !isIPad() && !isIPhone() ){
 		<video id="video">\
 			<source src="/assets/index/piano.mp4" type="video/mp4">\
 			<source src="/assets/index/piano.webm" type="video/webm">\
-			<img id="video" src="/assets/index/piano.jpg">\
+			<img src="/assets/index/piano.jpg">\
 		</video>\
 	');
 
-	videojs('video', {'autoplay': true, 'loop': true, 'ControlBar': false}, function(){} );
+	// videojs('video', {'autoplay': true, 'loop': true, 'ControlBar': false}, function(){} );
 
-	// var video = $('header video').get(0);
-	// video.load();
-	// video.oncanplaythrough = function() {
-	// 	video.play();
-	// 	$('header video').on('ended', function () {
-	// 		video.play();
-	// 	});
-	// };
+	var video = $('header video').get(0);
+	video.load();
+	video.oncanplaythrough = function() {
+		video.play();
+		$('header video').on('ended', function () {
+			video.play();
+		});
+	};
 
 	
 };

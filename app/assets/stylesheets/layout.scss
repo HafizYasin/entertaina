@@ -387,11 +387,7 @@ header#video_header{
 	overflow: hidden;
 	z-index: 3;
 	background-size: cover;
-	.vjs-control-bar, .vjs-caption-settings, .vjs-loading-spinner, .vjs-hidden, .vjs-error-display{ 
-		display:none !important; 
-	}
-	#video{ width: initial !important; height: initial !important; }
-	video{
+	video, video img{
 		position: absolute;
 		left: 50%; top: 50%;
 		min-width: 100%; min-height: 100%;
