@@ -36,16 +36,26 @@ $ ->
 
 
 
-		
 
-	$('a.gallery').fancybox afterShow: ->
+			
+	if (window.matchMedia('(max-width: 1000px)').matches) 
+		$('a.gallery').fancybox 
+			autoSize: false
+			height: '100%'
+			afterShow: ->
+				hi()
+	else 
+		$('a.gallery').fancybox 
+			afterShow: ->
+				hi()
+
+
+	hi = ->
 		if $('.fancybox-inner').find('.lightSlider').length == 0
 			$('#photo_modal .slider').lightSlider
 				gallery: true
 				item: 1
 				loop: true
-				# adaptiveHeight: true
-				# autowidth: true
 				galleryMargin: 40
 				thumbMargin: 20
 				thumbItem: 10
@@ -56,11 +66,18 @@ $ ->
 					{ breakpoint: 1000, settings: {  
 						gallery: false
 						pager: false
-						onSliderLoad: ->
-							$('.lightSlider img').css('max-height', $('.fancybox-inner').height() )
+						adaptiveHeight: true
+						autowidth: true
 					}}
 				]
 		return #photos in modal in profile
+
+
+
+
+
+
+
 
 	$('body').on 'DOMNodeInserted', '.fancybox-skin', ->
 		if $('.modal.gallery').parents('.fancybox-skin.transparent').length == 0
