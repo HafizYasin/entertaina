@@ -387,7 +387,7 @@ header#video_header{
 	overflow: hidden;
 	z-index: 3;
 	background-size: cover;
-	video{
+	video, .wistia_embed{
 		position: absolute;
 		left: 50%; top: 50%;
 		min-width: 100%; min-height: 100%;
