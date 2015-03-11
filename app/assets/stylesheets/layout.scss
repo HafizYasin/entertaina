@@ -380,14 +380,14 @@ header.big{
 }
 
 header#video_header{
-	background: url('/assets/index/piano.jpg') -20px;
+	background: url('/assets/index/piano.jpg') 0px;
 	width: 100%;
 	height: 100%;
 	position: relative;
 	overflow: hidden;
 	z-index: 3;
 	background-size: cover;
-	video, video img{
+	video{
 		position: absolute;
 		left: 50%; top: 50%;
 		min-width: 100%; min-height: 100%;

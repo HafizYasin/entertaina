@@ -863,23 +863,14 @@
 			height: 100% !important;
 			top: 0px !important;
 		}
-		.gallery.modal .slider{
-			img{ 
-				margin-left: 0px; 
-			}
-			li{
-
-				img{
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-				}
-			}
+		.gallery.modal .slider img{ 
+			margin-left: 0px; 
+			position: relative;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
 		}
-
-
 	}
 
 }
