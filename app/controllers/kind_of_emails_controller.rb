@@ -1,5 +1,5 @@
 class KindOfEmailsController < ApplicationController
-	layout 'layouts/emails'
+	layout 'emails'
 
   def welcome
   end
